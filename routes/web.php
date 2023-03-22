@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Bisection;
+use App\Models\Cholesky;
+use App\Models\LURozklad;
+use App\Models\Integral;
+use App\Models\Jacobi;
+use App\Models\Newton;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +20,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); // tu dorobit nejaky jednoduchy dashboard ako uvod ze o com to je a tak 
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/bisekcia', function(){
+    return view('bisection', ['collection' => Bisection::all()]);
+});
+
+Route::get('/LURozklad', function(){
+    return view('LURozklad', ['collection' => LURozklad::all()]);
+});
+
+Route::get('/cholesky', function(){
+    return view('cholesky', ['collection' => Cholesky::all()]);
+});
+
+Route::get('/integral', function(){
+    return view('integral', ['collection' => Integral::all()]);
+});
+
+Route::get('/jacobi', function(){
+    return view('jacobi', ['collection' => Jacobi::all()]);
+});
+Route::get('/newton', function(){
+    return view('newton', ['collection' => Newton::all()]);
+});
 
 Route::group([
     'prefix' => 'admin',
