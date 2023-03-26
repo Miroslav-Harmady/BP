@@ -10,70 +10,79 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
+    <h1 class="text-center text-3xl font-bold pb-4">
         LU rozklad
     </h1>
-    <div>
-        <p>
-            Princíp metódy <em>LU rozkladu</em> matice spočíva v tom, že regulárnu maticu A prepíšeme v tvare súčinu dvoch matíci, z ktorých jedna - L (z anglického lower) je <em>dolná trojuholníková</em>
-            a má na celej hlavnej diagonále jednotky, a druá - U (z anglického slova <em>upper</em>) je <em>horná trojuholníková matica</em> a na hlavnej diagonále má nenulové prvky 
-        </p>
-        <div class="flex">
-            <div>
-                \(L = \begin{pmatrix}
-                1 & 0 & 0 \\
-                \star & 1 & 0 \\
-                \star & \star & 1
-                \end{pmatrix}\)
+    <div class="flex justify-center">
+        <div class="w-3/4 ">
+            <p class="pb-2 text-lg">
+                Princíp metódy <em>LU rozkladu</em> matice spočíva v tom, že regulárnu maticu A prepíšeme v tvare súčinu dvoch matíci, z ktorých jedna - L (z anglického lower) je <em>dolná trojuholníková</em>
+                a má na celej hlavnej diagonále jednotky, a druá - U (z anglického slova <em>upper</em>) je <em>horná trojuholníková matica</em> a na hlavnej diagonále má nenulové prvky 
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 pl-10">
+                <div class="p-2 text-lg">
+                        \(L = \begin{pmatrix}
+                            1 & 0 & 0 \\
+                            \star & 1 & 0 \\
+                            \star & \star & 1
+                            \end{pmatrix},\)
+                </div>
+                <div class="p-2 text-lg">
+                    \(U = \begin{pmatrix}
+                    \star & \star & \star \\
+                    0 & \star & \star \\
+                    0 & 0 & \star
+                    \end{pmatrix}\)
+                </div>
             </div>
+            <p class="indent-4 py-2 text-lg">
+                V tomto prípade, keď sú prvky na hlavnej diagonále matice L rovné 1, hovoríme o tzv. <em>Doolittelovom rozklade</em>. Okrem toho existuje aj tzv. <em>Croutov rozklad</em>,
+                v ktorom sú prvky na hlavnej diagonále matice U rovné 1. My sa budeme venovať iba Doolittleovemu rozkladu.
+            </p>
+            <p class="indent-4 pb-2 text-lg">
+                Postup riešenia sústavy Ax = b metódou <em>LU rozkladu</em> je nasledovný. Maticu A nahradíme v sústave súčinom LU a označíme Ux = y. Dostaneme Ly = b. Najprv vyriešime sústavu Ly = b 
+                <em>doprednou substitúciou</em> a potom dosadíme y do pravej strany sústavy Ux = y, ktorú vyriešime <em>spätnou substitúciou</em>.
+            </p>
+            <p class="indent-4 pb-2 text-lg">
+                Výhoda metódy LU rozkladu je hlavne v prípadoch, keď riešime viac sústav s rovnakou maticou a rôznymi pravými stranami.
+            </p>
+        </div>
+    </div>
+
+    <div class="flex justify-center pt-4">
+        <div class="w-3/4">
             <div>
-                \(U = \begin{pmatrix}
-                \star & \star & \star \\
-                0 & \star & \star \\
-                0 & 0 & \star
-                \end{pmatrix}\)
+                <h2 class="text-2xl pl-10">
+                    Sekcia na vzorový príklad
+                </h2>
+            </div>
+
+            <div>
+                <h2 class="text-2xl pl-10 pt-2">
+                    Neriešené sem
+                </h2>
+                <br>
+                <br>
             </div>
         </div>
-        <p>
-            V tomto prípade, keď sú prvky na hlavnej diagonále matice L rovné 1, hovoríme o tzv. <em>Doolittelovom rozklade</em>. Okrem toho existuje aj tzv. <em>Croutov rozklad</em>,
-            v ktorom sú prvky na hlavnej diagonále matice U rovné 1. My sa budeme venovať iba Doolittleovemu rozkladu.
-        </p>
-        <p>
-            Postup riešenia sústavy Ax = b metódou <em>LU rozkladu</em> je nasledovný. Maticu A nahradíme v sústave súčinom LU a označíme Ux = y. Dostaneme Ly = b. Najprv vyriešime sústavu Ly = b 
-            <em>doprednou substitúciou</em> a potom dosadíme y do pravej strany sústavy Ux = y, ktorú vyriešime <em>spätnou substitúciou</em>.
-        </p>
-        <p>
-            Výhoda metódy LU rozkladu je hlavne v prípadoch, keď riešime vuac sústav s rovnakou maticou a rôznymi pravými stranami.
-        </p>
     </div>
-
-    <div>
-        <h2>
-            sekcia na vzorový príklad
-        </h2>
-        <br>
-        <br>
-    </div>
-
-    <div>
-        <h2>
-            neriešené sem
-        </h2>
-        <br>
-        <br>
-    </div>
+        
 
     <div>
         <div class="flex justify-center">
             <div class="w-1/2 relative p-2">
-                <div class="grid grid-cols-1 z-3">
+                <p class="text-base">
+                    Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor ktorý vidíte dole v
+                    v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
+                 </p>
+                <div class="grid grid-cols-1 z-3 mt-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
                         <div>
                             <div>
                                 <label for="inputA"> Ľavá strana matice:</label>
                             </div>
                             <div>
-                                <textarea name="inputA" id="inputA" cols="20" rows="10"></textarea>
+                                <textarea name="inputA" id="inputA" cols="20" rows="10" class="border-2 border-solid border-black rounded-2xl pl-2" placeholder="1, 2, 3&#10;2, 3, 8&#10;-1, -5,-5"></textarea>
                             </div>
                         </div>
                         
@@ -82,7 +91,7 @@
                                 <label for="inputB"> Pravá strana matice:</label>
                             </div>
                             <div>
-                                <textarea name="inputB" id="inputB" cols="20" rows="10" ></textarea>
+                                <textarea name="inputB" id="inputB" cols="20" rows="10" class="border-2 border-solid border-black rounded-2xl pl-2" placeholder="8&#10;16&#10;-6" ></textarea>
                             </div>
                         </div>
 

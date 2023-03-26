@@ -10,43 +10,52 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Newtonove-Cotesove kvadratúrne vzorce
-    </h1>
-    <p>
-        <em>Základná myšlienka</em> Newtonových - Cotesových kvadratúrnych vzorcov spočíva v tom,že funkciu \(f(x)\) <em>nahradíme</em> na intervale \(\left< a,b \right>\)
-        nejakou inou <em>jednoduchšou funkciou</em> \(P_m(x)\), v tomto prípad aproximačným alebo interpolačným polynómom stupňa m. Vo všeobecnosti platí, že pokiaľ je
-        funkcia \(P_m(x)\) dobrou aprosimáciou funkcie \(f(x)\), tak aj $$\int_{a}^{b}P_m(x)dx$$ je dobrou aproximáciou \(\int_a^bf(x)dx\)
-    </p>
-    <p>
-        Postup výpočtu určitého integrálu potom môžeme zhrnúť do nasledovných bodov:
-    </p>
-    <p>
-        1. Interval \(\left< a,b \right>\) rozdelíme na n <em>rovnakých čiastkových intervalov</em> (nazývaných aj <em>podintervaly</em>) rovnakej dĺžky h, ktorú vypočítame
-         $$h = \frac{b - a}{n}$$.
-    </p>
-    <p>
-        Získali sme tak (n + 1) deliacich bodov, ktoré označíme \(x_i, i = 1,...,n + 1\). Platí 
-    </p>
-  
-    <div class="flex"> 
-        {{-- toto asi dam este na grid uvidi sa --}}
-        <div class="px-4">
-            \(x_i = a + (i - 1) \cdot h,\)
-        </div>
-        <div class="px-4">
-            \(y_i = f(x_i)\),
-        </div>
-        <div class="px-4">
-            \(i = 1,...,n + 1\)
+    <div class="flex justify-center">
+        <div class="w-3/4 text-lg">
+            <h1 class="text-center text-3xl font-bold py-4">
+                Newtonove-Cotesove kvadratúrne vzorce
+            </h1>
+        
+            <p class="">
+                <em>Základná myšlienka</em> Newtonových - Cotesových kvadratúrnych vzorcov spočíva v tom,že funkciu \(f(x)\) <em>nahradíme</em> na intervale \(\left< a,b \right>\)
+                nejakou inou <em>jednoduchšou funkciou</em> \(P_m(x)\), v tomto prípad aproximačným alebo interpolačným polynómom stupňa m. Vo všeobecnosti platí, že pokiaľ je
+                funkcia \(P_m(x)\) dobrou aprosimáciou funkcie \(f(x)\), tak aj $$\int_{a}^{b}P_m(x)dx$$ je dobrou aproximáciou \(\int_a^bf(x)dx\)
+            </p>
+            <p>
+                Postup výpočtu určitého integrálu potom môžeme zhrnúť do nasledovných bodov:
+            </p>
+            <p>
+                1. Interval \(\left< a,b \right>\) rozdelíme na n <em>rovnakých čiastkových intervalov</em> (nazývaných aj <em>podintervaly</em>) rovnakej dĺžky h, ktorú vypočítame
+                 $$h = \frac{b - a}{n}$$.
+            </p>
+            <p>
+                Získali sme tak (n + 1) deliacich bodov, ktoré označíme \(x_i, i = 1,...,n + 1\). Platí 
+            </p>
+                           
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3"> 
+                {{-- toto asi dam este na grid uvidi sa --}}
+                <div class="px-4">
+                    \(x_i = a + (i - 1) \cdot h,\)
+                </div>
+                <div class="px-4">
+                    \(y_i = f(x_i)\),
+                </div>
+                <div class="px-4">
+                    \(i = 1,...,n + 1\)
+                </div>
+            </div>
+            <p class="text-2xl text-red-500 font-bold">
+                Dobre tu sa radšej opýtaj že čo všetko tam má byť a čo už nie z tej teórie
+            </p>
         </div>
     </div>
+    
     <br>
-    dobre tu sa radšej opýtaj že čo všetko tam má byť a čo už nie z tej teórie
+   
 
     <div>
         <div class="flex justify-center">
-            <div class="w-1/2 relative p-2">
+            <div class="w-3/4 relative p-2">
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
                         <div>

@@ -11,35 +11,43 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
+    <h1 class="text-center text-3xl font-bold p-4">
         Metóda bisekcie
     </h1>
-    <p>
-        Metóda bisekcie sa nazýva aj <em>metóda polovičného delenia intervalu</em> a aplikuje sa na problémy formulované v tvare f(x) = 0.
-        Predpokladajme, že funkcia f(x) je spojitá na intervale \( I = \langle a, b \rangle\) a má v ňom  práve jeden koreň \(\color{Blue}\alpha\).
-        Na začiatok si vyberme \(a_0\) a \(a_0\), ktorých hodnoty \(f(a_0)\) a \(f(b_0)\) majú opačné znamienka. Potom rozdelíme interval mdedzi
-        \(a_0\) a \(b_0\) pomocou \(s_1 = (a_0 + b_0)/2\) a vypočítame jeho hodnotu \(f(s_1)\). Pre ďalšiu iterácui si ponecháme \(s_1\) a 
-        jednu hodnotu z \(a_0\) alebo \(b_0\), ktorá má opačné znamenko \(f\) v porovnaní s \(f(s_1)\). Pokračujeme v delení intervalu, pokým 
-        \(\left| f(s_n) \right| \lt \varepsilon_1 \) alebo \(\left| a_n - b_n \right| \lt \varepsilon_2 \)
-    </p>
-    <p>
-        Metóda bisekcie je jednoduchá, vždy konverguje, ale táto konvergencia je pomalá, nakoľko je založená na delení intervalu. Na druhej strane je jednoduchá na naprogramovanie a dáva odhad chyby v každom kroku.
-    </p>
-    <h2>
-        tu ukazkove priklady ale to sa este dohodneme
-    </h2>
-    <h2>
-        Neriešené príklady na precvičenie.
-    </h2>
-    @forelse ($collection as $item)
-        <p>
-            \({{$item->function}}\)
-        </p>
-    @empty
-        <p>
-            Zatiaľ nebol k tejto téme priradený žiadny neriešený príklad.
-        </p>
-    @endforelse
+
+    <div class="flex justify-center">
+        <div class="w-3/4">
+            <p class="indent-4 text-lg pb-2">
+                Metóda bisekcie sa nazýva aj <em>metóda polovičného delenia intervalu</em> a aplikuje sa na problémy formulované v tvare f(x) = 0.
+                Predpokladajme, že funkcia f(x) je spojitá na intervale \( I = \langle a, b \rangle\) a má v ňom  práve jeden koreň \(\color{Blue}\alpha\).
+                Na začiatok si vyberme \(a_0\) a \(a_0\), ktorých hodnoty \(f(a_0)\) a \(f(b_0)\) majú opačné znamienka. Potom rozdelíme interval mdedzi
+                \(a_0\) a \(b_0\) pomocou \(s_1 = (a_0 + b_0)/2\) a vypočítame jeho hodnotu \(f(s_1)\). Pre ďalšiu iterácui si ponecháme \(s_1\) a 
+                jednu hodnotu z \(a_0\) alebo \(b_0\), ktorá má opačné znamenko \(f\) v porovnaní s \(f(s_1)\). Pokračujeme v delení intervalu, pokým 
+                \(\left| f(s_n) \right| \lt \varepsilon_1 \) alebo \(\left| a_n - b_n \right| \lt \varepsilon_2 \)
+            </p>
+            <p class="indent-4 text-lg pb-2">
+                Metóda bisekcie je jednoduchá, vždy konverguje, ale táto konvergencia je pomalá, nakoľko je založená na delení intervalu. Na druhej strane je jednoduchá na naprogramovanie a dáva odhad chyby v každom kroku.
+            </p>
+            <h2 class="text-2xl py-4 pl-10">
+                tu ukazkove priklady ale to sa este dohodneme
+            </h2>
+
+            <h2 class="text-2xl py-4 pl-10">
+                Neriešené príklady na precvičenie.
+            </h2>
+            @forelse ($collection as $item)
+                <p>
+                    \({{$item->function}}\)
+                </p>
+            @empty
+                <p>
+                    Zatiaľ nebol k tejto téme priradený žiadny neriešený príklad.
+                </p>
+            @endforelse
+        </div>
+    </div>
+   
+    
     <br>
     <br>
     <br>
@@ -59,7 +67,7 @@
                                 <label for="inputF">f(x)=</label>
                             </div>
                             <div>
-                                <input type="text" name="inputF" id="function_des" placeholder="x^3-4*x+3" class="border-2 border-black rounded-lg border-solid">
+                                <input type="text" name="inputF" id="function_des" placeholder="x^3-4*x+3" class="border-2 border-black rounded-lg border-solid p-1">
                             </div>
                         </div>
 
@@ -68,7 +76,7 @@
                                 <label for="inputA">a:</label>
                             </div>
                             <div>
-                                <input type="number" name="inputA" id="inputA" class="border-2 border-black rounded-lg border-solid">
+                                <input type="number" name="inputA" id="inputA" class="border-2 border-black rounded-lg border-solid p-1" placeholder="0">
                             </div>
                         </div>
 
@@ -77,7 +85,7 @@
                                 <label for="inputB">b:</label>
                             </div>
                             <div>
-                                <input type="number" name="inputB" id="inputB" class="border-2 border-black rounded-lg border-solid">
+                                <input type="number" name="inputB" id="inputB" class="border-2 border-black rounded-lg border-solid p-1" placeholder="4">
                             </div>
                         </div>
 
@@ -86,7 +94,7 @@
                                 <label for="eps">eps:</label>
                             </div>
                             <div>
-                                <input type="number" name="eps" min="0" id="eps" class="border-2 border-black rounded-lg border-solid"> 
+                                <input type="number" name="eps" min="0" id="eps" class="border-2 border-black rounded-lg border-solid p-1" placeholder="0.001"> 
                             </div>
                         </div>
 

@@ -10,93 +10,95 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Jacobiho metóda
-    </h1>
-    <br>
-    <p>
-        tu neviem či bude treba aj ten úvod
-    </p>
-    <br>
-    <p>
-        Princíp <em>Jacobiho metódy</em> vysvetlíme na systéme troch lineárnych rovníc o troch neznámych $$a_{11}x_1 + a_{12}x_2 + a_{13}x_3$$
-        $$a_{21}x_1 + a_{22}x_2 + a_{2n}x_3$$
-        $$a_{31}x_1 + a_{32}x_2 + a_{3n}x_3$$
-    </p>
-    <p>
-        Každú s rovníc vydelíme koeficientom \(a_{ii}\) za predpokladu, že \(a_{ii} \not= 0 \) 
-        $$x_1 + \frac{a_{12}}{a_{11}}x_2 + \frac{a_{13}}{a_{11}}x_3 = \frac{b_{1}}{a_{11}},$$
-        $$\frac{a_{21}}{a_{22}}x_1 + x_2  \frac{a_{23}}{a_{22}}x_3 = \frac{b_{2}}{a_{22}},$$
-        $$\frac{a_{31}}{a_{33}}x_2 + \frac{a_{32}}{a_{33}}x_2 +  x_3 = \frac{b_{3}}{a_{33}}.$$
-    </p>
+    <div class="flex justify-center">
+        <div class="w-3/4 text-lg">
+            <h1 class="text-center text-3xl font-bold">
+                Jacobiho metóda
+            </h1>
+            <p class="text-2xl text-red-500 font-bold">
+                tu neviem či bude treba aj ten úvod
+            </p>
 
-    <p>
-        Potom z prvej rovnice vyjadríme \(x_1\), z druhej vyjadríme \(x_2\), z tretej rovnice vyjadríme \(x_3\) a zapíšeme nasledovne
-    </p>
+            <p>
+                Princíp <em>Jacobiho metódy</em> vysvetlíme na systéme troch lineárnych rovníc o troch neznámych $$a_{11}x_1 + a_{12}x_2 + a_{13}x_3$$
+                $$a_{21}x_1 + a_{22}x_2 + a_{2n}x_3$$
+                $$a_{31}x_1 + a_{32}x_2 + a_{3n}x_3$$
+            </p>
 
-    <p>
-        $$x_1 = \color{Blue}0 \color{Black} \cdot x_1 - \frac{a_{12}}{a_{11}}x_2 - \frac{a_{13}}{a_{11}}x_3 + \frac{b_{1}}{a_{11}},$$
-        $$x_2 = -\frac{a_{21}}{a_{22}}x_1 +\color{Blue} 0 \color{Black} \cdot x_2  - \frac{a_{23}}{a_{22}}x_3 + \frac{b_{2}}{a_{22}},$$
-        $$x_3 = - \frac{a_{31}}{a_{33}}x_1 - \frac{a_{32}}{a_{33}}x_2 + \color{Blue} 0 \color{Black} \cdot x_3 + \frac{b_{3}}{a_{33}}$$
-    </p>
+            <p>
+                Každú s rovníc vydelíme koeficientom \(a_{ii}\) za predpokladu, že \(a_{ii} \not= 0 \) 
+                $$x_1 + \frac{a_{12}}{a_{11}}x_2 + \frac{a_{13}}{a_{11}}x_3 = \frac{b_{1}}{a_{11}},$$
+                $$\frac{a_{21}}{a_{22}}x_1 + x_2  \frac{a_{23}}{a_{22}}x_3 = \frac{b_{2}}{a_{22}},$$
+                $$\frac{a_{31}}{a_{33}}x_2 + \frac{a_{32}}{a_{33}}x_2 +  x_3 = \frac{b_{3}}{a_{33}}.$$
+            </p>
 
-    <p>
-        \(\begin{pmatrix}
-            x1\\
-            x2\\
-            x3 
-        \end{pmatrix}\) =  \(\begin{pmatrix}
-        \color{Blue} 0 & - \frac{a_{12}}{a_{11}} & - \frac{a_{13}}{a_{11}} \\
-        - \frac{a_{21}}{a_{22}} & \color{Blue} 0 & - \frac{a_{23}}{a_{22}} \\
-        - \frac{a_{31}}{a_{33}} & - \frac{a_{32}}{a_{33}} & \color{Blue} 0
-        \end{pmatrix} \cdot \) \(\begin{pmatrix} x1\\ x2\\ x3 \end{pmatrix} + \)
-        \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b2}{a_{22}}\\ \frac{b3}{a_{33}} \end{pmatrix}\)
-    </p>
-    <p>
-        Iteračná formula pre výpočet vektora \(x^{\color{Green}{(k)}}\), k = 1, ..., bude potom mať tvar
-    </p>
+            <p>
+                Potom z prvej rovnice vyjadríme \(x_1\), z druhej vyjadríme \(x_2\), z tretej rovnice vyjadríme \(x_3\) a zapíšeme nasledovne
+            </p>
+        
+            <p>
+                $$x_1 = \color{Blue}0 \color{Black} \cdot x_1 - \frac{a_{12}}{a_{11}}x_2 - \frac{a_{13}}{a_{11}}x_3 + \frac{b_{1}}{a_{11}},$$
+                $$x_2 = -\frac{a_{21}}{a_{22}}x_1 +\color{Blue} 0 \color{Black} \cdot x_2  - \frac{a_{23}}{a_{22}}x_3 + \frac{b_{2}}{a_{22}},$$
+                $$x_3 = - \frac{a_{31}}{a_{33}}x_1 - \frac{a_{32}}{a_{33}}x_2 + \color{Blue} 0 \color{Black} \cdot x_3 + \frac{b_{3}}{a_{33}}$$
+            </p>
 
-    <p>
-        $$x_1^{\color{Green}{(k)}} = \color{Blue}0 \color{Black} \cdot x_1^{\color{Red}{(k-1)}} - \frac{a_{12}}{a_{11}}x_2^{\color{Red}{(k-1)}} - \frac{a_{13}}{a_{11}}x_3^{\color{Red}{(k-1)}} + \frac{b_{1}}{a_{11}},$$
-        $$x_2^{\color{Green}{(k)}} = -\frac{a_{21}}{a_{22}}x_1^{\color{Red}{(k-1)}} +\color{Blue} 0 \color{Black} \cdot x_2^{\color{Red}{(k-1)}}  - \frac{a_{23}}{a_{22}}x_3^{\color{Red}{(k-1)}} + \frac{b_{2}}{a_{22}},$$
-        $$x_3^{\color{Green}{(k)}} = - \frac{a_{31}}{a_{33}}x_1^{\color{Red}{(k-1)}} - \frac{a_{32}}{a_{33}}x_2^{\color{Red}{(k-1)}} + \color{Blue} 0 \color{Black} \cdot x_3^{\color{Red}{(k-1)}} + \frac{b_{3}}{a_{33}}$$
-    </p>
-    <p>
-        respektíve
-    </p>
-    <p>
-        \(\begin{pmatrix}
-            x1^{\color{Green}{(k)}}\\
-            x2^{\color{Green}{(k)}}\\
-            x3^{\color{Green}{(k)}} 
-        \end{pmatrix}\) =  \(\begin{pmatrix}
-        \color{Blue} 0 & - \frac{a_{12}}{a_{11}} & - \frac{a_{13}}{a_{11}} \\
-        - \frac{a_{21}}{a_{22}} & \color{Blue} 0 & - \frac{a_{23}}{a_{22}} \\
-        - \frac{a_{31}}{a_{33}} & - \frac{a_{32}}{a_{33}} & \color{Blue} 0
-        \end{pmatrix} \cdot \) \(\begin{pmatrix} x1^{\color{Red}{(k-1)}}\\ x2^{\color{Red}{(k-1)}}\\ x3^{\color{Red}{(k-1)}} \end{pmatrix} + \)
-        \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b2}{a_{22}}\\ \frac{b3}{a_{33}} \end{pmatrix}\),
-    </p>
-    <p>
-        Kde horný index k označuje poradie iterácie. Horné indexy same zámere zvýraznili zelenou a červenou farbou, aby sme neskôr mohli poukázať na rozdiel medzi Jacobiho a Gaussovou-Seidelovou metódou. Je tiež dôležité si uvedomiť, že nahlavnej diagonále mám iba nulové prvky.
-    </p>
-    <p>
-        Všeobecne <em>Jacobiho metódu</em> môžeme napísať nasledovne: Vybrme i-tú rovnicu
-        $$\sum_{j=1}^{n}a_{ij}x_j = b_i$$
-        a iteračný zápis výpočtu hodnoty \(x_i\) bude nasledovný
-        $$x_i^{\color{Green}{(k)}} = \frac{1}{a_{i,i}} \left( b_i - \sum_{j=1}a_{ij}x{j}^{\color{Red}{(k-1)}} \right)$$
-        Na konvergenciu Jacobiho metódy jepostačujúce, aby matica A bola <em>diagonálne dominantná</em>. To, či je matica riadkovo (resp. stĺpcovo) diagonálne dominantná znamená,
-        že jej diagonálne prvky sú väčšieako suma ostatných prvkov v príslušnom riadku(resp. stĺpci).
-    </p>
-    <p>
-        Hlavnou výhodou Jacobiho metódy je ľahká paralelizácia a vektorizácia algoritmu.
-    </p>
+            <p class="py-2">
+                \(\begin{pmatrix}
+                    x1\\
+                    x2\\
+                    x3 
+                \end{pmatrix}\) =  \(\begin{pmatrix}
+                \color{Blue} 0 & - \frac{a_{12}}{a_{11}} & - \frac{a_{13}}{a_{11}} \\
+                - \frac{a_{21}}{a_{22}} & \color{Blue} 0 & - \frac{a_{23}}{a_{22}} \\
+                - \frac{a_{31}}{a_{33}} & - \frac{a_{32}}{a_{33}} & \color{Blue} 0
+                \end{pmatrix} \cdot \) \(\begin{pmatrix} x1\\ x2\\ x3 \end{pmatrix} + \)
+                \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b2}{a_{22}}\\ \frac{b3}{a_{33}} \end{pmatrix}\)
+            </p>
+            <p>
+                Iteračná formula pre výpočet vektora \(x^{\color{Green}{(k)}}\), k = 1, ..., bude potom mať tvar
+            </p>
 
+            <p>
+                $$x_1^{\color{Green}{(k)}} = \color{Blue}0 \color{Black} \cdot x_1^{\color{Red}{(k-1)}} - \frac{a_{12}}{a_{11}}x_2^{\color{Red}{(k-1)}} - \frac{a_{13}}{a_{11}}x_3^{\color{Red}{(k-1)}} + \frac{b_{1}}{a_{11}},$$
+                $$x_2^{\color{Green}{(k)}} = -\frac{a_{21}}{a_{22}}x_1^{\color{Red}{(k-1)}} +\color{Blue} 0 \color{Black} \cdot x_2^{\color{Red}{(k-1)}}  - \frac{a_{23}}{a_{22}}x_3^{\color{Red}{(k-1)}} + \frac{b_{2}}{a_{22}},$$
+                $$x_3^{\color{Green}{(k)}} = - \frac{a_{31}}{a_{33}}x_1^{\color{Red}{(k-1)}} - \frac{a_{32}}{a_{33}}x_2^{\color{Red}{(k-1)}} + \color{Blue} 0 \color{Black} \cdot x_3^{\color{Red}{(k-1)}} + \frac{b_{3}}{a_{33}}$$
+            </p>
+            <p class="py-2">
+                respektíve
+            </p>
 
+            <p class="py-2">
+                \(\begin{pmatrix}
+                    x1^{\color{Green}{(k)}}\\
+                    x2^{\color{Green}{(k)}}\\
+                    x3^{\color{Green}{(k)}} 
+                \end{pmatrix}\) =  \(\begin{pmatrix}
+                \color{Blue} 0 & - \frac{a_{12}}{a_{11}} & - \frac{a_{13}}{a_{11}} \\
+                - \frac{a_{21}}{a_{22}} & \color{Blue} 0 & - \frac{a_{23}}{a_{22}} \\
+                - \frac{a_{31}}{a_{33}} & - \frac{a_{32}}{a_{33}} & \color{Blue} 0
+                \end{pmatrix} \cdot \) \(\begin{pmatrix} x1^{\color{Red}{(k-1)}}\\ x2^{\color{Red}{(k-1)}}\\ x3^{\color{Red}{(k-1)}} \end{pmatrix} + \)
+                \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b2}{a_{22}}\\ \frac{b3}{a_{33}} \end{pmatrix}\),
+            </p>
+            <p>
+                Kde horný index k označuje poradie iterácie. Horné indexy same zámere zvýraznili zelenou a červenou farbou, aby sme neskôr mohli poukázať na rozdiel medzi Jacobiho a Gaussovou-Seidelovou metódou. Je tiež dôležité si uvedomiť, že nahlavnej diagonále mám iba nulové prvky.
+            </p>
+            <p>
+                Všeobecne <em>Jacobiho metódu</em> môžeme napísať nasledovne: Vybrme i-tú rovnicu
+                $$\sum_{j=1}^{n}a_{ij}x_j = b_i$$
+                a iteračný zápis výpočtu hodnoty \(x_i\) bude nasledovný
+                $$x_i^{\color{Green}{(k)}} = \frac{1}{a_{i,i}} \left( b_i - \sum_{j=1}a_{ij}x{j}^{\color{Red}{(k-1)}} \right)$$
+                Na konvergenciu Jacobiho metódy jepostačujúce, aby matica A bola <em>diagonálne dominantná</em>. To, či je matica riadkovo (resp. stĺpcovo) diagonálne dominantná znamená,
+                že jej diagonálne prvky sú väčšieako suma ostatných prvkov v príslušnom riadku(resp. stĺpci).
+            </p>
+            <p>
+                Hlavnou výhodou Jacobiho metódy je ľahká paralelizácia a vektorizácia algoritmu.
+            </p>
+        </div>
+    </div>
 
-
-    <div>
+    <div class="mt-4">
         <div class="flex justify-center">
-            <div class="w-1/2 relative p-2 bg-red-200">
+            <div class="w-3/4 relative p-2 bg-red-200">
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center mb-4" >
                         <div>
@@ -119,11 +121,14 @@
 
                         <div>
                             <div>
-                                <label for="m">Počet iterácii:</label>        
+                                <label for="m">Maximálny počet iterácii:</label>        
                             </div>
                             <div>
-                                <input type="number" id="m"> 
-                                <!-- nateraz je to este number input ale prerobim to na select od 1 po 10 ked to nahodim do laravelu -->
+                                <select name="m" id="m">
+                                    @for ($i = 1; $i < 11; $i++)
+                                        <option value = {{$i}}>{{$i}}</option>
+                                    @endfor 
+                                </select>
                             </div>
                         </div>
 
@@ -162,10 +167,10 @@
                         </div>
                     </div>
                 </div>
+                <table id="table">
+                </table>
             </div>
         </div>
-        <table id="table">
-        </table>
     </div>
 </body>
 <script src="{{ asset('js/pages/jacobi.js') }}"></script>
