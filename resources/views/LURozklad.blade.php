@@ -9,12 +9,13 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body>
-    <h1 class="text-center text-3xl font-bold pb-4">
-        LU rozklad
-    </h1>
+<body class="bg-gray-300">
+    @include('Includes.navbar')    
     <div class="flex justify-center">
-        <div class="w-3/4 ">
+        <div class="w-3/4 bg-white">
+            <h1 class="text-center text-3xl font-bold pb-4">
+                LU rozklad
+            </h1>
             <p class="pb-2 text-lg">
                 Princíp metódy <em>LU rozkladu</em> matice spočíva v tom, že regulárnu maticu A prepíšeme v tvare súčinu dvoch matíci, z ktorých jedna - L (z anglického lower) je <em>dolná trojuholníková</em>
                 a má na celej hlavnej diagonále jednotky, a druá - U (z anglického slova <em>upper</em>) je <em>horná trojuholníková matica</em> a na hlavnej diagonále má nenulové prvky 
@@ -46,31 +47,20 @@
             <p class="indent-4 pb-2 text-lg">
                 Výhoda metódy LU rozkladu je hlavne v prípadoch, keď riešime viac sústav s rovnakou maticou a rôznymi pravými stranami.
             </p>
+
+            <h2 class="text-2xl pl-10">
+                Sekcia na vzorový príklad
+            </h2>
+
+            <h2 class="text-2xl pl-10 pt-2">
+                Neriešené sem
+            </h2>
         </div>
     </div>
-
-    <div class="flex justify-center pt-4">
-        <div class="w-3/4">
-            <div>
-                <h2 class="text-2xl pl-10">
-                    Sekcia na vzorový príklad
-                </h2>
-            </div>
-
-            <div>
-                <h2 class="text-2xl pl-10 pt-2">
-                    Neriešené sem
-                </h2>
-                <br>
-                <br>
-            </div>
-        </div>
-    </div>
-        
 
     <div>
         <div class="flex justify-center">
-            <div class="w-1/2 relative p-2">
+            <div class="w-3/4 relative bg-white">
                 <p class="text-base">
                     Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor ktorý vidíte dole v
                     v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
@@ -109,7 +99,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="bg-green-500 border-green-700 border-2 border-solid p-2 rounded-lg font-bold text-white hover:bg-green-600 hover:drop-shadow-lg" onclick="compute()">compute</button>
+                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">compute</button>
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">

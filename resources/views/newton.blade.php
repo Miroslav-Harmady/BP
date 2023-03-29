@@ -9,9 +9,10 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body>
+<body class="bg-gray-300">
+    @include('Includes.navbar')
     <div class="flex justify-center">
-        <div class="w-3/4 text-lg">
+        <div class="w-3/4 text-lg bg-white pl-4">
             <h1 class="text-3xl text-center font-bold">
                 Newtonova metóda
             </h1>
@@ -42,9 +43,9 @@
     </div>
     
 
-    <div class="mt-4">
+    <div>
         <div class="flex justify-center">
-            <div class="w-3/4 relative p-2">
+            <div class="w-3/4 relative pt-4 bg-white">
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
                         <div>
@@ -106,7 +107,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="bg-green-500 border-green-700 border-2 border-solid p-2 rounded-lg font-bold text-white hover:bg-green-600 hover:drop-shadow-lg" onclick="compute()">compute</button>
+                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">compute</button>
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">

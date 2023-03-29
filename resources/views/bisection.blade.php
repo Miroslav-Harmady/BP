@@ -10,13 +10,13 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body>
-    <h1 class="text-center text-3xl font-bold p-4">
-        Metóda bisekcie
-    </h1>
-
+<body class="bg-gray-300">
+    @include('Includes.navbar')
     <div class="flex justify-center">
-        <div class="w-3/4">
+        <div class="w-3/4 bg-white">
+            <h1 class="text-center text-3xl font-bold p-4">
+                Metóda bisekcie
+            </h1>
             <p class="indent-4 text-lg pb-2">
                 Metóda bisekcie sa nazýva aj <em>metóda polovičného delenia intervalu</em> a aplikuje sa na problémy formulované v tvare f(x) = 0.
                 Predpokladajme, že funkcia f(x) je spojitá na intervale \( I = \langle a, b \rangle\) a má v ňom  práve jeden koreň \(\color{Blue}\alpha\).
@@ -46,19 +46,9 @@
             @endforelse
         </div>
     </div>
-   
-    
-    <br>
-    <br>
-    <br>
     <div> 
         <div class="flex justify-center">
-            <div class="w-1/2 relative p-2 bg-red-200">
-                <div>
-                    <p>
-                        Opytat sa ze ci je rozdiel medzi a = 0, b = 4 a ked je to naopak
-                    </p>
-                </div>
+            <div class="w-3/4 relative p-2 bg-white">
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center mb-4" >
                         
@@ -111,7 +101,7 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick="compute()" id="idk" class="justify-self-center bg-green-500 border-green-700 border-2 border-solid p-2 rounded-lg font-bold text-white hover:bg-green-600 hover:drop-shadow-lg">Vypočítaj</button>
+                    <button onclick="compute()" id="idk" class="justify-self-center bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg">Vypočítaj</button>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">
                     <div class=" w-3/4 bg-white font-black">

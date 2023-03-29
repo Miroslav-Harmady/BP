@@ -21,7 +21,7 @@ use App\Models\Newton;
 
 Route::get('/', function () {
     return view('welcome'); // tu dorobit nejaky jednoduchy dashboard ako uvod ze o com to je a tak 
-});
+})->name('welcome');
 
 Auth::routes();
 

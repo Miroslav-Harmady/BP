@@ -19,7 +19,6 @@ function getDomain(){
     for (let i = (a - 1); i <= (b + 1); i =i + 0.1){
         d.push(i);
     }
-    console.log("sme na konci get domain");
     return d;
 }
 
@@ -83,6 +82,7 @@ function compute(){
     var esp = parseFloat(inputEsp.value);
     var a = parseInt(inputA.value);
     var b = parseInt(inputB.value);
+    //Toto by tu asi nemalo byt
     if (b < a){
         let temp = a;
         a = b;

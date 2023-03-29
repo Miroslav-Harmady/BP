@@ -88,9 +88,6 @@ function compute(){
     var tableHead = createHeader();
     var tableBody = document.createElement("tbody");
 
-    //tuto ako pokracovat ak je dervicacia nulova?
-    //nemal by tu byt variabilny pocet iteracii?
-    //toto si treba pozriet este raz a prerobit lebo to vyzera jak odpad
     for(let i = 0; i < 10; i++){ 
         if(math.derivative(f, 'x').evaluate({x: x}) == 0){
             console.log("delenie nulou");
