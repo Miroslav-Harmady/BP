@@ -10,38 +10,38 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="text-2xl align-middle"> Bisekcia</h1>
-    <button><a href="{{route('admin.bisection.create')}}">vytvor</a></button>
+    @include('Includes.navbar')
+    <div class="flex justify-center">
+        <div class="w-3/4">
+            <h1 class="text-3xl font-bold text-center"> Bisekcia</h1>
+            <div class="flex justify-between">
+                <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" ><a href="/admin/index">späť</a></button>
+                <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" ><a href="{{route('admin.bisection.create')}}">vytvor</a></button>    
+            </div>
+            
+            @forelse ($collection as $item)
+                <div class="p-2 m-2 border-solid border-2 border-black flex justify-between" >
+                    <p>
+                        <span class="math display">
+                            \({{$item->function}}\)
+                        </span>
+                    </p>
+                        <button><a href="{{route('admin.bisection.edit', ['id' => $item->id])}}">úprava</a></button>
 
-    <div class="bg-green-300 border-2 w-1/2 border-black border-solid m-4" >
-        <p>
-            <span class="math display">
-                $$\begin{pmatrix}a & b \\c & d\end{pmatrix}$$
-            </span>
-        </p>
+                        <form action="{{route('admin.bisection.delete', ['id' => $item->id])}}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="text-red-500 bg-white font-semibold p-1 border-2 border-solid border-red-500 rounded-lg hover:bg-red-500 hover:text-white ">Vymazať</button>
+                        </form>
+                </div>
+            @empty
+                <div class="m-2 bg-white text-red-500 text-center border-2 border-red-500 text-xl font-bold rounded-2xl p-1">
+                    <p>
+                        Zatiaľ ste nepridali žiadne príklady tohto typu
+                    </p>
+                </div>
+            @endforelse
+        </div>
     </div>
-
-    @forelse ($collection as $item)
-        <div class="p-2 m-2 border-solid border-2 border-black" >
-            <p>
-                <span class="math display">
-                    $${{$item->function}}$$, {{$item->dispersion}}, {{$item->id}}
-                </span>
-            </p>
-            <button><a href="{{route('admin.bisection.edit', ['id' => $item->id])}}">úprava</a></button>
-
-            <form action="{{route('admin.bisection.delete', ['id' => $item->id])}}" method="POST">
-                @csrf
-                @method('delete')
-                <button type="submit" >Vymazať</button>
-            </form>
-        </div>
-    @empty
-        <div class="bg-red-300 ">
-            <p>
-                Zatial ste nepridali ziadne prikaldy tohto typu
-            </p>
-        </div>
-    @endforelse
 </body>
 </html>

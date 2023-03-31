@@ -20,7 +20,7 @@ use App\Models\Newton;
 */
 
 Route::get('/', function () {
-    return view('welcome'); // tu dorobit nejaky jednoduchy dashboard ako uvod ze o com to je a tak 
+    return view('welcome'); // prerobit welcome blade a hotovo 
 })->name('welcome');
 
 Auth::routes();

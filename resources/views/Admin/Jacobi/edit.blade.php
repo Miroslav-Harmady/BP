@@ -8,18 +8,25 @@
     <title>Document</title>
 </head>
 <body>
+    @include('Includes.navbar')
+    <h1 class="text-center text-2xl font-bold my-4">
+        Jacobiho metóda - úprava
+    </h1>
+    <a href="{{route('admin.jacobi.index')}}">
+        <button type="submit" class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg">Späť</button>
+    </a>
     <form action="{{route('admin.jacobi.update', ['id' => $item->id])}}" method="POST" class="flex justify-center">
         @csrf
         @method('PUT')
-        <div class="w-1/2 p-5 bg-red-400 border-solid border-2">
+        <div class="w-1/2 p-5 border-solid border-2">
             <div class="grid grid-cols-1 justify-items-center">
-                <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-begin mb-4">
+                <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-left mb-4">
                     <div>
                         <div>
                             <label for="inputLeft">Ľavá strana matice:</label>
                         </div>  
                         <div>
-                            <input type="text" name="inputLeft" id="inputLeft" value="{{$item->left}}">
+                            <input type="text" name="inputLeft" id="inputLeft" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->left}}">
                         </div>
                         @error('inputLeft')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -32,7 +39,7 @@
                             <label for="inputRight">Pravá strana matice:</label>
                         </div>
                         <div>
-                            <input type="text" name="inputRight" id="inputRight" value="{{$item->right}}">
+                            <input type="text" name="inputRight" id="inputRight" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->right}}">
                         </div>
                         @error('inputRight')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -44,7 +51,7 @@
                             <label for="approximation">Počet desatinných miest:</label>
                         </div>
                         <div>
-                            <select name="approximation" id="approximation">
+                            <select name="approximation" id="approximation" class="border-2 border-solid border-black rounded p-1 w-full">
                                 @for ($i = 2; $i < 5; $i++)
                                     <option value="{{$i}}" {{$item->approximation == $i ? 'selected' : ''}}>
                                         {{$i}}
@@ -62,7 +69,7 @@
                             <label for="iterations">Počet iterácii:</label>
                         </div>
                         <div>
-                            <select name="iterations" id="iterations">
+                            <select name="iterations" id="iterations" class="border-2 border-solid border-black rounded p-1 w-full">
                                 @for ($i = 1; $i < 11; $i++)
                                     <option value="{{$i}}" {{$item->iterations == $i ? 'selected' : ''}}>
                                         {{$i}}
@@ -80,7 +87,7 @@
                             <label for="dispersion">Zastavovacie kritérium:</label>
                         </div>
                         <div>
-                            <input type="number" name="dispersion" id="dispersion" placeholder="0.001" value="{{$item->dispersion}}">
+                            <input type="number" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$item->dispersion}}">
                         </div>
                         @error('dispersion')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -92,7 +99,7 @@
                             <label for="result">Výsledok X:</label>
                         </div>
                         <div>
-                            <input type="text" name="result" id="result" value="{{$item->result}}">
+                            <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->result}}">
                         </div>
                         @error('result')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -100,7 +107,7 @@
                     </div>
                 </div>
                 <div>
-                    <button type="submit" class="bg-green-500 text-center text-white border-solid">Uložiť</button>
+                    <button type="submit" class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg">Vytvoriť</button>
                 </div>
             </div>
         </div>

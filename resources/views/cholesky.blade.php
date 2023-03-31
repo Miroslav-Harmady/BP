@@ -59,12 +59,12 @@
                 Dostaneme \(Ly = b\). Najprv vyreišime sústavu Ly = b <em>doprednou substitúciou</em> a potom dosadíme y do prvej strany sústavy \(L^Tx = y\), 
                 ktorú vyriešime <em>spätnou substitúciou</em>.
             </p>
-        </div>
-    </div>
+        {{-- </div> --}}
+    {{-- </div> --}}
     
-    <div>
-        <div class="flex justify-center">
-            <div class="w-3/4 relative px-4 bg-white">
+    {{-- <div> --}}
+        {{-- <div class="flex justify-center"> --}}
+            <div class="relative">
                 <p class="text-base">
                     Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor ktorý vidíte dole v
                     v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
