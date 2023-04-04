@@ -11,9 +11,9 @@
 </head>
 <body class="bg-gray-300">
     @include('Includes.navbar')    
-    <div class="flex justify-center">
-        <div class="w-3/4 bg-white">
-            <h1 class="text-center text-3xl font-bold pb-4">
+    <div class="flex justify-center mt-8">
+        <div class="w-3/4 bg-white px-4 shadow-2xl rounded-sm mb-4">
+            <h1 class="text-center text-3xl font-bold py-4">
                 LU rozklad
             </h1>
             <p class="pb-2 text-lg">
@@ -55,14 +55,10 @@
             <h2 class="text-2xl pl-10 pt-2">
                 Neriešené sem
             </h2>
-        </div>
-    </div>
-
-    <div>
-        <div class="flex justify-center">
-            <div class="w-3/4 relative bg-white">
+      
+            <div class="relative">
                 <p class="text-base">
-                    Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor ktorý vidíte dole v
+                    Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor, ktorý vidíte dole v
                     v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
                  </p>
                 <div class="grid grid-cols-1 z-3 mt-4">
@@ -112,17 +108,17 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-1/2 bg-green-300" >
-                    <span id="resultL" class="pr-2">
-                    </span>
-                    <span id="resultU" class="pr-2">
-                    </span>
-                    <span id="resultY" class="pr-2">
-                    </span>
-                    <span id="resultX">
-                    </span>
+            <div class="flex justify-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                        <span id="resultL" class="pr-2">
+                        </span>
+                        <span id="resultU" class="pr-2">
+                        </span>
+                        <span id="resultY" class="pr-2">
+                        </span>
+                        <span id="resultX">
+                        </span>
+                </div>
             </div>
         </div>
     </div>

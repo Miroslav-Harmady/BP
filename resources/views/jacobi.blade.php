@@ -11,14 +11,16 @@
 </head>
 <body class="bg-gray-300">
     @include('Includes.navbar')
-    <div class="flex justify-center mt-4 ">
-        <div class="w-3/4 text-lg bg-white pb-4">
-            <h1 class="text-center text-3xl font-bold">
+    <div class="flex justify-center mt-8 ">
+        <div class="w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4">
+            <h1 class="text-center text-3xl font-bold my-4">
                 Jacobiho metóda
             </h1>
-            <p class="text-2xl text-red-500 font-bold">
-                tu neviem či bude treba aj ten úvod
-            </p>
+           <p>
+            Jacobiho metóda je jedna z <em>iteračných metód</em>. Výsledky iteračných metód nemusia byť nutne presné, nakoľko dochádza k nepresnostiam pri zaokrúhľovaní, alebo pri chybách samotných metód. 
+            Práve preto vždy hľadáme len približné riešenie odpovedajúce vopred zadanej presnosti. Najrpv si zvolíme <em>počiatočnú aproximáciu riešenia</em> \(x^{(0)}\), ktorá sa postupom iterácii spresňuje. 
+            Výpočet je zastavovaný <em>zastavovacou podmienkou</em>. 
+           </p>
 
             <p>
                 Princíp <em>Jacobiho metódy</em> vysvetlíme na systéme troch lineárnych rovníc o troch neznámych $$a_{11}x_1 + a_{12}x_2 + a_{13}x_3$$
@@ -94,12 +96,8 @@
             <p>
                 Hlavnou výhodou Jacobiho metódy je ľahká paralelizácia a vektorizácia algoritmu.
             </p>
-        </div>
-    </div>
-
-    <div class="">
-        <div class="flex justify-center">
-            <div class="w-3/4 relative p-2 bg-white">
+      
+            <div class="relative">
                 <div class="grid grid-cols-1 z-3 pb-4">
                     <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center mb-4" >
                         <div>
@@ -107,7 +105,7 @@
                                 <label for="inputA">Ľavá strana matice:</label>        
                             </div>
                             <div>
-                                <textarea name="inputA" id="inputA" cols="20" rows="10"></textarea>
+                                <textarea name="inputA" id="inputA" class="border-2 border-black border-solid rounded-lg p-1 m-0" cols="20" rows="10"></textarea>
                             </div>  
                         </div>
                     
@@ -116,7 +114,7 @@
                                 <label for="inputB">Pravá strana matice:</label>
                             </div>
                             <div>
-                                <textarea name="inputB" id="inputB" cols="20" rows="10"></textarea>
+                                <textarea name="inputB" id="inputB" class="border-2 border-black border-solid rounded-lg p-1 m-0" cols="20" rows="10"></textarea>
                             </div>
                         </div>
 
@@ -138,7 +136,7 @@
                                 <label for="dispersion">Zastavovacie kriterium:</label>
                             </div>
                             <div>
-                                <input type="number" id="dispersion">
+                                <input type="number" class="border-2 border-solid border-black rounded p-1 w-full" id="dispersion">
                             </div>
                         </div>
                     

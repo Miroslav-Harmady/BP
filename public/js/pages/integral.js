@@ -17,11 +17,13 @@ function createHeader(){
     var headRow = document.createElement("tr");
    
     var headCell = document.createElement("th");
-    headCell.textContent = "xi"; 
+    headCell.textContent = "x"; 
+    headCell.classList.add("bg-[#ff7900]", "text-white", "text-center", "border-2", "border-black", "p-1");
     headRow.appendChild(headCell);
 
     var headCell = document.createElement("th");
-    headCell.textContent = "f(xi)"//tu tiez to iste
+    headCell.textContent = "f(x)"
+    headCell.classList.add("bg-[#ff7900]", "text-white", "text-center", "border-2", "border-black", "p-1");
     headRow.appendChild(headCell);
 
     tableHead.appendChild(headRow);
@@ -35,6 +37,7 @@ function fillBody(table, intervals, h, f, start, end, r){
         var row = document.createElement("tr");
 
         var td = document.createElement("td");
+        td.classList.add("border-2", "border-black", "text-center", "p-1");
         if(table.id == "table3"){
             td.textContent = (intervals[i] + intervals[i + 1]) / 2;
         }else{
@@ -43,6 +46,7 @@ function fillBody(table, intervals, h, f, start, end, r){
         row.appendChild(td);
 
         var td = document.createElement("td");
+        td.classList.add("border-2", "border-black", "text-center", "p-1");
         if(table.id === "table3"){
             let x = (intervals[i] + intervals[i+1])/2
             td.textContent = math.round(h * math.parse(f).evaluate({x: x}), r);
@@ -56,11 +60,16 @@ function fillBody(table, intervals, h, f, start, end, r){
         row.appendChild(td);
         body.appendChild(row);
     }
-    //toto musim este nejako domysliet
-    let div = document.getElementById("result");
-    let p = document.createElement("p");
-    p.textContent = "total: " + total;
-    div.appendChild(p);
+    var row = document.createElement("tr");
+    var td = document.createElement("td");
+    td.classList.add("bg-[#ff7900]", "text-white", "text-center", "border-2", "border-black", "p-1");
+    td.innerText = "Spolu";
+    row.appendChild(td);
+    var td = document.createElement("td");
+    td.innerText = total;
+    td.classList.add("bg-[#ff7900]", "text-white", "text-center", "border-2", "border-black", "p-1");
+    row.appendChild(td);
+    body.appendChild(row);
     return body;
 }
 
@@ -127,7 +136,6 @@ function compute(){
         console.log(e.message)
         return;
     }
-    createGraph("graph1", a, n, h, r);
 }
 
 function getDomain(){
@@ -144,29 +152,3 @@ function getDomain(){
     }
     return d;
 }
-
-function createGraph(graphId, a, n, h, r){
-    var f = document.getElementById("f").value;
-    var graph = document.getElementById(graphId);
-    var domain = getDomain(r);
-    var data = [], y = [], intervals = [];
-    intervals = getIntervals(a, n, h);
-
-    for(let i = 0; i < domain.length; i++){
-        y.push(math.parse(f).evaluate({x: domain[i]}));
-    }
-
-    var layout = { // tu sa spise cely layout cize nazvy pomenovania osi atd
-    };
-
-    var trace = {
-        type: "scatter",
-        mode: "lines",
-        x: domain,
-        y: y,
-        line: {color: "#0000FF"}
-    };
-    data.push(trace);
-    Plotly.newPlot(graph, data, layout);
-}
-

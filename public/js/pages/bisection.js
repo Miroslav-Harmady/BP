@@ -27,6 +27,7 @@ function createRow(table, tableRow){
     for(let j = 0; j < 7; j++){
         var cell = document.createElement("td");
         cell.innerText = tableRow[j];
+        cell.classList.add("p-1", "text-center", "border-2", "border-black")
         row.appendChild(cell);
     }
     table.appendChild(row);
@@ -49,6 +50,7 @@ function createHeader(table){
 function appendHeader(row, text){
     var th = document.createElement("th");
     th.innerText = text;
+    th.classList.add("bg-[#ff7900]", "text-white", "p-1", "text-center", "border-2", "border-black");
     row.appendChild(th);
 }
 
@@ -78,16 +80,14 @@ function hideModal(){
 
 function compute(){
     var error = "";
+    var chart = document.getElementById('chart');
+    var table = document.getElementById("resultTable");
+    table.innerHTML = "";
+    chart.innerHTML = "";
     var r = parseInt(accuracy.value);
     var esp = parseFloat(inputEsp.value);
     var a = parseInt(inputA.value);
     var b = parseInt(inputB.value);
-    //Toto by tu asi nemalo byt
-    if (b < a){
-        let temp = a;
-        a = b;
-        b = temp;
-    }
     var f = funcInput.value;
     error = validate(f, a, b, esp);
     if(error != ""){
@@ -106,11 +106,8 @@ function compute(){
         return;
     }
 
-    TESTER = document.getElementById('tester');
     fa = math.parse(f).evaluate({x: a});
     fb = math.parse(f).evaluate({x: b});
-    table = document.getElementById("resultTable");
-    table.innerHTML = "";
     if(fa * fb < 0){
         createHeader(table);
         for(let i = 0; i < 10; i++){
@@ -141,33 +138,40 @@ function compute(){
 
     var trace1 = {
         type: "scatter",
+        name: "" + f,
         mode: "lines",
         x: domain,
         y: y,
-        line: {color: "#0000FF"}
+        line: {color: "#0000FF"},
+        showLegend: true
     };
 
     var data = [trace1];
 
-    // console.log(aList);
-    // console.log(bList);
     for(let i = 0; i < aList.length; i++){
         var trace = {
             type: "scatter",
             mode: "lines",
+            name:"a",
             x: [aList[i], aList[i]],
             y: [0, math.parse(f).evaluate({x: aList[i]})],
-            line: {color: "#FF0000"}
+            line: {color: "#FF0000"},
+            showlegend: (i < 1)
         }
         data.push(trace);
         trace = {
             type: "scatter",
             mode: "lines",
+            name:"b",
             x: [bList[i], bList[i]],
             y: [0, math.parse(f).evaluate({x: bList[i]})],
-            line: {color: "#00FF00"}
+            line: {color: "#00FF00"},
+            showlegend: (i < 1)
         }
         data.push(trace);
     }
-    Plotly.newPlot(TESTER, data);
+    Plotly.newPlot(chart, data);
+    window.addEventListener('resize', function() {
+        Plotly.Plots.resize(chart);
+      });
 }

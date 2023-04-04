@@ -15,8 +15,12 @@
         <div class="w-3/4">
             <h1 class="text-3xl font-bold text-center"> Bisekcia</h1>
             <div class="flex justify-between">
-                <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" ><a href="/admin/index">späť</a></button>
-                <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" ><a href="{{route('admin.bisection.create')}}">vytvor</a></button>    
+                <a href="/admin/index">
+                    <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" >Späť</button>
+                </a>
+                <a href="{{route('admin.bisection.create')}}">
+                    <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" >Vytvor</button>
+                </a>
             </div>
             
             @forelse ($collection as $item)
@@ -26,7 +30,8 @@
                             \({{$item->function}}\)
                         </span>
                     </p>
-                        <button><a href="{{route('admin.bisection.edit', ['id' => $item->id])}}">úprava</a></button>
+                        <a href="{{route('admin.bisection.edit', ['id' => $item->id])}}" class="p-1"><button>Úprava</button></a>
+                        
 
                         <form action="{{route('admin.bisection.delete', ['id' => $item->id])}}" method="POST">
                             @csrf

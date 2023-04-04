@@ -14,11 +14,14 @@
     <div class="flex justify-center">
         <div class="w-3/4">
             <h1 class="text-3xl font-bold text-center"> LU rozklad</h1>
-            <div class="flex justify-between">
-                <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" ><a href="/admin/index">späť</a></button>
-                <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" ><a href="{{route('admin.LU.create')}}">vytvor</a></button>    
+            <div class="flex justify-between px-2">
+                <a href="/admin/index">
+                    <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" >Späť</button>
+                </a>
+                <a href="{{route('admin.LU.create')}}">
+                    <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" >Vytvor</button>
+                </a>
             </div>
-
             @forelse ($collection as $item)
                 <div class="p-2 m-2 border-solid border-2 border-black flex justify-between items-center" >
                     <p>
@@ -26,7 +29,8 @@
                             \({{$item->left}}\)
                         </span>
                     </p>
-                    <button><a href="{{route('admin.LU.edit', ['id' => $item->id])}}">úprava</a></button>
+
+                    <a href="{{route('admin.LU.edit', ['id' => $item->id])}}"> <button>úprava</button></a>
 
                     <form action="{{route('admin.LU.delete', ['id' => $item->id])}}" method="POST">
                         @csrf

@@ -11,8 +11,8 @@
 </head>
 <body class="bg-gray-300">
     @include('Includes.navbar')
-    <div class="flex justify-center">
-        <div class="w-3/4 text-lg bg-white">
+    <div class="flex justify-center mt-8">
+        <div class="w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4">
             <h1 class="text-center text-3xl font-bold py-4">
                 Newtonove-Cotesove kvadratúrne vzorce
             </h1>
@@ -32,9 +32,8 @@
             <p>
                 Získali sme tak (n + 1) deliacich bodov, ktoré označíme \(x_i, i = 1,...,n + 1\). Platí 
             </p>
-                           
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3"> 
-                {{-- toto asi dam este na grid uvidi sa --}}
+                             
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
                 <div class="px-4">
                     \(x_i = a + (i - 1) \cdot h,\)
                 </div>
@@ -46,14 +45,12 @@
                 </div>
             </div>
             <p class="text-2xl text-red-500 font-bold">
-                Dobre tu sa radšej opýtaj že čo všetko tam má byť a čo už nie z tej teórie
+                Tuto by to chcelo este nejaky uvod k tomu vzorcu
             </p>
-        </div>
-    </div>
-
-    <div>
-        <div class="flex justify-center">
-            <div class="w-3/4 relative p-2 bg-white">
+            <p>
+                \(\int_{a}^{b}f(x)dx \approx h \cdot \sum_{i=1}^{n}f(x_i)\)
+            </p>
+            <div class="relative">      
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
                         <div>
@@ -106,7 +103,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="justify-self-center bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">compute</button>
+                        <button class="justify-self-center bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">Vypočítaj</button>
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">
@@ -118,10 +115,10 @@
                         </div>
                     </div>
                 </div>
-                <div id="result">
-                    <table id="table"></table>
-                    <table id="table2"></table>
-                    <table id="table3"></table>
+                <div id="result" class="flex justify-center my-4">
+                    <table id="table" class="mr-2"></table>
+                    <table id="table2" class="mr-2"></table>
+                    <table id="table3" class="mr-2"></table>
                 </div>
             </div>
         </div>    

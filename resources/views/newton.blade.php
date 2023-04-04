@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.2.0/math.js"></script>
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML"></script>
     @vite('resources/css/app.css')
@@ -11,8 +12,8 @@
 </head>
 <body class="bg-gray-300">
     @include('Includes.navbar')
-    <div class="flex justify-center">
-        <div class="w-3/4 text-lg bg-white pl-4">
+    <div class="flex justify-center mt-8">
+        <div class="w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4 py-4">
             <h1 class="text-3xl text-center font-bold">
                 Newtonova metóda
             </h1>
@@ -39,13 +40,8 @@
                 Predelením obidvoch strán rovnice \(f'(x_0)\) (za predpokladu\(f'(x_0) \not=0 \)) máme $$\frac{-f(x_0)}{f'(x_0)} = x_1 - x_0$$
                 a vyjadrením \(x_1\) dostaneme $$x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.$$
             </p>
-        </div>
-    </div>
-    
 
-    <div>
-        <div class="flex justify-center">
-            <div class="w-3/4 relative pt-4 bg-white">
+            <div class="relative">
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
                         <div>
@@ -120,9 +116,9 @@
                     </div>
                 </div>
                 <div>
-                    <div id="tester"></div>
+                    <div id="chart" class="w-full h-auto"></div>
+                    <table id="resultTable"></table>
                 </div>
-                <table id="resultTable"></table>
             </div>       
         </div>
     </div>

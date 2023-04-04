@@ -21,10 +21,12 @@ function createHeader(){
     var headCell = document.createElement("th");
     headCell.textContent = "xi"; 
     headRow.appendChild(headCell);
+    headCell.classList.add("bg-[#ff7900]", "text-white", "p-1", "border-2", "border-black");
 
     var headCell = document.createElement("th");
-    headCell.textContent = "f(xi)"//tu tiez to iste
+    headCell.textContent = "f(xi)"
     headRow.appendChild(headCell);
+    headCell.classList.add("bg-[#ff7900]", "text-white", "p-1", "border-2", "border-black");
 
     tableHead.appendChild(headRow);
     return tableHead;
@@ -60,6 +62,10 @@ function hideModal(){
 
 function compute(){
     var error = "";
+    var chart = document.getElementById('chart');
+    table = document.getElementById("resultTable");
+    table.innerHTML = "";
+    chart.innerHTML = ""; 
     var a = parseInt(document.getElementById("inputda").value);
     var b = parseInt(document.getElementById("inputdb").value);
     var eps = inputEsp.value;
@@ -82,9 +88,7 @@ function compute(){
         showModal("Nesprávna syntax pri zadávaní predpisu funkcie");
         return;
     }
-    TESTER = document.getElementById('tester');
-    table = document.getElementById("resultTable");
-    table.innerHTML = ""; // toto este pripadne mozem dat hore aby sa to zmazalo pred validaciou.
+   
     var tableHead = createHeader();
     var tableBody = document.createElement("tbody");
 
@@ -95,11 +99,13 @@ function compute(){
         }
         var row = document.createElement("tr");
         var td = document.createElement("td");
+        td.classList.add("p-1", "border-2", "border-black");
         td.textContent = i;
         row.appendChild(td);
 
         var td = document.createElement("td");
         td.textContent = x;
+        td.classList.add("p-1", "border-2", "border-black");
         row.appendChild(td);
 
         tableBody.appendChild(row);
@@ -112,10 +118,12 @@ function compute(){
             var row = document.createElement("tr");
             var td = document.createElement("td");
             td.textContent = i + 1;
+            td.classList.add("p-1", "border-2", "border-black");
             row.appendChild(td);
 
             var td = document.createElement("td");
             td.textContent = x;
+            td.classList.add("p-1", "border-2", "border-black");
             row.appendChild(td);
 
             tableBody.appendChild(row);
@@ -134,5 +142,8 @@ function compute(){
     };
     var data = [trace1];
 
-    Plotly.newPlot(TESTER, data);
+    Plotly.newPlot(chart, data);
+    window.addEventListener('resize', function() {
+        Plotly.Plots.resize(chart);
+      });
 }
