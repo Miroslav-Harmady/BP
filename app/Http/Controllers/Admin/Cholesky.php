@@ -20,17 +20,14 @@ class Cholesky extends Controller
 
     public function save(Request $request){
         $rules = [
-            'inputLeft' => 'required|max:100',
-            'inputRight' => 'required|max:100',
-            'approximation' => 'required',
+            'matrix' => 'required',
             'resultL' => 'required',
             'resultX' => 'required',
             'resultY' => 'required'
         ];
 
         $messages = [
-            'required' => "Vstupné pole musí byť vyplnené",
-            'max' => "Nesmiete presiahnuť :max znakov"
+            'required' => "Vstupné pole musí byť vyplnené"
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -43,9 +40,7 @@ class Cholesky extends Controller
 
 
         $cholesky = new Chol;
-        $cholesky->left = $request->input('inputLeft');
-        $cholesky->right = $request->input('inputRight');
-        $cholesky->approximation = $request->input('approximation');
+        $cholesky->matrix = $request->input('matrix');
         $cholesky->resultL = $request->input('resultL');
         $cholesky->resultX = $request->input('resultX');
         $cholesky->resultY = $request->input('resultY');
@@ -64,9 +59,7 @@ class Cholesky extends Controller
 
     public function update(Request $request, $id){
         $rules = [
-            'inputLeft' => 'required|max:100',
-            'inputRight' => 'required|max:100',
-            'approximation' => 'required',
+            'matrix' => 'required',
             'resultL' => 'required',
             'resultX' => 'required',
             'resultY' => 'required'
@@ -87,9 +80,7 @@ class Cholesky extends Controller
 
 
         $cholesky = Chol::where('id', $id)->update([
-            'left' => $request->input('inputLeft'),
-            'right' => $request->input('inputRight'),
-            'approximation' => $request->input('approximation'),
+            'matrix' => $request->input('matrix'),
             'resultL' => $request->input('resultL'),
             'resultX' => $request->input('resultX'),
             'resultY' => $request->input('resultY'),

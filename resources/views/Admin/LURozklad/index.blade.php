@@ -30,7 +30,7 @@
                         </span>
                     </p>
 
-                    <a href="{{route('admin.LU.edit', ['id' => $item->id])}}"> <button>úprava</button></a>
+                    <a href="{{route('admin.LU.edit', ['id' => $item->id])}}" class="p-1 font-semibold text-blue-500 border-2 border-blue-500 rounded-lg hover:text-white hover:bg-blue-500  "> <button>Úprava</button></a>
 
                     <form action="{{route('admin.LU.delete', ['id' => $item->id])}}" method="POST">
                         @csrf

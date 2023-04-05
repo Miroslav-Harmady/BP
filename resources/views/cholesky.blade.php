@@ -102,11 +102,13 @@
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">
-                    <div class=" w-3/4 bg-white font-black">
-                        Ups! Zdá sa že došlo ku chybe počas výpočtu.
-                        <p id="error"></p>
-                        <div class="flex justify-center">
-                            <button class="bg-green-600 font-bold text-white p-2 rounded" onclick="hideModal()">Schovať</button>
+                    <div class=" w-3/4 bg-white font-black rounded-lg p-2 border-2 border-[#ff7900] shadow-lg">
+                        <p class="text-center text-base font-semibold">
+                            Ups! Zdá sa že došlo ku chybe počas výpočtu.
+                        </p>
+                        <p id="error" class="text-center text-base font-semibold"></p>
+                        <div class="flex justify-center my-2">
+                            <button class="justify-self-center bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="hideModal()">Schovať</button>
                         </div>
                     </div>
                 </div>

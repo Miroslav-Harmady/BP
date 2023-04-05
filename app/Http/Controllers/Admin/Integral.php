@@ -23,7 +23,6 @@ class Integral extends Controller
             'function' => 'required|max:100',
             'interval' => 'required',
             'n' => 'required|numeric|min:1',
-            'approximation' => 'required',
             'result' => 'required'
         ];
 
@@ -44,7 +43,6 @@ class Integral extends Controller
         $integral->function = $request->input('function');
         $integral->interval = $request->input('interval');
         $integral->n = $request->input('n');
-        $integral->approximation = $request->input('approximation');
         $integral->result = $request->input('result');
         $integral->save();
         return redirect()->route('admin.integral.index');
@@ -64,7 +62,6 @@ class Integral extends Controller
             'function' => 'required|max:100',
             'interval' => 'required',
             'n' => 'required|min:1',
-            'approximation' => 'required',
             'result' => 'required'
         ];
 
@@ -84,7 +81,6 @@ class Integral extends Controller
         $integral = Integ::where('id', $id)->update([
             'function' => $request->input('function'),
             'interval' => $request->input('interval'),
-            'approximation' => $request->input('approximation'),
             'n' => $request->input('n'),
             'result' => $request->input('result'),
         ]);

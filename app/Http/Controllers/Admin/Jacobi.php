@@ -20,7 +20,7 @@ class Jacobi extends Controller
 
     public function save(Request $request){
         $rules = [
-            'inputLeft' => 'required|max:100',
+            'matrix' => 'required|max:100',
             'inputRight' => 'required',
             'approximation' => 'required',
             'dispersion' => 'required|numeric|min:0',
@@ -42,9 +42,7 @@ class Jacobi extends Controller
         }
 
         $jacobi = new Jac;
-        $jacobi->left = $request->input('inputLeft');
-        $jacobi->right = $request->input('inputRight');
-        $jacobi->approximation = $request->input('approximation');
+        $jacobi->matrix = $request->input('matrix');
         $jacobi->iterations = $request->input('iterations');
         $jacobi->dispersion = $request->input('dispersion');
         $jacobi->result = $request->input('result');
@@ -63,9 +61,7 @@ class Jacobi extends Controller
 
     public function update(Request $request, $id){
         $rules = [
-            'inputLeft' => 'required|max:100',
-            'inputRight' => 'required',
-            'approximation' => 'required',
+            'matrix' => 'required|max:100',
             'dispersion' => 'required|numeric|min:0',
             'iterations' => 'required',
             'result' => 'required'
@@ -85,9 +81,7 @@ class Jacobi extends Controller
         }
 
         $jacobi = Jac::where('id', $id)->update([
-            'left' => $request->input('inputLeft'),
-            'right' => $request->input('inputRight'),
-            'approximation' => $request->input('approximation'),
+            'matrix' => $request->input('matrix'),
             'iterations' => $request->input('iterations'),
             'dispersion' => $request->input('dispersion'),
             'result' => $request->input('result'),

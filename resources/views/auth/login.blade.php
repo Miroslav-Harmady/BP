@@ -2,19 +2,22 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+    <div class="flex justify-center">
+        <div class="w-1/2">
+            <div>
+                <div class="bg-[#ff7900]">
+                    <p class="text-white font-semibold text-lg">
+                        Prihlásenie
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <form method="POST" action="{{ route('login') }}" class="w-3/4">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <div class="flex mb-3 w-max justify-end">
+                            <label for="email" class="mr-2 justify-end">Emailová adresa: </label>
 
-                            <div class="col-md-6">
+                            <div class="">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -69,5 +72,10 @@
             </div>
         </div>
     </div>
+</div>
+<div class="bg-green-300 ">
+    <p>
+        JASGCIGSAHJ
+    </p>
 </div>
 @endsection

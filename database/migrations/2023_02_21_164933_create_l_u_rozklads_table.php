@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('l_u_rozklads', function (Blueprint $table) {
             $table->id();
-            $table->String('left');
-            $table->String('right');
-            $table->Integer('approximation');
+            $table->medimText('matrix');
             $table->String('resultL');
             $table->String('resultU');
             $table->String('resultX');

@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('jacobis', function (Blueprint $table) {
             $table->id();
-            $table->String('left');
-            $table->String('right');
+            $table->mediumText('matrix');
             $table->Integer('iterations');
             $table->float('dispersion', 5, 4);
-            $table->Integer('approximation');
             $table->String('result');
             $table->timestamps();
         });

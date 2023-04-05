@@ -42,14 +42,14 @@
             </p>
 
             <div class="relative">
-                <div class="grid grid-cols-1 z-3">
+                <div class="grid grid-cols-1 z-3 pb-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
                         <div>
                             <div>
                                 <label for="inputF">f(x):</label>
                             </div>
                             <div>
-                                <input type="text" name="inputF" id="function_des" class="border-2 border-solid border-black rounded-xl p-1">
+                                <input type="text" name="inputF" id="function_des" class="border-2 border-solid border-black rounded-lg p-1">
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@
                                 <label for="inputA">x0:</label>        
                             </div>
                             <div>
-                                <input type="number" name="inputA" id="inputA" class="border-2 border-solid border-black rounded-xl p-1">
+                                <input type="number" name="inputA" id="inputA" class="border-2 border-solid border-black rounded-lg p-1">
                             </div>  
                         </div>
                     
@@ -67,7 +67,7 @@
                                 <label for="inputda">začiatok D intervalu:</label>
                             </div>
                             <div>
-                                <input type="number" name="inputda" id="inputda" class="border-2 border-solid border-black rounded-xl p-1">
+                                <input type="number" name="inputda" id="inputda" class="border-2 border-solid border-black rounded-lg p-1">
                             </div>
                         </div>
                         
@@ -76,7 +76,7 @@
                                 <label for="inputdb">koniec D intervalu:</label>
                             </div>
                             <div>
-                                <input type="number" name="inputdb" id="inputdb" class="border-2 border-solid border-black rounded-xl p-1">
+                                <input type="number" name="inputdb" id="inputdb" class="border-2 border-solid border-black rounded-lg p-1">
                             </div>
                         </div>
                         
@@ -85,7 +85,7 @@
                                 <label for="eps">eps:</label>        
                             </div>
                             <div>
-                                <input type="number" name="eps" min="0" id="eps" class="border-2 border-solid border-black rounded-xl p-1">         
+                                <input type="number" name="eps" min="0" id="eps" class="border-2 border-solid border-black rounded-lg p-1">         
                             </div>
                         </div>
 
@@ -94,7 +94,7 @@
                                 <label for="r" > Presnosť zaokrúhľovania:</label>
                             </div>
                             <div>
-                                <select name="r" id="r" class="border-2 border-solid border-black rounded-xl p-1">
+                                <select name="r" id="r" class="border-2 border-solid border-black rounded-lg p-1">
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
@@ -107,11 +107,13 @@
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">
-                    <div class=" w-3/4 bg-white font-black">
-                        Ups! Zdá sa že došlo ku chybe počas výpočtu.
-                        <p id="error"></p>
-                        <div class="flex justify-center">
-                            <button class="bg-green-600 font-bold text-white p-2 rounded" onclick="hideModal()">Schovať</button>
+                    <div class=" w-3/4 bg-white font-black rounded-lg p-2 border-2 border-[#ff7900] shadow-lg">
+                        <p class="text-center text-base font-semibold">
+                            Ups! Zdá sa že došlo ku chybe počas výpočtu.
+                        </p>
+                        <p id="error" class="text-center text-base font-semibold"></p>
+                        <div class="flex justify-center my-2">
+                            <button class="justify-self-center bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="hideModal()">Schovať</button>
                         </div>
                     </div>
                 </div>

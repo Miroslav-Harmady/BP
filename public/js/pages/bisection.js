@@ -56,7 +56,7 @@ function appendHeader(row, text){
 
 function validate(f, a, b, esp){
     if(isNaN(a) || isNaN(b) || isNaN(esp) || f == ""){
-        return "Nevyplnili ste Všetky polia. Pre správne fungovanie kalkulačky prosím vyplňte každé pole.";
+        return "Nevyplnili ste všetky polia. Pre správne fungovanie kalkulačky prosím vyplňte každé pole.";
     }
     if(esp <= 0){
        return "Zastavovacie kritérium musí byť nezáporná hodnota";

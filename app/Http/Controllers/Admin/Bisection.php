@@ -19,17 +19,15 @@ class Bisection extends Controller
 
     public function save(Request $request){
         $rules = [
-            'function' => 'required|max:100',
+            'function' => 'required',
             'interval' => 'required',
-            'approximation' => 'required',
-            'dispersion' => 'required|min:0',
+            'dispersion' => 'required',
             'iterations' => 'required',
             'result' => 'required'
         ];
 
         $messages = [
-            'required' => "Vstupné pole musí byť vyplnené",
-            'min' => "Zadadná hodnota musí byť viac ako :min"
+            'required' => "Vstupné pole musí byť vyplnené"
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -43,7 +41,6 @@ class Bisection extends Controller
         $bisection = new Bis;
         $bisection->function = $request->input('function');
         $bisection->interval = $request->input('interval');
-        $bisection->approximation = $request->input('approximation');
         $bisection->iterations = $request->input('iterations');
         $bisection->dispersion = $request->input('dispersion');
         $bisection->result = $request->input('result');
@@ -62,17 +59,15 @@ class Bisection extends Controller
 
     public function update(Request $request, $id){
         $rules = [
-            'function' => 'required|max:100',
+            'function' => 'required',
             'interval' => 'required',
-            'approximation' => 'required',
-            'dispersion' => 'required|min:0',
+            'dispersion' => 'required',
             'iterations' => 'required',
             'result' => 'required'
         ];
 
         $messages = [
-            'required' => "Vstupné pole musí byť vyplnené",
-            'min' => "Zadadajte číslo väčšie ako :min"
+            'required' => "Vstupné pole musí byť vyplnené"
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -86,7 +81,6 @@ class Bisection extends Controller
         $bisection = Bis::where('id', $id)->update([
             'function' => $request->input('function'),
             'interval' => $request->input('interval'),
-            'approximation' => $request->input('approximation'),
             'iterations' => $request->input('iterations'),
             'dispersion' => $request->input('dispersion'),
             'result' => $request->input('result'),

@@ -20,9 +20,7 @@ class LURozklad extends Controller
 
     public function save(Request $request){
         $rules = [
-            'inputLeft' => 'required|max:100',
-            'inputRight' => 'required|max:100',
-            'approximation' => 'required',
+            'matrix' => 'required|max:100',
             'resultL' => 'required',
             'resultU' => 'required',
             'resultX' => 'required',
@@ -43,9 +41,7 @@ class LURozklad extends Controller
         }
 
         $item = new LUR;
-        $item->left = $request->input('inputLeft');
-        $item->right = $request->input('inputRight');
-        $item->approximation = $request->input('approximation');
+        $item->matrix = $request->input('matrix');
         $item->resultL = $request->input('resultL');
         $item->resultU = $request->input('resultU');
         $item->resultX = $request->input('resultX');
@@ -65,9 +61,7 @@ class LURozklad extends Controller
 
     public function update(Request $request, $id){
         $rules = [
-            'inputLeft' => 'required|max:100',
-            'inputRight' => 'required|max:100',
-            'approximation' => 'required',
+            'matrix' => 'required|max:100',
             'resultL' => 'required',
             'resultU' => 'required',
             'resultX' => 'required',
@@ -88,9 +82,7 @@ class LURozklad extends Controller
         }
 
         $item = LUR::where('id', $id)->update([
-            'left' => $request->input('inputLeft'),
-            'right' => $request->input('inputRight'),
-            'approximation' => $request->input('approximation'),
+            'matrix' => $request->input('matrix'),
             'resultL' => $request->input('resultL'),
             'resultX' => $request->input('resultX'),
             'resultY' => $request->input('resultY'),

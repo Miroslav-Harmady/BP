@@ -24,17 +24,21 @@
                             @csrf
                             <div>
                                 <div>
-                                    <label for="inputLeft">Ľavá strana matice:</label>
+                                    <label for="matrix">Matica:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="inputLeft" id="inputLeft" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="sem vlozte maticu z latexu" value="{{$errors->any() ? old('inputLeft') : '' }}">
+                                    <input type="text" name="matrix" id="matrix" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="sem vlozte maticu z latexu" value="{{$errors->any() ? old('matrix') : '' }}">
                                 </div>
-                                @error('inputLeft')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @error('matrix')
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
 
-                            <div>
+                            {{-- <div>
                                 <div>
                                     <label for="inputRight">Pravá strana matice:</label>
                                 </div>
@@ -44,22 +48,7 @@
                                 @error('inputRight')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                            </div>
-                            <div>
-                                <div>
-                                    <label for="approximation">Počet desatinných miest:</label>
-                                </div>
-                                <div>
-                                    <select name="approximation" id="approximation" class="border-2 border-solid border-black rounded p-1 w-full">
-                                        @for ($i = 2; $i < 5; $i++)
-                                        <option value={{$i}} {{($errors->any() && old('approximation') == $i) ? 'selected' : ''}}>{{$i}}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                                @error('approximation')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
+                            </div> --}}
 
                             <div>
                                 <div>
@@ -69,7 +58,11 @@
                                     <input type="text" name="resultL" id="resultL" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultL') : '' }}">
                                 </div>
                                 @error('resultL')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
 
@@ -81,7 +74,11 @@
                                     <input type="text" name="resultX" id="resultX" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultX') : '' }}">
                                 </div>
                                 @error('resultX')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
 
@@ -93,7 +90,11 @@
                                     <input type="text" name="resultY" id="resultY" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultY') : '' }}">
                                 </div>
                                 @error('resultY')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
                         </div>

@@ -31,7 +31,11 @@
                                     <input type="text" name="function" id="function" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->function}}">
                                 </div>
                                 @error('function')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
 
@@ -43,11 +47,15 @@
                                     <input type="text" name="interval" id="interval" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->interval}}">
                                 </div>
                                 @error('interval')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
                             
-                            <div>
+                            {{-- <div>
                                 <div>
                                     <label for="approximation">Počet desatinných miest:</label>
                                 </div>
@@ -63,7 +71,7 @@
                                 @error('approximation')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                            </div>
+                            </div> --}}
 
                             <div>
                                 <div>
@@ -79,7 +87,11 @@
                                     </select>
                                 </div>
                                 @error('iterations')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
                             
@@ -91,7 +103,11 @@
                                     <input type="number" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$item->dispersion}}">
                                 </div>
                                 @error('dispersion')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
                             
@@ -100,10 +116,14 @@
                                     <label for="result">Výsledok:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->result}}">
+                                    <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2345" value="{{$item->result}}">
                                 </div>
                                 @error('result')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
                         </div>

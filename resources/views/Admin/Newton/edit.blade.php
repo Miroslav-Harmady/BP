@@ -30,6 +30,13 @@
                                 <div>
                                     <input type="text" name="function" id="function" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->function}}">
                                 </div>
+                                @error('function')
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
+                                @enderror
                             </div>
                             
                             <div>
@@ -39,21 +46,13 @@
                                 <div>
                                     <input type="text" name="interval" id="interval" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->interval}}">
                                 </div>
-                            </div>
-
-                            <div>
-                                <div>
-                                    <label for="approximation">Počet desatinných miest:</label>
-                                </div>
-                                <div>
-                                    <select name="approximation" id="approximation" class="border-2 border-solid border-black rounded p-1 w-full">
-                                        @for ($i = 2; $i < 5; $i++)
-                                            <option value="{{$i}}" {{$item->approximation == $i ? 'selected' : ''}}>
-                                                {{$i}}
-                                            </option>
-                                        @endfor
-                                    </select>
-                                </div>
+                                @error('interval')
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
+                                @enderror
                             </div>
 
                             <div>
@@ -67,6 +66,13 @@
                                         @endfor
                                     </select>
                                 </div>
+                                @error('iterations')
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
+                                @enderror
                             </div>
                             
                             <div>
@@ -74,8 +80,15 @@
                                     <label for="result">Výsledok:</label>
                                 </div>
                                 <div>
-                                    <input type="text" step="0.001" name="result"  id="result" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->result}}">
+                                    <input type="text" step="0.001" name="result"  id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2345" value="{{$item->result}}">
                                 </div>
+                                @error('result')
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div>

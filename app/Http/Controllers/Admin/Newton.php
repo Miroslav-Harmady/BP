@@ -20,8 +20,7 @@ class Newton extends Controller
 
     public function save(Request $request){
         $rules = [
-            'function' => 'required|max:100',
-            'approximation' => 'required',
+            'function' => 'required',
             'interval' => 'required',
             'iterations' => 'required',
             'result' => 'required'
@@ -29,7 +28,6 @@ class Newton extends Controller
 
         $messages = [
             'required' => "Vstupné pole musí byť vyplnené",
-            'max' => "Nesmiete presiahnuť :max znakov"
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -43,7 +41,6 @@ class Newton extends Controller
         $newton = new Nwton;
         $newton->function = $request->input('function');
         $newton->interval = $request->input('interval');
-        $newton->approximation = $request->input('approximation');
         $newton->iterations = $request->input('iterations');
         $newton->result = $request->input('result');
         $newton->save();
@@ -61,8 +58,7 @@ class Newton extends Controller
 
     public function update(Request $request, $id){
         $rules = [
-            'function' => 'required|max:100',
-            'approximation' => 'required',
+            'function' => 'required',
             'interval' => 'required',
             'iterations' => 'required',
             'result' => 'required'
@@ -70,7 +66,6 @@ class Newton extends Controller
 
         $messages = [
             'required' => "Vstupné pole musí byť vyplnené",
-            'max' => "Nesmiete presiahnuť :max znakov"
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -84,7 +79,6 @@ class Newton extends Controller
         $newton = Nwton::where('id', $id)->update([
             'function' => $request->input('function'),
             'interval' => $request->input('interval'),
-            'approximation' => $request->input('approximation'),
             'iterations' => $request->input('iterations'),
             'result' => $request->input('result'),
         ]);

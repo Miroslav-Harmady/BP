@@ -27,11 +27,11 @@
                 <div class="p-2 m-2 border-solid border-2 border-black flex justify-between items-center" >
                     <p>
                         <span class="math display">
-                            \({{$item->left}}\)
+                            \({{$item->matrix}}\)
                         </span>
                     </p>
                     
-                    <a href="{{route('admin.cholesky.edit', ['id' => $item->id])}}" class="p-1"> <button>úprava</button></a>
+                    <a href="{{route('admin.cholesky.edit', ['id' => $item->id])}}" class="p-1 font-semibold text-blue-500 border-2 border-blue-500 rounded-lg hover:text-white hover:bg-blue-500"> <button>Úprava</button></a>
 
                     <form action="{{route('admin.cholesky.delete', ['id' => $item->id])}}" method="POST">
                         @csrf

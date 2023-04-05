@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('choleskies', function (Blueprint $table) {
             $table->id('id');
-            $table->String('left');
-            $table->String('right');
-            $table->Integer('approximation');
+            $table->mediumText('matrix');
             $table->String('resultL');
             $table->String('resultX');
             $table->String('resultY');

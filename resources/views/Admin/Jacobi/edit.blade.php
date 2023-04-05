@@ -26,44 +26,17 @@
                         <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-left mb-4">
                             <div>
                                 <div>
-                                    <label for="inputLeft">Ľavá strana matice:</label>
+                                    <label for="matrix">Matica:</label>
                                 </div>  
                                 <div>
-                                    <input type="text" name="inputLeft" id="inputLeft" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->left}}">
+                                    <input type="text" name="matrix" id="matrix" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->left}}">
                                 </div>
-                                @error('inputLeft')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            
-                            <div>
-                                
-                                <div>
-                                    <label for="inputRight">Pravá strana matice:</label>
-                                </div>
-                                <div>
-                                    <input type="text" name="inputRight" id="inputRight" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->right}}">
-                                </div>
-                                @error('inputRight')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <div>
-                                    <label for="approximation">Počet desatinných miest:</label>
-                                </div>
-                                <div>
-                                    <select name="approximation" id="approximation" class="border-2 border-solid border-black rounded p-1 w-full">
-                                        @for ($i = 2; $i < 5; $i++)
-                                            <option value="{{$i}}" {{$item->approximation == $i ? 'selected' : ''}}>
-                                                {{$i}}
-                                            </option>
-                                        @endfor
-                                    </select>
-                                </div>
-                                @error('approximation')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @error('matrix')
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
 
@@ -81,7 +54,11 @@
                                     </select>
                                 </div>
                                 @error('iterations')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror   
                             </div>
 
@@ -93,7 +70,11 @@
                                     <input type="number" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$item->dispersion}}">
                                 </div>
                                 @error('dispersion')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror   
                             </div>
 
@@ -102,10 +83,14 @@
                                     <label for="result">Výsledok X:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->result}}">
+                                    <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="3.2, 7.4, 0.25" value="{{$item->result}}">
                                 </div>
                                 @error('result')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror   
                             </div>
                         </div>

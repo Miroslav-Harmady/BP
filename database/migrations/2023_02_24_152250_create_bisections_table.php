@@ -17,7 +17,6 @@ return new class extends Migration
             $table->String('interval');
             $table->float('dispersion', 6, 4);
             $table->Integer('iterations');
-            $table->Integer('approximation');
             $table->float('result', 8, 4);
             $table->timestamps();
         });

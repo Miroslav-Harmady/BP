@@ -10,7 +10,7 @@
 <body>
     @include('Includes.navbar')
     <h1 class="text-center text-2xl font-bold my-4">
-        Bisekcia - vytváranie
+        Newtonova metóda - vytváranie
     </h1>
     <div class="flex justify-center">
         <div class="w-1/2">
@@ -31,7 +31,11 @@
                                     <input type="text" name="function" id="function" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="sem vlozte funkciu z latexu" value="{{$errors->any() ? old('function') : ''}}"> 
                                 </div>
                                 @error('function')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
                         
@@ -40,10 +44,14 @@
                                     <label for="interval">Interval integralu:</label>        
                                 </div>
                                 <div>
-                                    <input type="text" name="interval" id="interval" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1,2" value="{{$errors->any() ? old('interval') : ''}}">
+                                    <input type="text" name="interval" id="interval" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2" value="{{$errors->any() ? old('interval') : ''}}">
                                 </div>
                                 @error('interval')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
 
@@ -59,23 +67,11 @@
                                     </select>
                                 </div>
                                 @error('iterations')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <div>
-                                    <label for="approximation">Počet desatinných miest:</label>
-                                </div>
-                                <div>
-                                    <select name="approximation" id="approximation" class="border-2 border-solid border-black rounded p-1 w-full">
-                                        @for ($i = 2; $i < 5; $i++)
-                                            <option value="{{$i}}" {{($errors->any() && old('iterations') == $i) ? 'selected' : ''}}>{{$i}}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                                @error('approximation')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
 
@@ -84,10 +80,14 @@
                                     <label for="result">Výsledok:</label>        
                                 </div>
                                 <div>
-                                    <input type="text" step="0.001" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="3.2, 7.4, 0.25" value="{{$errors->any() ? old('result') : ''}}">
+                                    <input type="text" step="0.001" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2345" value="{{$errors->any() ? old('result') : ''}}">
                                 </div>
                                 @error('result')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
                                 @enderror
                             </div>
                         </div>
