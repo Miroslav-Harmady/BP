@@ -12,15 +12,15 @@
 <body class="bg-gray-300">
     @include('Includes.navbar')
     <div class="flex justify-center mt-8">
-        <div class="w-3/4 bg-white px-4 shadow-2xl rounded-sm mb-4">
+        <div class="w-full md:w-3/4 lg:w-3/4 bg-white px-4 shadow-2xl rounded-sm mb-4 text-sm md:text-base lg:text-lg  ">
             <h1 class="text-center text-3xl font-bold py-4 text-">
                 Choleskyho rozklad
             </h1>
-            <p class="text-lg">
+            <p class="">
                 Nech A je symetrická pozitívne definitná matica, potom existuje dolno-trojuholníková matica L s kladnými diagonálnymi prvkami taká, že platí
            </p>
 
-           <div class="py-2 text-lg">
+           <div class="py-2 ">
                 \(A = L \cdot L^{T} =\) \(\begin{pmatrix}
                 l_{11}& \color{Blue}0 & \color{Blue}0\\
                 l_{21}& l_{22} & \color{Blue}0 \\
@@ -32,10 +32,10 @@
                 \color{Blue}0& \color{Blue}0& \color{Blue}0
                     \end{pmatrix}\)
             </div>
-            <p class="text-lg">
+            <p class="">
                 Tento rozklad sa nazýva <em>Choleskyho rozklad</em> a pre prvky matice L potom dostaneme
             </p>
-            <div class="py-2">
+            <div class="py-2 sm:text-sm md:text-base lg:text-lg">
                 \(L = \begin{pmatrix}
                 \sqrt{a_{11}} & \color{Blue} 0 & \color{Blue} 0 \\
                  a_{21}/l_{11}& \sqrt{a_{22} - l_{21}^2} & \color{Blue} 0 \\
@@ -43,24 +43,24 @@
                 \end{pmatrix}  \)
             </div>
 
-            <p class="text-lg py-2">
+            <p class=" py-2">
                 Vo všeobecnosti môžeme <em>Choleskyho rozklad</em> zapísať v tvare
             </p>
         
-            <div class="py-2 text-lg">
+            <div class="py-2 ">
                 \(l_{i,j} = \sqrt{ a_{i,i} - \sum_{k=1}^{i-1}l_{i,k}^2} \)
             </div>
-            <div class="pb-2 text-lg" >
+            <div class="pb-2 " >
                 \(l_{j,i} = \frac{1}{l_{i,i}} \left( a_{j,i} - \sum_{k=1}^{j-1}l_{j,k}l_{i,k} \right) \)
             </div>
         
-            <p class="py-2 text-lg">
+            <p class="py-2 ">
                 Postup riešenia sústavy Ax = b metódou <em>Choleskyho rozkladu</em> je nasledovný. Maticu A nahradíme v sústave súčinom \(LL^T\) a označíme \(L^Tx = y\).
                 Dostaneme \(Ly = b\). Najprv vyreišime sústavu Ly = b <em>doprednou substitúciou</em> a potom dosadíme y do prvej strany sústavy \(L^Tx = y\), 
                 ktorú vyriešime <em>spätnou substitúciou</em>.
             </p>
             <div class="relative">
-                <p class="text-base">
+                <p class="text-base sm:text-sm">
                     Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor ktorý vidíte dole v
                     v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
                  </p>

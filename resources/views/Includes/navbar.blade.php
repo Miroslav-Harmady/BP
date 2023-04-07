@@ -17,13 +17,14 @@
                         </a>
                     </div>
                     <div class="hidden lg:flex items-center">
+                        <a href="/" class="py-4 px-2 text-white {{Route::current()->uri == "/" ? " border-b-4 border-white" : ""}} font-semibold">Domov</a>
                         <a href="/bisekcia" class="py-4 px-2 text-white {{Route::current()->uri == "bisekcia" ? " border-b-4 border-white" : ""}} font-semibold">Bisekcia</a>
                         <a href="/cholesky" class="py-4 px-2 text-white {{Route::current()->uri == "cholesky" ? " border-b-4 border-white" : ""}} font-semibold">Cholesky</a>
                         <a href="/integral" class="py-4 px-2 text-white  {{Route::current()->uri == "integral" ? " border-b-4 border-white" : ""}} font-semibold">N-C Kvadratúrne vzorce</a>
                         <a href="/jacobi" class="py-4 px-2 text-white {{Route::current()->uri == "jacobi" ? " border-b-4 border-white" : ""}}  font-semibold">Jacobiho metóda</a>
                         <a href="/LURozklad" class="py-4 px-2 text-white {{Route::current()->uri == "LURozklad" ? " border-b-4 border-white" : ""}}  font-semibold">LU rozklad</a>
                         <a href="/newton" class="py-4 px-2 text-white {{Route::current()->uri == "newton" ? " border-b-4 border-white" : ""}} font-semibold">Newtnova metóda</a>
-                        <a href="/admin/index" class="py-4 px-2 text-white {{Route::current()->uri == "admin/index" ? " border-b-4 border-white" : ""}} font-semibold">Admin</a>
+                        {{-- <a href="/admin/index" class="py-4 px-2 text-white {{Route::current()->uri == "admin/index" ? " border-b-4 border-white" : ""}} font-semibold">Admin</a> --}}
                     </div>
                 </div>
                 <div class="hidden md:hidden lg:flex items-center space-x-3 pr-2">
@@ -34,8 +35,8 @@
                             @csrf
                             <button type="submit" class="py-4 px-2 text-white hover:border-b-4 hover:border-white" >Odhlásiť sa</button>
                         </form>
-                    @else
-                        <a href="/login" class="py-4 px-2 text-white hover:border-b-4 hover:border-white">Prihlásiť sa</a>
+                    {{-- @else
+                        <a href="/login" class="py-4 px-2 text-white hover:border-b-4 hover:border-white">Prihlásiť sa</a> --}}
                     @endif
                 </div>
                 <div class="lg:hidden flex items-center">
@@ -93,11 +94,11 @@
                         Newtnova metóda
                     </a>
                 </li>
-                <li class="">
+                {{-- <li class="">
                     <a href="/admin/index" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "admin/index" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
                         Admin
                     </a>
-                </li>
+                </li> --}}
                 @if (Auth::user())
                     <li>
                         <form action="{{route('logout')}}" method="post">
@@ -105,12 +106,13 @@
                             <button type="submit" class="block w-full text-left text-white text-sm px-2 py-4 font-semibold hover:text-[#ff7900] hover:bg-white" >Odhlásiť sa</button>
                         </form>
                     </li>
-                @else
+                @endif
+                {{-- @else
                     <li>
                         <a href="/login" class="block text-sm px-2 py-4 font-semibold text-white bg-[#ff7900]  hover:text-[#ff7900] hover:bg-white">Prihlásiť sa</a>
                     </li>        
                 @endif
-                
+                 --}}
             </ul>
         </div>
         <script>

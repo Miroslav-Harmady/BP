@@ -13,7 +13,7 @@
 <body class="bg-gray-300">
     @include('Includes.navbar')
     <div class="flex justify-center mt-8">
-        <div class="w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4 py-4">
+        <div class="w-full md:w-3/4 lg:w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4 py-4">
             <h1 class="text-3xl text-center font-bold">
                 Newtonova metóda
             </h1>
@@ -117,9 +117,9 @@
                         </div>
                     </div>
                 </div>
-                <div>
                     <div id="chart" class="w-full h-auto"></div>
-                    <table id="resultTable"></table>
+                <div>
+                    <table id="resultTable" class="mx-auto mb-4"></table>
                 </div>
             </div>       
         </div>

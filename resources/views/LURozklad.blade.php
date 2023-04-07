@@ -12,7 +12,7 @@
 <body class="bg-gray-300">
     @include('Includes.navbar')    
     <div class="flex justify-center mt-8">
-        <div class="w-3/4 bg-white px-4 shadow-2xl rounded-sm mb-4">
+        <div class="w-full md:w-3/4 lg:w-3/4 bg-white px-4 shadow-2xl rounded-sm mb-4">
             <h1 class="text-center text-3xl font-bold py-4">
                 LU rozklad
             </h1>
@@ -48,11 +48,11 @@
                 Výhoda metódy LU rozkladu je hlavne v prípadoch, keď riešime viac sústav s rovnakou maticou a rôznymi pravými stranami.
             </p>
 
-            <h2 class="text-2xl pl-10">
+            <h2 class="text-2xl 10">
                 Sekcia na vzorový príklad
             </h2>
 
-            <h2 class="text-2xl pl-10 pt-2">
+            <h2 class="text-2xl 10 pt-2">
                 Neriešené sem
             </h2>
       

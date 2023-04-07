@@ -141,8 +141,32 @@ function compute(){
         line: {color: "#0000FF"}
     };
     var data = [trace1];
+    var layout = {
+        title: {
+            text: 'Nazov grafu',
+            font: {
+                color: "#ff7900"
+            }
+        },
+        xaxis:{
+            title:{
+                text:"x",
+                font: {
+                    color: "#ff7900"
+                }
+            }
+        },
+        yaxis:{
+            title: {
+                text: "f(x)",
+                font: {
+                    color: "#ff7900"
+                }
+            }
+        }
+    }
 
-    Plotly.newPlot(chart, data);
+    Plotly.newPlot(chart, data, layout);
     window.addEventListener('resize', function() {
         Plotly.Plots.resize(chart);
       });

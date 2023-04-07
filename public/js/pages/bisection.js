@@ -170,7 +170,31 @@ function compute(){
         }
         data.push(trace);
     }
-    Plotly.newPlot(chart, data);
+    var layout = {
+        title: {
+            text: 'Nazov grafu',
+            font: {
+                color: "#ff7900"
+            }
+        },
+        xaxis:{
+            title:{
+                text:"x",
+                font: {
+                    color: "#ff7900"
+                }
+            }
+        },
+        yaxis:{
+            title: {
+                text: "f(x)",
+                font: {
+                    color: "#ff7900"
+                }
+            }
+        }
+    }
+    Plotly.newPlot(chart, data, layout);
     window.addEventListener('resize', function() {
         Plotly.Plots.resize(chart);
       });

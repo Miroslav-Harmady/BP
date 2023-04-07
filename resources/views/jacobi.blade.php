@@ -12,7 +12,7 @@
 <body class="bg-gray-300">
     @include('Includes.navbar')
     <div class="flex justify-center mt-8 ">
-        <div class="w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4 pb-4">
+        <div class="w-full md:w-3/4 lg:w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4 pb-4">
             <h1 class="text-center text-3xl font-bold my-4">
                 Jacobiho metóda
             </h1>
@@ -61,7 +61,7 @@
                 Iteračná formula pre výpočet vektora \(x^{\color{Green}{(k)}}\), k = 1, ..., bude potom mať tvar
             </p>
 
-            <p>
+            <p class="text-sm md:text-lg lg:text-lg">
                 $$x_1^{\color{Green}{(k)}} = \color{Blue}0 \color{Black} \cdot x_1^{\color{Red}{(k-1)}} - \frac{a_{12}}{a_{11}}x_2^{\color{Red}{(k-1)}} - \frac{a_{13}}{a_{11}}x_3^{\color{Red}{(k-1)}} + \frac{b_{1}}{a_{11}},$$
                 $$x_2^{\color{Green}{(k)}} = -\frac{a_{21}}{a_{22}}x_1^{\color{Red}{(k-1)}} +\color{Blue} 0 \color{Black} \cdot x_2^{\color{Red}{(k-1)}}  - \frac{a_{23}}{a_{22}}x_3^{\color{Red}{(k-1)}} + \frac{b_{2}}{a_{22}},$$
                 $$x_3^{\color{Green}{(k)}} = - \frac{a_{31}}{a_{33}}x_1^{\color{Red}{(k-1)}} - \frac{a_{32}}{a_{33}}x_2^{\color{Red}{(k-1)}} + \color{Blue} 0 \color{Black} \cdot x_3^{\color{Red}{(k-1)}} + \frac{b_{3}}{a_{33}}$$

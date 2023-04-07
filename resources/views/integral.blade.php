@@ -12,7 +12,7 @@
 <body class="bg-gray-300">
     @include('Includes.navbar')
     <div class="flex justify-center mt-8">
-        <div class="w-3/4 text-lg bg-white px-4 shadow-2xl rounded-sm mb-4">
+        <div class="w-full md:w-3/4 lg:w-3/4 text-lg bg-white px-4  shadow-2xl rounded-sm mb-4">
             <h1 class="text-center text-3xl font-bold py-4">
                 Newtonove-Cotesove kvadratúrne vzorce
             </h1>
@@ -50,7 +50,10 @@
             <p>
                 \(\int_{a}^{b}f(x)dx \approx h \cdot \sum_{i=1}^{n}f(x_i)\)
             </p>
-            <div class="relative">      
+            <div class="relative">
+                <p class="text-base">
+                    Pre správny výpočet kalkulačky bla bla bla    
+                </p>      
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
                         <div>

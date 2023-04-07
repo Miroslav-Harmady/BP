@@ -13,12 +13,11 @@
 <body class="bg-gray-300">
     @include('Includes.navbar')
     <div class="flex justify-center mt-8">
-        <div class="w-3/4 bg-white px-4 shadow-2xl rounded-sm mb-4 pb-4">
+        <div class="w-full bg-white text-lg shadow-2xl px-4 rounded-sm mb-4 pb-4 md:w-3/4 lg:w-3/4">
             <h1 class="text-center text-3xl font-bold p-4">
                 Metóda bisekcie
             </h1>
-            {{-- Tu sa este rozhodnut ze ako co mozno jackie povie on vie --}}
-            <p class="indent-4 sm:text-base md:text-lg lg:text-lg p-2">
+            <p >
                 Metóda bisekcie sa nazýva aj <em>metóda polovičného delenia intervalu</em> a aplikuje sa na problémy formulované v tvare f(x) = 0.
                 Predpokladajme, že funkcia f(x) je spojitá na intervale \( I = \langle a, b \rangle\) a má v ňom  práve jeden koreň \(\color{Blue}\alpha\).
                 Na začiatok si vyberme \(a_0\) a \(a_0\), ktorých hodnoty \(f(a_0)\) a \(f(b_0)\) majú opačné znamienka. Potom rozdelíme interval mdedzi
@@ -26,14 +25,14 @@
                 jednu hodnotu z \(a_0\) alebo \(b_0\), ktorá má opačné znamenko \(f\) v porovnaní s \(f(s_1)\). Pokračujeme v delení intervalu, pokým 
                 \(\left| f(s_n) \right| \lt \varepsilon_1 \) alebo \(\left| a_n - b_n \right| \lt \varepsilon_2 \)
             </p>
-            <p class="indent-4 text-lg pb-2">
+            <p class="  pb-2">
                 Metóda bisekcie je jednoduchá, vždy konverguje, ale táto konvergencia je pomalá, nakoľko je založená na delení intervalu. Na druhej strane je jednoduchá na naprogramovanie a dáva odhad chyby v každom kroku.
             </p>
-            <h2 class="text-2xl py-4 pl-10">
+            <h2 class="text-2xl py-4 ">
                 tu ukazkove priklady ale to sa este dohodneme
             </h2>
 
-            <h2 class="text-2xl py-4 pl-10">
+            <h2 class="text-2xl py-4 ">
                 Neriešené príklady na precvičenie.
             </h2>
             @forelse ($collection as $item)
@@ -45,8 +44,8 @@
                     Zatiaľ nebol k tejto téme priradený žiadny neriešený príklad.
                 </p>
             @endforelse
-            <div class="relative p-2">
-                <p>
+            <div class="relative ">
+                <p class="text-base">
                     Pre správny výpočet prosím vyplňte všetky polia, nakoľko pre výpočet sú všetky potrebné. Funkciu však treba zadať v špecifickej syntaxi,
                      ako zadávať ktoré operácie, či funkcie sa dozviete v dokuementáciina stránke <a href="https://mathjs.org/docs/index.html" target="_blank" class="text-[#ff7900] hover:border-b-2 hover:border-[#ff7900]">https://mathjs.org/docs/index.html</a> 
                      <br> POZOR: kalkulačka počíta od počiatočného bodu (0,0,0). 
@@ -116,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-                    <div id="chart" class="w-full h-auto"></div>
+                    <div id="chart" class="w-full h-auto mb-4" ></div>
                     <table id="resultTable" class="rounded-xl"></table>
             </div>
         </div>   
