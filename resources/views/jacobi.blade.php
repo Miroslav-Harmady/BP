@@ -97,7 +97,11 @@
                 Hlavnou výhodou Jacobiho metódy je ľahká paralelizácia a vektorizácia algoritmu.
             </p>
       
-            <div class="relative">
+            <div class="relative mt-4">
+                <p class="text-base sm:text-sm">
+                    Pre správny výpočet kalkulačky zadajte maticu v regulérnom tvare. Dodržiavajte prosím vzor ktorý vidíte dole v
+                    v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkova nezabudnite vyplniť všetky polia nakoľko sú všetky povinné.
+                 </p>
                 <div class="grid grid-cols-1 z-3 pb-4">
                     <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center mb-4" >
                         <div>
@@ -105,7 +109,7 @@
                                 <label for="inputA">Ľavá strana matice:</label>        
                             </div>
                             <div>
-                                <textarea name="inputA" id="inputA" class="border-2 border-black border-solid rounded-lg p-1 m-0" cols="20" rows="10" placeholder="4, 6, -2&#10;6, 13, 1&#10;-2, 1, 6"></textarea>
+                                <textarea name="inputA" id="inputA" class="border-2 border-black border-solid rounded-lg p-1 m-0" cols="20" rows="10" placeholder="4, 6, 0&#10;6, 13, 1&#10;0, 1, 6"></textarea>
                             </div>  
                         </div>
                     
@@ -136,7 +140,7 @@
                                 <label for="dispersion">Zastavovacie kriterium:</label>
                             </div>
                             <div>
-                                <input type="number" class="border-2 border-solid border-black rounded p-1 w-full" id="dispersion">
+                                <input type="number" class="border-2 border-solid border-black rounded p-1 w-full" id="dispersion" placeholder="0.001">
                             </div>
                         </div>
                     
@@ -154,7 +158,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">compute</button>
+                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">Vypočítaj</button>
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">

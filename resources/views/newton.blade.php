@@ -41,7 +41,12 @@
                 a vyjadrením \(x_1\) dostaneme $$x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.$$
             </p>
 
-            <div class="relative">
+            <div class="relative mt-4">
+                <p class="text-base">
+                    Pre správny výpočet prosím vyplňte všetky polia, nakoľko pre výpočet sú všetky potrebné. Funkciu však treba zadať v špecifickej syntaxi.
+                     Ako zadávať ktoré operácie, či funkcie sa dozviete v dokuementácii na stránke <a href="https://mathjs.org/docs/index.html" target="_blank" class="text-[#ff7900] hover:border-b-2 hover:border-[#ff7900]">https://mathjs.org/docs/index.html</a>. 
+                     Kalkulačka zobrazuje aj graf zadanej funkcie, polia "začiatok D intervalu" a "koniec D intervalu" predstavujú definičný obor na ktorom sa funkcia zobrazí.
+                </p>   
                 <div class="grid grid-cols-1 z-3 pb-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
                         <div>
@@ -49,7 +54,7 @@
                                 <label for="inputF">f(x):</label>
                             </div>
                             <div>
-                                <input type="text" name="inputF" id="function_des" class="border-2 border-solid border-black rounded-lg p-1">
+                                <input type="text" name="inputF" id="function_des" class="border-2 border-solid border-black rounded-lg p-1" placeholder="x^3-4*x^2+3x-7">
                             </div>
                         </div>
 
@@ -58,7 +63,7 @@
                                 <label for="inputA">x0:</label>        
                             </div>
                             <div>
-                                <input type="number" name="inputA" id="inputA" class="border-2 border-solid border-black rounded-lg p-1">
+                                <input type="number" name="inputA" id="inputA" class="border-2 border-solid border-black rounded-lg p-1" placeholder="0">
                             </div>  
                         </div>
                     

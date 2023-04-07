@@ -6,9 +6,10 @@ var accuracy = document.getElementById("r");
 var domain = []
 
 function getDomain(){
-   
+    console.log("toto by sa malo volat 2x");
     var a = parseInt(document.getElementById("inputA").value);
     var b = parseInt(document.getElementById("inputB").value);
+    console.log(a,b);
     if (b < a){
         let temp = a;
         a = b;
@@ -95,7 +96,7 @@ function compute(){
         return;
     }
 
-    var domain = getDomain(r);
+    var domain = getDomain();
     var fa, fb, s, fs;
     var aList = [], bList = [], y = [];
     try{

@@ -29,9 +29,27 @@
                 Metóda bisekcie je jednoduchá, vždy konverguje, ale táto konvergencia je pomalá, nakoľko je založená na delení intervalu. Na druhej strane je jednoduchá na naprogramovanie a dáva odhad chyby v každom kroku.
             </p>
             <h2 class="text-2xl py-4 ">
-                tu ukazkove priklady ale to sa este dohodneme
+               Vzorový príklad
             </h2>
-
+            <p>
+                Metódou bisekcie nájdite s presnosťou \(\left|{f(s_n)}\right| < 0.1\) aproximáciou koreňa rovnice \(f(x)=x^2+x-3\) v intervale \(\left\langle 1,2 \right\rangle\)
+            </p>
+                <img src="{{asset('images/bis1.png') }}" alt="prvá iterácia bisekcie" class="w-full h-auto">
+                <p>
+                    Na základe grafu vidíme, že f(a) a f(b) majú opačné znamienka, a teda má zmysel pokračovať \(a = 1\) \(b = 2\) \(f(a) = -1\) \(f(b) = 3\) \(s = 1.5\) a \(f(s) = 0.75\). Keďže \(f(a) \cdot f(s) < 0\) posúvame \(b\) na hodnotu \(s\) a teda nová hodnota \(b = 1.5\)
+                </p>
+                <img src="{{asset('images/bis2.png') }}" alt="prvá iterácia bisekcie" class="w-full h-auto">
+                <p>
+                    Znovu overíme podmienku nutnú pre pokračovanie vo výpočte a zisťujeme že \(s=\frac{1 + 1.5}{2} = 1.25\), tým pádom \(f(s) = -0.1875\). Tentokrát \(f(b) \cdot f(s) < 0 \), takže tentorkát posunieme \(a\) na novú hodnotu \(a=1.25\)
+                </p>
+                <img src="{{asset('images/bis3.png') }}" alt="prvá iterácia bisekcie" class="w-full h-auto">
+                <p>
+                    Po overení poračujeme výpočtom: \(s=\frac{1.25 + 1.5}{2} = 1.375\), tým pádom \(f(s) = 0.2656\), \(f(a) \cdot f(s) < 0\), posunieme b na \(b = 1.375\)
+                </p>
+                <img src="{{asset('images/bis4.png') }}" alt="prvá iterácia bisekcie" class="w-full h-auto">
+                <p>
+                    \(s=\frac{1.25 + 1.375}{2} = 0.03252 < 0.1\) a tu náš algoritmus končí a našli sme približnú hodnotu \(s = 1.3125\)
+                </p>
             <h2 class="text-2xl py-4 ">
                 Neriešené príklady na precvičenie.
             </h2>
@@ -46,8 +64,8 @@
             @endforelse
             <div class="relative ">
                 <p class="text-base">
-                    Pre správny výpočet prosím vyplňte všetky polia, nakoľko pre výpočet sú všetky potrebné. Funkciu však treba zadať v špecifickej syntaxi,
-                     ako zadávať ktoré operácie, či funkcie sa dozviete v dokuementáciina stránke <a href="https://mathjs.org/docs/index.html" target="_blank" class="text-[#ff7900] hover:border-b-2 hover:border-[#ff7900]">https://mathjs.org/docs/index.html</a> 
+                    Pre správny výpočet prosím vyplňte všetky polia, nakoľko pre výpočet sú všetky potrebné. Funkciu však treba zadať v špecifickej syntaxi.
+                     Ako zadávať ktoré operácie, či funkcie sa dozviete v dokuementáciina stránke <a href="https://mathjs.org/docs/index.html" target="_blank" class="text-[#ff7900] hover:border-b-2 hover:border-[#ff7900]">https://mathjs.org/docs/index.html</a> 
                      <br> POZOR: kalkulačka počíta od počiatočného bodu (0,0,0). 
                 </p>
                 <div class="grid grid-cols-1 z-3">
@@ -117,9 +135,15 @@
                 </div>
                     <div id="chart" class="w-full h-auto mb-4" ></div>
                     <table id="resultTable" class="rounded-xl"></table>
+                    <div id=vzor>
+
+                    </div>
             </div>
         </div>   
     </div>
 </body>
 <script src="{{ asset('js/pages/bisection.js') }}"></script>
+<script>
+   style
+</script>
 </html>

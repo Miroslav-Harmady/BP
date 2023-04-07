@@ -49,14 +49,17 @@
             </p>
 
             <h2 class="text-2xl 10">
-                Sekcia na vzorový príklad
+                Vzorový príklad
             </h2>
+            <p>
+                Nájdite LU rozklad matice
+            </p>
 
             <h2 class="text-2xl 10 pt-2">
                 Neriešené sem
             </h2>
       
-            <div class="relative">
+            <div class="relative mt-4">
                 <p class="text-base">
                     Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor, ktorý vidíte dole v
                     v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
@@ -68,7 +71,7 @@
                                 <label for="inputA"> Ľavá strana matice:</label>
                             </div>
                             <div>
-                                <textarea name="inputA" id="inputA" cols="20" rows="10" class="border-2 border-solid border-black rounded-lg pl-2" placeholder="1, 2, 3&#10;2, 3, 8&#10;-1, -5,-5"></textarea>
+                                <textarea name="inputA" id="inputA" cols="20" rows="10" class="border-2 border-solid border-black rounded-lg pl-2" placeholder="1, 2, 0&#10;0, 3, 8&#10;-1, -5,-5"></textarea>
                             </div>
                         </div>
                         

@@ -14,7 +14,7 @@
     </h1>
     <div class="flex justify-center">
         <p class="text-center text-lg w-full md:w-1/2 lg:w-1/2 ">
-            Vitajte v admin panely. Táto sekcia slúži na manipulovanie s príkladmi, ktoré sa nachádzajú na jednotlivých stránkach. Príklady môžete mazať, upravovať aj vytvárať. Stačí si vybrať jednu z nasledujúcih možností.
+            Vitajte v admin paneli. Táto sekcia slúži na manipulovanie s príkladmi, ktoré sa nachádzajú na jednotlivých stránkach. Príklady môžete mazať, upravovať aj vytvárať. Stačí si vybrať jednu z nasledujúcih možností.
         </p>
     </div>
     <div class="flex justify-center mt-4">

@@ -43,16 +43,52 @@
                 <div class="px-4">
                     \(i = 1,...,n + 1\)
                 </div>
-            </div>
-            <p class="text-2xl text-red-500 font-bold">
-                Tuto by to chcelo este nejaky uvod k tomu vzorcu
+            </div>   
+            <p class="mt-2">
+                Na základe získaných poznatkov môžeme teda povedať, že všeobecný vzorec je: 
+                $$\int_{a}^{b}f(x)dx \approx h \cdot \sum_{i=1}^{n}f(x_i)$$
             </p>
+            <h2 class="text-2xl py-4">
+                Vzorový príklad
+            </h2>
             <p>
-                \(\int_{a}^{b}f(x)dx \approx h \cdot \sum_{i=1}^{n}f(x_i)\)
+                Vypočítajte približne hodnotu \(\int_{1}^{5}cos(x+3)dx\) pomocou zloženejobdĺžnikovej metódy, ak počet podintervalov n = 4. Vypočítajte pre ľavý krajný pravý krajný a stredný bod interpolácie.
             </p>
-            <div class="relative">
+            <p class="py-2">
+                Najskôr vypočítame dĺžku čiastkového intervalu h. \(h = \frac{b-a}{n} = \frac{5-1}{4} = 1\)
+            </p>
+            <h3 class="text-xl py-3">
+                Ľavý krajný bod:
+            </h3>
+            <p>
+                \(f(x_1)=f(1)\approx -0.6536\)<br>
+                \(f(x_2)=f(2)\approx 0.2837\)<br>
+                \(f(x_3)=f(3)\approx 0.9602\)<br>
+                \(f(x_4)=f(4)\approx 0.7539\)<br>
+                Po dosadení do vzorca uvedeného vyššie dostávame hodnotu \(1.3442\)
+            </p>
+            <h3 class="text-xl py-3">
+                Pravý krajný bod:
+            </h3>
+            <p>
+                
+                Pre pravý krajný bod nám stačí dopočítať hodnotu pre \(x_5\), \(f(x_5) = f(5)\approx-0.1455\) <br>
+                Súčtom hodnôt \(f(2) až f(5)\) dostávame výsledok \(1.8523\) 
+            </p>
+            <h3 class="text-xl py-3">
+               Stredný bod:
+            </h3>
+            <p>
+                \(f(1.5)\approx -0.2108\)<br>
+                \(f(2.5)\approx 0.7087\)<br>
+                \(f(3.5)\approx 0.9766\)<br>
+                \(f(4.5)\approx 0.3466\)<br>
+                Po dosadení do vzorca uvedeného vyššie dostávame hodnotu \(1.8211\)
+            </p>
+            <div class="relative mt-4">
                 <p class="text-base">
-                    Pre správny výpočet kalkulačky bla bla bla    
+                    Pre správny výpočet prosím vyplňte všetky polia, nakoľko pre výpočet sú všetky potrebné. Funkciu však treba zadať v špecifickej syntaxi.
+                     Ako zadávať ktoré operácie, či funkcie sa dozviete v dokuementácii na stránke <a href="https://mathjs.org/docs/index.html" target="_blank" class="text-[#ff7900] hover:border-b-2 hover:border-[#ff7900]">https://mathjs.org/docs/index.html</a> 
                 </p>      
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
