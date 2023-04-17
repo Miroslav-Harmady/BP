@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    @include('Includes.navbar')
+    @include('Includes.adminNavbar')
     <h1 class="text-center text-2xl font-bold my-4">
         Newtonova metóda - úprava
     </h1>

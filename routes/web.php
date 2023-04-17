@@ -20,7 +20,7 @@ use App\Models\Newton;
 */
 
 Route::get('/', function () {
-    return view('welcome'); // prerobit welcome blade a hotovo 
+    return view('welcome'); 
 })->name('welcome');
 
 Auth::routes();

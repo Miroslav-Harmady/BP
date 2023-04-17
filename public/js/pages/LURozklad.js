@@ -105,7 +105,7 @@ function hideModal(){
 }
 
 function toLatex(char, a){
-    var result = "$$" + char + "= " +  "\\begin{pmatrix}";
+    var result = "\\(" + char + "= " +  "\\begin{pmatrix}";
     for(let i = 0; i < a.length; i++){
         for(let j = 0; j < a[0].length; j++){
             result += a[i][j];
@@ -117,7 +117,7 @@ function toLatex(char, a){
             result = result + "\\" + "\\";
         }
     }
-    result += "\\end{pmatrix}$$";
+    result += "\\end{pmatrix}\\)";
     return result;
 }
 

@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    @include('Includes.navbar')
+    @include('Includes.adminNavbar')
     <div class="flex justify-center">
         <div class="w-3/4">
             <h1 class="text-3xl font-bold text-center"> Bisekcia</h1>

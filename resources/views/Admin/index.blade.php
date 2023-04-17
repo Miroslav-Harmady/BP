@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    @include('Includes.navbar')
+    @include('Includes.adminNavbar')
     <h1 class="text-center font-bold text-2xl mb-4">
         Admin panel
     </h1>
