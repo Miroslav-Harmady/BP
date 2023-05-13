@@ -35,7 +35,7 @@ class Cholesky extends Controller
         if($validator->fails()){
             return redirect()->route('admin.cholesky.create')
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
 
@@ -75,7 +75,7 @@ class Cholesky extends Controller
         if($validator->fails()){
             return redirect()->route('admin.cholesky.edit',['id' => $id])
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
 

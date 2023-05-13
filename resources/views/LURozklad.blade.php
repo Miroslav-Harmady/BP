@@ -52,7 +52,110 @@
                 Vzorový príklad
             </h2>
             <p>
-                Nájdite LU rozklad matice
+                Metódou LU rozkladu nájdite riešenie sústavy lineárnych rovníc.
+                $$8x_1-6x_2+2x_3 = 0$$
+                $$-6x_1+7x_2-4x_3 = 5$$
+                $$2x_1-4x_2+3x_3 = 5$$
+            </p>
+            <p>
+                Pôjdeme podľa vzorca \(LU = A\)
+            </p>
+            <p>
+                \(\begin{pmatrix}
+               8 & -6 & 2 \\
+               -6 & 7 & -4\\
+               2 & -4 & 3
+               \end{pmatrix} =\)
+
+               \(
+               \begin{pmatrix}
+                1& 0 &0  \\
+                l_{21}& 1 & 0 \\
+                l_{31}& l_{32} & 1
+                \end{pmatrix}\cdot\)
+
+                \(\begin{pmatrix}
+                u_{11}& u_{12} & u_{13} \\
+                0& u_{22} & u_{23} \\
+                0& 0 & u_{33}
+               \end{pmatrix}\)
+            </p>
+            <p>násobením matíc postupne vyrátame jednotlivé neznáme prvky <br>  \(u_{11} = 8\) <br> \(u_{12} = -6\) <br> \(u_{13} = 2\) <br>
+                \(-6= l_{21} \cdot u_{11} \Rightarrow -6 = 8 \cdot l_{21} \Rightarrow l_{21} = -0.75\) <br>
+                \(7 = l_{21}u_{12} + u_{22} \Rightarrow 7 = (-0.75)(-6) + u_{22} \Rightarrow u_{22} = 2.5 \)<br>
+                \(-4 = l_{21}u_{13} + u_{23} \Rightarrow -4 = (-0.75)2 + u_{23} \Rightarrow u_{23} = -2.5 \) <br>
+                \(2 = l_{31}u_{11} \Rightarrow 2 = 8l_{31} \Rightarrow l_{31} = 0.25 \) <br>
+                \(-4 = l_{31}u_{12} + l_{32}u_{22} \Rightarrow 0.25(-6) + 2.5l_{32} \Rightarrow l_{32} = -1 \)
+                \(3 =  l_{31}u_{13} + l_{32}u_{23} + u_{33} \Rightarrow 0.25 \cdot 2 + (-1)(-0.25) + u_{33} \Rightarrow u_{33} = 0\)
+            </p>
+            <p class="py-2">
+                \(\begin{pmatrix}
+                8 & -6 & 2 \\
+                -6 & 7 & -4\\
+                2 & -4 & 3
+                \end{pmatrix} =\)
+
+                \(
+               \begin{pmatrix}
+                1& 0 &0  \\
+                -0.75& 1 & 0 \\
+                0.25& -1 & 1
+                \end{pmatrix}\cdot\)
+
+                \(\begin{pmatrix}
+                8& -6 & 2 \\
+                0& 2.5 & -2.5 \\
+                0& 0 & 0
+               \end{pmatrix}\) 
+            </p>
+
+            <p>
+                Vypočítanú L maticu dosadíme do \(Ly = b\) a vypočítame prvky vektora y <br>
+                \(
+                \begin{pmatrix}
+                    1& 0 &0  \\
+                    -0.75& 1 & 0 \\
+                    0.25& -1 & 1
+                    \end{pmatrix}\cdot\)
+                \(\begin{pmatrix} 
+                y_1 \\
+                y_2 \\
+                y_3 \end{pmatrix} = \)
+               
+                \(\begin{pmatrix} 
+                0\\
+                5 \\
+                5 \end{pmatrix} \Rightarrow\)
+                \(
+                \begin{matrix}  
+                 y_1 = 0\\
+                 y_2 = 5\\
+                 y_3 = 10
+                 \end{matrix} \)
+            </p>
+            <p>
+                Podobne dosadením vektora y do \(Ux = y\) vypočítame prvky vektora x <br>
+                \(\begin{pmatrix}
+                8& -6 & 2 \\
+                0& 2.5 & -2.5 \\
+                0& 0 & 0
+               \end{pmatrix}\cdot\)
+               \(\begin{pmatrix} 
+                x_1 \\
+                x_2 \\
+                x_3 \end{pmatrix} = \)
+                \(
+                \begin{pmatrix}  
+                 0\\
+                 5\\
+                 10
+                 \end{pmatrix}\Rightarrow\)
+                 \(
+                \begin{matrix}  
+                 x_1 = 1.5\\
+                 x_2 = 2\\
+                 x_3 = 0
+                 \end{matrix} \)
             </p>
 
             <h2 class="text-2xl 10 pt-2">
@@ -61,7 +164,7 @@
       
             <div class="relative mt-4">
                 <p class="text-base">
-                    Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a atď... To sa sem ešte doplní. Dodržiavajte prosím vzor, ktorý vidíte dole v
+                    Pre správny výpočet kalkulačky dajte maticu prosím do správneho tvaru. To znamená, že matica musí byť štvorcová a regulárna. Dodržiavajte prosím vzor, ktorý vidíte dole v
                     v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
                  </p>
                 <div class="grid grid-cols-1 z-3 mt-4 mb-4 pb-4">
@@ -98,7 +201,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">compute</button>
+                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">Vypočítaj</button>
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">
@@ -113,7 +216,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center p-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                         <span id="resultL" class="pr-2">
                         </span>

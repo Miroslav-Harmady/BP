@@ -12,8 +12,30 @@ function getIntervals(a, n, h){
     return intervals;
 }
 
-function createHeader(){
+function createHeader(id){
+    var text;
+    switch(id){
+        case "table":
+            text = "Ľavý krajný bod";
+            break
+
+        case "table2":
+            text = "Pravý krajný bod";
+            break;
+        
+        case "table3":
+            text = "Stredný bod";
+            break;
+    }
     var tableHead = document.createElement("thead");
+    var topRow = document.createElement("tr");
+    var td = document.createElement("th");
+    td.classList.add("bg-[#ff7900]", "text-white", "text-center", "border-2", "border-black", "p-1");
+    td.colSpan = 2;
+    td.innerText = text;
+    topRow.appendChild(td);
+    tableHead.appendChild(topRow);
+
     var headRow = document.createElement("tr");
    
     var headCell = document.createElement("th");
@@ -77,7 +99,7 @@ function generateTable(tableId, intervals, h, f, start, end, r){
     var table = document.getElementById(tableId);
     table.innerHTML = "";
 
-    var tableHead = createHeader();
+    var tableHead = createHeader(tableId);
     try{
     var tableBody = fillBody(table, intervals, h, f, start, end, r);
     }catch(e){

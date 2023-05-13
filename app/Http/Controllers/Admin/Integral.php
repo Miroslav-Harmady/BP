@@ -36,7 +36,7 @@ class Integral extends Controller
         if($validator->fails()){
             return redirect()->route('admin.integral.create')
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $integral = new Integ;
@@ -75,7 +75,7 @@ class Integral extends Controller
         if($validator->fails()){
             return redirect()->route('admin.integral.edit', ['id' => $id])
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $integral = Integ::where('id', $id)->update([

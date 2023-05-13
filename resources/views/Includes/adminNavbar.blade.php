@@ -19,8 +19,8 @@
                     <div class="hidden lg:flex items-center">
                         <a href="/" class="py-4 px-2 text-white {{Route::current()->uri == "/" ? " border-b-4 border-white" : ""}} font-semibold">Domov</a>
                         <a href="{{route('admin.bisection.index')}}" class="py-4 px-2 text-white {{Route::current()->uri == "bisekcia" ? " border-b-4 border-white" : ""}} font-semibold">Bisekcia</a>
-                        <a href="{{route('admin.cholesky.index')}}" class="py-4 px-2 text-white {{Route::current()->uri == "cholesky" ? " border-b-4 border-white" : ""}} font-semibold">Cholesky</a>
-                        <a href="{{route('admin.integral.index')}}" class="py-4 px-2 text-white  {{Route::current()->uri == "integral" ? " border-b-4 border-white" : ""}} font-semibold">N-C Kvadratúrne vzorce</a>
+                        <a href="{{route('admin.cholesky.index')}}" class="py-4 px-2 text-white {{Route::current()->uri == "cholesky" ? " border-b-4 border-white" : ""}} font-semibold">Choleskyho rozklad</a>
+                        <a href="{{route('admin.integral.index')}}" class="py-4 px-2 text-white  {{Route::current()->uri == "integral" ? " border-b-4 border-white" : ""}} font-semibold">Numerické riešenie integrálov</a>
                         <a href="{{route('admin.jacobi.index')}}" class="py-4 px-2 text-white {{Route::current()->uri == "jacobi" ? " border-b-4 border-white" : ""}}  font-semibold">Jacobiho metóda</a>
                         <a href="{{route('admin.LU.index')}}" class="py-4 px-2 text-white {{Route::current()->uri == "LURozklad" ? " border-b-4 border-white" : ""}}  font-semibold">LU rozklad</a>
                         <a href="{{route('admin.newton.index')}}" class="py-4 px-2 text-white {{Route::current()->uri == "newton" ? " border-b-4 border-white" : ""}} font-semibold">Newtnova metóda</a>
@@ -71,12 +71,12 @@
                 </li>
                 <li class="">
                     <a href="{{route('admin.cholesky.index')}}" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "cholesky" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        Cholesky
+                        Choleskyho rozklad
                     </a>
                 </li>
                 <li class="">
                     <a href="{{route('admin.integral.index')}}" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "integral" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        N-C kvadratúrne vzorce
+                        Numerické riešenie integrálov
                     </a>
                 </li>
                 <li class="">
@@ -94,11 +94,6 @@
                         Newtnova metóda
                     </a>
                 </li>
-                {{-- <li class="">
-                    <a href="/admin/index" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "admin/index" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        Admin
-                    </a>
-                </li> --}}
                 @if (Auth::user())
                     <li>
                         <form action="{{route('logout')}}" method="post">
@@ -107,12 +102,6 @@
                         </form>
                     </li>
                 @endif
-                {{-- @else
-                    <li>
-                        <a href="/login" class="block text-sm px-2 py-4 font-semibold text-white bg-[#ff7900]  hover:text-[#ff7900] hover:bg-white">Prihlásiť sa</a>
-                    </li>        
-                @endif
-                 --}}
             </ul>
         </div>
         <script>

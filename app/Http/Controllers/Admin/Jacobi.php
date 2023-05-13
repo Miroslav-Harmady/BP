@@ -38,7 +38,7 @@ class Jacobi extends Controller
         if($validator->fails()){
             return redirect()->route('admin.jacobi.create')
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $jacobi = new Jac;
@@ -77,7 +77,7 @@ class Jacobi extends Controller
         if($validator->fails()){
             return redirect()->route('admin.jacobi.edit', ['id' => $id])
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $jacobi = Jac::where('id', $id)->update([

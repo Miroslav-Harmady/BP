@@ -176,34 +176,29 @@ function printResult(l, x, y){
 
 function compute(){
     var errorMsg = "";
-    if((document.getElementById("inputA").value == "") || (document.getElementById("inputB").value == "")){
-        errorMsg = "Nevyplnili ste všetky polia. Pre správne fungovanie kalkulačky prosím vyplňte všetky polia.";
-        showModal(errorMsg);
-        return;
+    if((document.getElementById("inputA").value == "") ||
+        (document.getElementById("inputB").value == "")){
+            errorMsg = "Nevyplnili ste všetky polia. Pre správne fungovanie kalkulačky prosím vyplňte všetky polia.";
+            showModal(errorMsg);
+            return;
     }
-
     var a = parseInput("inputA");
     var n = a.length;
     var b = parseInput("inputB");
     var l = initializeL(n);
     var r = parseInt(document.getElementById("r").value);
     errorMsg = validate(a, b);
-
     if(errorMsg != ""){
         showModal(errorMsg);
         return;
     }
-   
     l[0][0] = math.sqrt(a[0][0]);
-
     for(let j = 0; j < n; j++){
         l[j][0] = a[j][0] / l[0][0];
     }
-
     for(let i = 1; i < n - 1; i++){
         var tempSum = sum1(l, i);
         l[i][i] = math.sqrt(a[i][i] - tempSum);
-
         for(let j = i + 1; j < n;j++){
             tempSum = sum2(l, j, i);
             l[j][i] = (a[j][i] - tempSum) / l[i][i];
@@ -211,7 +206,6 @@ function compute(){
     }
     tempSum = sum3(n, l);
     l[n - 1][n - 1] = math.sqrt(a[n - 1][n - 1] - tempSum);
-   
     var y = computeY(n, l, b, r);
     var x = computeX(n, transposeL(l), y, r);
     printResult(l,x,y);

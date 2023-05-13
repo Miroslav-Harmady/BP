@@ -59,6 +59,67 @@
                 Dostaneme \(Ly = b\). Najprv vyreišime sústavu Ly = b <em>doprednou substitúciou</em> a potom dosadíme y do prvej strany sústavy \(L^Tx = y\), 
                 ktorú vyriešime <em>spätnou substitúciou</em>.
             </p>
+            <p>
+                Metódou Choleskyho rozkladu nájdite riešenie sústavy lineárnych rovníc.
+                $$25x_1 + 15x_2 -5x_3 = 5$$
+                $$15x_1 + 18x_2 + 0x_3 = 9$$
+                $$-5x_1 + 0x_2 + 11x_3 = 7$$
+            </p>
+            <p>
+                Po dosadení do vzoca pre výpočet matice L dostaneme maticu L v tvare: <br>
+                \(L=
+                 \begin{pmatrix} 
+                 5 & 0 & 0 \\
+                 3 & 3 & 0\\
+                 -1 & 1 & 3 \end{pmatrix}\)
+            </p>
+            <p>
+                ďalej postupujeme rovnako ako pri riešení systémov lineárnych rovníc pomocou LU rozkladu. Vypočítanú L meticu dosadíme do \(Ly=b\) a vypočítame prvky vektora y <br>
+                \(
+                 \begin{pmatrix} 
+                 5 & 0 & 0 \\
+                 3 & 3 & 0\\
+                 -1 & 1 & 3 \end{pmatrix}\cdot \)
+
+                \(\begin{pmatrix} 
+                 y_1\\
+                 y_2\\
+                 y_3 \end{pmatrix} = \)
+
+                 \(\begin{pmatrix} 
+                 5\\
+                 9\\
+                 7 \end{pmatrix} \Rightarrow \)
+
+                 \(\begin{matrix} 
+                 y_1 = 1\\
+                 y_2 = 2\\
+                 y_3 = 2 \end{matrix}\)
+            </p>
+
+            <p>
+               Dosadením vektora y do pravej strany sústavy \(L^Tx=y\)vypočítame prvky vektoar x <br>
+                \(
+                \begin{pmatrix} 
+                5 & 3 & -1 \\
+                0 & 3 & 1\\
+                0 & 0 & 3 \end{pmatrix}\cdot \)
+
+                \(\begin{pmatrix} 
+                x_1\\
+                x_2\\
+                x_3 \end{pmatrix} = \)
+
+                \(\begin{pmatrix} 
+                    1\\
+                    2\\
+                    2\end{pmatrix} \Rightarrow \)
+
+                \(\begin{matrix} 
+                x_1 = \frac{1}{15}\\
+                x_2 = \frac{4}{9}\\
+                x_3 = \frac{2}{3} \end{matrix}\)
+            </p>
             <div class="relative">
                 <p class="text-base sm:text-sm">
                     Pre správny výpočet kalkulačky zadajte maticu v regulérnom tvare. Dodržiavajte prosím vzor ktorý vidíte dole v

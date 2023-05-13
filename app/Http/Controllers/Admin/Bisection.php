@@ -35,7 +35,7 @@ class Bisection extends Controller
         if($validator->fails()){
             return redirect()->route('admin.bisection.create')
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $bisection = new Bis;
@@ -75,7 +75,7 @@ class Bisection extends Controller
         if($validator->fails()){    
             return redirect()->route("admin.bisection.edit",['id' => $id])
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
         
         $bisection = Bis::where('id', $id)->update([

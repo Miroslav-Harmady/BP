@@ -35,7 +35,7 @@ class Newton extends Controller
         if($validator->fails()){
             return redirect()->route('admin.newton.create')
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $newton = new Nwton;
@@ -73,7 +73,7 @@ class Newton extends Controller
         if($validator->fails()){
             return redirect()->route('admin.newton.edit',['id' => $id])
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $newton = Nwton::where('id', $id)->update([

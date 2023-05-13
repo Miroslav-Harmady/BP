@@ -15,7 +15,7 @@
         <div class="w-3/4">
             <h1 class="text-3xl font-bold text-center"> Newtonova metóda</h1>
             <div class="flex justify-between px-2">
-                <a href="/admin/index">
+                <a href="/admin">
                     <button class="bg-white border-2 border-solid border-[#ff7900] text-[#ff7900] p-2 rounded-lg  font-semibold hover:bg-[#ff7900] hover:text-white hover:shadow-lg" >Späť</button>
                 </a>
                 <a href="{{route('admin.newton.create')}}">

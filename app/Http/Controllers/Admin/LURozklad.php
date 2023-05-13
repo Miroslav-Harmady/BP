@@ -37,7 +37,7 @@ class LURozklad extends Controller
         if($validator->fails()){
             return redirect()->route('admin.LU.create')
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $item = new LUR;
@@ -78,7 +78,7 @@ class LURozklad extends Controller
         if($validator->fails()){
             return redirect()->route('admin.LU.edit', ['id' => $id])
                              ->withErrors($validator)
-                             ->withINput();
+                             ->withInput();
         }
 
         $item = LUR::where('id', $id)->update([

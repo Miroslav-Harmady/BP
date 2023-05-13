@@ -19,7 +19,7 @@ function createHeader(){
     var headRow = document.createElement("tr");
    
     var headCell = document.createElement("th");
-    headCell.textContent = "xi"; 
+    headCell.textContent = "i"; 
     headRow.appendChild(headCell);
     headCell.classList.add("bg-[#ff7900]", "text-white", "p-1", "border-2", "border-black");
 
@@ -94,7 +94,6 @@ function compute(){
 
     for(let i = 0; i < 10; i++){ 
         if(math.derivative(f, 'x').evaluate({x: x}) == 0){
-            console.log("delenie nulou");
             break;
         }
         var row = document.createElement("tr");
@@ -110,9 +109,7 @@ function compute(){
 
         tableBody.appendChild(row);
 
-        console.log("--------------- iteration " + (i + 1) + " ---------------");
         x = math.round(x - (math.parse(f).evaluate({x: x}) / math.derivative(f, 'x').evaluate({x: x})), r); 
-        console.log("x: " + x);
 
         if (math.abs(math.parse(f).evaluate({x: x})) < eps){
             var row = document.createElement("tr");
@@ -143,7 +140,7 @@ function compute(){
     var data = [trace1];
     var layout = {
         title: {
-            text: 'Nazov grafu',
+            text: 'Newtonova metóda',
             font: {
                 color: "#ff7900"
             }

@@ -15,17 +15,6 @@ function parseInput(id){
     return result;
 }
 
-function inputB(id){
-    // mozno este osetrovat vstup by sa zislo
-    return parseInput(id);
-}
-
-// Vkladanie koeficientov do matice bez pravej strany
-
-function inputA(id){
-    return parseInput(id);
-}
-
 function checkApproximation(last, next, dispersion){
     for(let i = 0; i < last.length; i++){
         if(Math.abs(next[i] - last[i]) > dispersion){
@@ -81,31 +70,21 @@ function hideModal(){
     modal.style.pointerEvents = 'none';
 }
 
-
-function printResult(){
-//    TODO: asi len nejaka simple funkcia ako zobrazit vysledok ale asi tu bude treba generate table.
-//    to sa este uvidi
-}
-function createHeader(){
+function createHeader(n){
     var tableHead = document.createElement("thead");
     var headRow = document.createElement("tr");
    
     var headCell = document.createElement("th");
     headCell.textContent = "i"; 
     headRow.appendChild(headCell);
+    headCell.classList.add("bg-[#ff7900]", "text-white", "p-1", "border-2", "border-black");
 
-    var headCell = document.createElement("th");
-    headCell.textContent = "x1"
-    headRow.appendChild(headCell);
-
-    var headCell = document.createElement("th");
-    headCell.textContent = "x2"
-    headRow.appendChild(headCell);
-
-    var headCell = document.createElement("th");
-    headCell.textContent = "x3"
-    headRow.appendChild(headCell);
-    
+    for(let i = 1; i <= n; i++){
+        var headCell = document.createElement("th");
+        headCell.textContent = "x" + i;
+        headRow.appendChild(headCell);
+        headCell.classList.add("bg-[#ff7900]", "text-white", "p-1", "border-2", "border-black");
+    }
     tableHead.appendChild(headRow);
     return tableHead;
 }
@@ -115,37 +94,42 @@ function createRow(tbody, aprox, iteration){
     var cell = document.createElement("td");
     cell.innerText = iteration;
     row.appendChild(cell);
+    cell.classList.add("p-1", "border-2", "border-black");
     for(let j = 0; j < aprox.length; j++){
         var cell = document.createElement("td");
         cell.innerText = aprox[j];
         row.appendChild(cell);
+        cell.classList.add("p-1", "border-2", "border-black");
     }
     tbody.appendChild(row);
 }
 
 function compute(){
     var table = document.getElementById("table");
-    var tableHead = createHeader();
-    var tableBody = document.createElement("tbody");
+    
     table.innerHTML = "";
-    if((document.getElementById("inputA").value == "") || (document.getElementById("inputB").value == "" || document.getElementById("dispersion").value == "")){
+    if((document.getElementById("inputA").value == "") || 
+        (document.getElementById("inputB").value == "" || 
+        document.getElementById("dispersion").value == "")){
         showModal("Nevyplnili ste všetky polia. Pre správne fungovanie kalkulačky prosím vyplňte všetky polia.");
         return;
     }
-    var a = inputA("inputA");
-    var b = inputB("inputB");
+    var a = parseInput("inputA");
+    var b = parseInput("inputB");
     var m = parseInt(document.getElementById("m").value);
     var dispersion = parseFloat(document.getElementById("dispersion").value);
     var r = parseInt(document.getElementById("r").value);
     var aproximation = [];
     var temp, error="";
+    var tableHead = createHeader(a.length);
+    var tableBody = document.createElement("tbody");
     error = validate(a, b, dispersion);
     if(error != ""){
         showModal(error);
         return;
     }
     for(let i = 0; i < a.length; i++){
-        aproximation.push(0);// tu sa treba opytat ze ci si to zadaju sami alebo ako to bude co to bdue 
+        aproximation.push(0);
     }
     for(let k = 1; k < (m + 1); k++){
         var nextAprox = [];
@@ -160,8 +144,8 @@ function compute(){
             temp = (b[i][0] - temp) / (a[i][i]);
             nextAprox.push(math.round(temp, r)) 
         }
-        if (checkApproximation(aproximation, nextAprox, dispersion)){ // kontrola ci sme dosiahli hranicnu podmienku alebo nie
-            //console.log(nextAprox);
+        // kontrola ci sme dosiahli hranicnu podmienku alebo nie
+        if (checkApproximation(aproximation, nextAprox, dispersion)){ 
             createRow(tableBody, nextAprox, k);
             table.appendChild(tableHead);
             table.appendChild(tableBody);
@@ -170,10 +154,8 @@ function compute(){
         createRow(tableBody, nextAprox, k);
         aproximation = nextAprox;
     }
-    console.log(aproximation);
-    createRow(tableBody, nextAprox, 10);
+    // createRow(tableBody, nextAprox, 10);
     table.appendChild(tableHead);
     table.appendChild(tableBody);
     return aproximation;
-    
 }

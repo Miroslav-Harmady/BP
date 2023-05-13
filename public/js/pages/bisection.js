@@ -79,6 +79,44 @@ function hideModal(){
     modal.style.pointerEvents = 'none';
 }
 
+function generateData(domain, aList, f, y, bList){
+    var trace1 = {
+        type: "scatter",
+        name: "" + f,
+        mode: "lines",
+        x: domain,
+        y: y,
+        line: {color: "#0000FF"},
+        showLegend: true
+    };
+
+    data = [trace1];
+
+    for(let i = 0; i < aList.length; i++){
+        var trace = {
+            type: "scatter",
+            mode: "lines",
+            name:"a",
+            x: [aList[i], aList[i]],
+            y: [0, math.parse(f).evaluate({x: aList[i]})],
+            line: {color: "#FF0000"},
+            showlegend: (i < 1)
+        }
+        data.push(trace);
+        trace = {
+            type: "scatter",
+            mode: "lines",
+            name:"b",
+            x: [bList[i], bList[i]],
+            y: [0, math.parse(f).evaluate({x: bList[i]})],
+            line: {color: "#00FF00"},
+            showlegend: (i < 1)
+        }
+        data.push(trace);
+    }
+    return data;
+}
+
 function compute(){
     var error = "";
     var chart = document.getElementById('chart');
@@ -137,43 +175,11 @@ function compute(){
         }
     }
 
-    var trace1 = {
-        type: "scatter",
-        name: "" + f,
-        mode: "lines",
-        x: domain,
-        y: y,
-        line: {color: "#0000FF"},
-        showLegend: true
-    };
-
-    var data = [trace1];
-
-    for(let i = 0; i < aList.length; i++){
-        var trace = {
-            type: "scatter",
-            mode: "lines",
-            name:"a",
-            x: [aList[i], aList[i]],
-            y: [0, math.parse(f).evaluate({x: aList[i]})],
-            line: {color: "#FF0000"},
-            showlegend: (i < 1)
-        }
-        data.push(trace);
-        trace = {
-            type: "scatter",
-            mode: "lines",
-            name:"b",
-            x: [bList[i], bList[i]],
-            y: [0, math.parse(f).evaluate({x: bList[i]})],
-            line: {color: "#00FF00"},
-            showlegend: (i < 1)
-        }
-        data.push(trace);
-    }
+    var data = generateData(domain, aList, f, y, bList);
+    
     var layout = {
         title: {
-            text: 'Nazov grafu',
+            text: 'Metóda bisekcie',
             font: {
                 color: "#ff7900"
             }

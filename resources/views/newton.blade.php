@@ -29,18 +29,30 @@
                 také rešenie, ktoré spĺňa zadané kritérium.
             </p>
             <p class="pt-2">
-                Aby sme získlai vzťah medzi\(x_i\) a \(x_{i + 1}\), vrátime sa k dotyčnici \(t_0\). Sklon dotyčnice \(t_0\) je \(f'(x_0)\), t. j. 
+                Aby sme získali vzťah medzi\(x_i\) a \(x_{i + 1}\), vrátime sa k dotyčnici \(t_0\). Sklon dotyčnice \(t_0\) je \(f'(x_0)\), t. j. 
                 hodnota derivácie funkcie \(f(x)\) v bode x = \(x_0\). Dotyčnica \(t_0\) prechádza bodom \((x_0, f(x_0))\) a aplikovaním smernicového 
                 tvaru priamky na \(t_0\) dostávame $$y-f(x_0) = f'(x_0)(x_1 - x_0)$$.
             </p>
             <p class="pt-2">
-                Bod \((x_1, 0)\) letí na \(t_0\), preto jeho súradnice musia spĺňať rovnicu \(t_0\), t. j. \(x = x_1\) a \(y = 0\) $$0 - f(x_0) = f'(x0)(x_1 - x_0).$$
+                Bod \((x_1, 0)\) leží na \(t_0\), preto jeho súradnice musia spĺňať rovnicu \(t_0\), t. j. \(x = x_1\) a \(y = 0\) $$0 - f(x_0) = f'(x0)(x_1 - x_0).$$
             </p>
             <p>
                 Predelením obidvoch strán rovnice \(f'(x_0)\) (za predpokladu\(f'(x_0) \not=0 \)) máme $$\frac{-f(x_0)}{f'(x_0)} = x_1 - x_0$$
                 a vyjadrením \(x_1\) dostaneme $$x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}.$$
             </p>
-
+            <h2>
+                Vzorový príklad
+            </h2>
+            <p>
+                Newtonovou metódou nájdite riešenie rovnice \(4x^3+2x+1 = 0;x_0=0\) <br>
+                \( x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} = \) \(x_i - \frac{4x_i^3 + 2x_i + 1}{12x_i^2+2}\)
+            </p>
+            <p>
+                \(x_1 = 0 - \frac{4 \cdot 0^3 +2 \cdot 0 + 1}{12 \cdot 0^2 + 2}\) \(\Rightarrow x_1 = -0.5\) <br>
+                \(x_2 = -0.5 - \frac{4 \cdot (-0.5)^3 +2 \cdot (-0.5) + 1}{12 \cdot (-0.5)^2 + 2}\) \(\Rightarrow x_2 = -0.4\) <br>
+                \(x_3 = -0.4 - \frac{4 \cdot (-0.4)^3 +2 \cdot (-0.4) + 1}{12 \cdot (-0.4)^2 + 2}\) \( \Rightarrow x_3 = -0.3857\) <br>
+                Pri ďalšej iterácii pre \(x_4\) dostaneme hodnotu, ktorej rozdiel oproti \(x_3\) je menej ako zastavovacie kritérium, preto tu výpočet končíme.
+            </p>
             <div class="relative mt-4">
                 <p class="text-base">
                     Pre správny výpočet prosím vyplňte všetky polia, nakoľko pre výpočet sú všetky potrebné. Funkciu však treba zadať v špecifickej syntaxi.
@@ -108,7 +120,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">compute</button>
+                        <button class="bg-white border-2 border-[#ff7900] text-[#ff7900] border-solid p-2 rounded-lg font-bold hover:bg-[#ff7900] hover:text-white hover:drop-shadow-lg" onclick="compute()">Vypočítaj</button>
                     </div>
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 pointer-events-none" id="errorModal">

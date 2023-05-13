@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome'); 
 })->name('welcome');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/bisekcia', function(){
@@ -51,6 +51,7 @@ Route::get('/newton', function(){
 
 Route::group([
     'prefix' => 'admin',
+    'middleware' => 'auth',
     'as' => 'admin.'], function () {
     
     Route::get('/', function(){

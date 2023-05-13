@@ -19,8 +19,8 @@
                     <div class="hidden lg:flex items-center">
                         <a href="/" class="py-4 px-2 text-white {{Route::current()->uri == "/" ? " border-b-4 border-white" : ""}} font-semibold">Domov</a>
                         <a href="/bisekcia" class="py-4 px-2 text-white {{Route::current()->uri == "bisekcia" ? " border-b-4 border-white" : ""}} font-semibold">Bisekcia</a>
-                        <a href="/cholesky" class="py-4 px-2 text-white {{Route::current()->uri == "cholesky" ? " border-b-4 border-white" : ""}} font-semibold">Cholesky</a>
-                        <a href="/integral" class="py-4 px-2 text-white  {{Route::current()->uri == "integral" ? " border-b-4 border-white" : ""}} font-semibold">N-C Kvadratúrne vzorce</a>
+                        <a href="/cholesky" class="py-4 px-2 text-white {{Route::current()->uri == "cholesky" ? " border-b-4 border-white" : ""}} font-semibold">Choleskyho rozklad</a>
+                        <a href="/integral" class="py-4 px-2 text-white  {{Route::current()->uri == "integral" ? " border-b-4 border-white" : ""}} font-semibold">Numerické riešenie integrálov</a>
                         <a href="/jacobi" class="py-4 px-2 text-white {{Route::current()->uri == "jacobi" ? " border-b-4 border-white" : ""}}  font-semibold">Jacobiho metóda</a>
                         <a href="/LURozklad" class="py-4 px-2 text-white {{Route::current()->uri == "LURozklad" ? " border-b-4 border-white" : ""}}  font-semibold">LU rozklad</a>
                         <a href="/newton" class="py-4 px-2 text-white {{Route::current()->uri == "newton" ? " border-b-4 border-white" : ""}} font-semibold">Newtnova metóda</a>
@@ -71,12 +71,12 @@
                 </li>
                 <li class="">
                     <a href="/cholesky" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "cholesky" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        Cholesky
+                        Choleskyho rozklad
                     </a>
                 </li>
                 <li class="">
                     <a href="/integral" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "integral" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        N-C kvadratúrne vzorce
+                        Numerické riešenie integrálov
                     </a>
                 </li>
                 <li class="">

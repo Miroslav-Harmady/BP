@@ -1,4 +1,4 @@
-function initializeL(n){
+function initializeMatrix(n){
     var a = [];
     for(let i = 0; i < n; i++){
         temp = [];
@@ -136,7 +136,8 @@ function printResult(l, u, x, y){
 
 function compute(){
     var error = "";
-    if((document.getElementById("inputA").value == "") || (document.getElementById("inputB").value == "")){
+    if((document.getElementById("inputA").value == "") || 
+        (document.getElementById("inputB").value == "")){
         showModal("Nevyplnili ste všetky polia. Pre správne fungovanie kalkulačky prosím vyplňte všetky polia.");
         return;
     }
@@ -148,8 +149,8 @@ function compute(){
         return;
     }
 
-    var u = initializeL(a.length);
-    var l = initializeL(a.length);
+    var u = initializeMatrix(a.length);
+    var l = initializeMatrix(a.length);
     var r = parseInt(document.getElementById("r").value); 
 
     for(let k = 0; k < a.length; k++){
@@ -166,7 +167,6 @@ function compute(){
             }
         }   
     }
-    
     var y = computeY(a.length, l, b, r);
     var x = computeX(a.length, u, y, r);
     printResult(l, u, x, y);

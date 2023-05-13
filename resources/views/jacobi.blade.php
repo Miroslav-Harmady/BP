@@ -172,8 +172,9 @@
                         </div>
                     </div>
                 </div>
-                <table id="table">
-                </table>
+                <div>
+                    <table class="mx-auto" id="table"></table>
+                </div>
             </div>
         </div>
     </div>

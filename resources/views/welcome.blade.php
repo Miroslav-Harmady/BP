@@ -13,11 +13,11 @@
         <div class="w-10/12 md:w-3/4 lg:w-3/4 text-lg text-center bg-white px-2 shadow-2xl">
             <h1 class="text-3xl text-center my-4 font-bold">Matematika pre geodetov</h1>
             <p class="pb-2">
-                Poznávate ten pocit, keď sa učíte matematiku a musíte mať otvorených nekonečný počet stránok, prtože sa potrebujete pozerať do skrípt, príklady sú na inej stránke
-                a kalkulačku si ešte msuíte aj sami dohľadať? 
+                Poznáte ten pocit, keď sa učíte matematiku a musíte mať otvorených nekonečný počet stránok, pretože sa potrebujete pozerať do skrípt, príklady sú na inej stránke
+                a kalkulačku si ešte musíte aj sami dohľadať? 
             </p>
             <p class="pb-2">
-                Tomu je od dnes koniec. Naša stránka obsahuje 6 vybraných tém z predmetu matematika 3, pričom každá téma obsahuje teóriu, vzorovo riešený príklad s vysvetlením 
+                To sa dnes končí. Naša stránka obsahuje 6 vybraných tém z predmetu matematika 4, pričom každá téma obsahuje teóriu, vzorovo riešený príklad s vysvetlením 
                 a kalkulačku. 
             </p>
         </div>
