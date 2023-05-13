@@ -48,23 +48,23 @@
                 Výhoda metódy LU rozkladu je hlavne v prípadoch, keď riešime viac sústav s rovnakou maticou a rôznymi pravými stranami.
             </p>
 
-            <h2 class="text-2xl 10">
+            <h2 class="text-2xl py-2">
                 Vzorový príklad
             </h2>
             <p>
                 Metódou LU rozkladu nájdite riešenie sústavy lineárnych rovníc.
-                $$8x_1-6x_2+2x_3 = 0$$
-                $$-6x_1+7x_2-4x_3 = 5$$
-                $$2x_1-4x_2+3x_3 = 5$$
+                $$3x_1-2x_2 = 4$$
+                $$6x_1-5x_2+x_3 = 6$$
+                $$-3x_1+4x_3 = -10$$
             </p>
             <p>
                 Pôjdeme podľa vzorca \(LU = A\)
             </p>
             <p>
                 \(\begin{pmatrix}
-               8 & -6 & 2 \\
-               -6 & 7 & -4\\
-               2 & -4 & 3
+               3 & -2 & 0 \\
+               6 & -5 & 1\\
+               -3 & 0 & 4
                \end{pmatrix} =\)
 
                \(
@@ -80,32 +80,32 @@
                 0& 0 & u_{33}
                \end{pmatrix}\)
             </p>
-            <p>násobením matíc postupne vyrátame jednotlivé neznáme prvky <br>  \(u_{11} = 8\) <br> \(u_{12} = -6\) <br> \(u_{13} = 2\) <br>
-                \(-6= l_{21} \cdot u_{11} \Rightarrow -6 = 8 \cdot l_{21} \Rightarrow l_{21} = -0.75\) <br>
-                \(7 = l_{21}u_{12} + u_{22} \Rightarrow 7 = (-0.75)(-6) + u_{22} \Rightarrow u_{22} = 2.5 \)<br>
-                \(-4 = l_{21}u_{13} + u_{23} \Rightarrow -4 = (-0.75)2 + u_{23} \Rightarrow u_{23} = -2.5 \) <br>
-                \(2 = l_{31}u_{11} \Rightarrow 2 = 8l_{31} \Rightarrow l_{31} = 0.25 \) <br>
-                \(-4 = l_{31}u_{12} + l_{32}u_{22} \Rightarrow 0.25(-6) + 2.5l_{32} \Rightarrow l_{32} = -1 \)
-                \(3 =  l_{31}u_{13} + l_{32}u_{23} + u_{33} \Rightarrow 0.25 \cdot 2 + (-1)(-0.25) + u_{33} \Rightarrow u_{33} = 0\)
+            <p>násobením matíc postupne vyrátame jednotlivé neznáme prvky <br>  \(u_{11} = 3\) <br> \(u_{12} = -2\) <br> \(u_{13} = 0\) <br>
+                \(6 = l_{21} \cdot u_{11} \Rightarrow 6 = 3 \cdot l_{21} \Rightarrow l_{21} = 2\) <br>
+                \(-5 = l_{21}u_{12} + u_{22} \Rightarrow -5 = -4 + u_{22} \Rightarrow u_{22} = -1 \)<br>
+                \(1 = l_{21}u_{13} + u_{23} \Rightarrow 1 = 0 + u_{23} \Rightarrow u_{23} = 1 \) <br>
+                \(-3 = l_{31}u_{11} \Rightarrow -3 = 3l_{31} \Rightarrow l_{31} = -1 \) <br>
+                \(0 = l_{31}u_{12} + l_{32}u_{22} \Rightarrow 0 = 2 - l_{32} \Rightarrow l_{32} = 2 \)<br>
+                \(4 =  l_{31}u_{13} + l_{32}u_{23} + u_{33} \Rightarrow 4 = 0 + 2 + u_{33} \Rightarrow u_{33} = 2\)
             </p>
             <p class="py-2">
                 \(\begin{pmatrix}
-                8 & -6 & 2 \\
-                -6 & 7 & -4\\
-                2 & -4 & 3
+                3 & -2 & 0 \\
+               6 & -5 & 1\\
+               -3 & 0 & 4
                 \end{pmatrix} =\)
 
                 \(
                \begin{pmatrix}
                 1& 0 &0  \\
-                -0.75& 1 & 0 \\
-                0.25& -1 & 1
+                2& 1 & 0 \\
+                -1& 2 & 1
                 \end{pmatrix}\cdot\)
 
                 \(\begin{pmatrix}
-                8& -6 & 2 \\
-                0& 2.5 & -2.5 \\
-                0& 0 & 0
+                3& -2 & 0 \\
+                0& -1 & 1 \\
+                0& 0 & 2
                \end{pmatrix}\) 
             </p>
 
@@ -113,9 +113,9 @@
                 Vypočítanú L maticu dosadíme do \(Ly = b\) a vypočítame prvky vektora y <br>
                 \(
                 \begin{pmatrix}
-                    1& 0 &0  \\
-                    -0.75& 1 & 0 \\
-                    0.25& -1 & 1
+                1& 0 &0  \\
+                2& 1 & 0 \\
+                -1& 2 & 1
                     \end{pmatrix}\cdot\)
                 \(\begin{pmatrix} 
                 y_1 \\
@@ -123,22 +123,22 @@
                 y_3 \end{pmatrix} = \)
                
                 \(\begin{pmatrix} 
-                0\\
-                5 \\
-                5 \end{pmatrix} \Rightarrow\)
+                4\\
+                6 \\
+                -10 \end{pmatrix} \Rightarrow\)
                 \(
                 \begin{matrix}  
-                 y_1 = 0\\
-                 y_2 = 5\\
-                 y_3 = 10
+                 y_1 = 4\\
+                 y_2 = -2\\
+                 y_3 = -2
                  \end{matrix} \)
             </p>
             <p>
                 Podobne dosadením vektora y do \(Ux = y\) vypočítame prvky vektora x <br>
                 \(\begin{pmatrix}
-                8& -6 & 2 \\
-                0& 2.5 & -2.5 \\
-                0& 0 & 0
+                3& -2 & 0 \\
+                0& -1 & 1 \\
+                0& 0 & 2
                \end{pmatrix}\cdot\)
                \(\begin{pmatrix} 
                 x_1 \\
@@ -146,15 +146,15 @@
                 x_3 \end{pmatrix} = \)
                 \(
                 \begin{pmatrix}  
-                 0\\
-                 5\\
-                 10
+                 4\\
+                 -2\\
+                 -2
                  \end{pmatrix}\Rightarrow\)
                  \(
                 \begin{matrix}  
-                 x_1 = 1.5\\
-                 x_2 = 2\\
-                 x_3 = 0
+                 x_1 = 2\\
+                 x_2 = 1\\
+                 x_3 = -1
                  \end{matrix} \)
             </p>
 

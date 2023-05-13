@@ -93,8 +93,28 @@
                 Na konvergenciu Jacobiho metódy jepostačujúce, aby matica A bola <em>diagonálne dominantná</em>. To, či je matica riadkovo (resp. stĺpcovo) diagonálne dominantná znamená,
                 že jej diagonálne prvky sú väčšieako suma ostatných prvkov v príslušnom riadku(resp. stĺpci).
             </p>
-            <p>
+            <p class="pb-2">
                 Hlavnou výhodou Jacobiho metódy je ľahká paralelizácia a vektorizácia algoritmu.
+            </p>
+
+            <h2 class="text-2xl py-2">
+                Vzorový príklad
+            </h2>
+
+            <p class="mb-1">
+                Pomocou Jacobiho metódy nájdite riešenie danej sústavy rovníc po tretej iterácii, ak počiatočná apoximácia riešenia je \(x^{(0)} = (0;0;0)^T\). Výpočet vykonajte na štyri desatinné miesta.
+                $$7x_1 -0,5x_2+4x_3 = 12,1$$
+                $$2,3x_1 + 13x_2 -0,9x_3 = 15,2$$
+                $$0,22x_1 + 3,2x_2 + 11x_3 = 11,3$$
+            </p>
+            <p class="mb-1">
+                Aby sme získali \(x^{(1)}\) dosadíme hodnoty zo zadania do iteračnej formuly spomenutej vyššie a dostávame \(x^{(1)} = (1.7286; 1.1692; 1.0273)\)<br>
+            </p>
+            <p class="mb-1">
+                V druhej iterácii pokračujeme rovnako s tým že za \(x^{(k-1)}\) teraz dosadíme \(x^{(1)}\) a vypočtom dostávame \(x^{(2)} = (1.2251; 0.9345; 0.6526)\)
+            </p>
+            <p class="mb-1">
+                Podobným spôsobom dsotávame \(x^{(3)} = (1.4224;0.9977;0.7309)\), čo predstavuje konečný výsledok nášho zadania.
             </p>
       
             <div class="relative mt-4">

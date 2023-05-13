@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
-    {{-- <link rel="stylesheet" href="{{ asset('/public/build/assets/app-5005f49e.css') }}"> --}}
     <title>Document</title>
 </head>
     <nav class="bg-[#ff7900]">
