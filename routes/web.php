@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome'); 
 })->name('welcome');
 
-Auth::routes(['register' => false]);
+Auth::routes(/*['register' => false]*/);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/bisekcia', function(){
