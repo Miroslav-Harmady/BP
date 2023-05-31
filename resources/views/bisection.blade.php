@@ -62,7 +62,7 @@
             @foreach ($collection as $item)
                 <div>
                     <p class="mb-2 ml-4">{{++$counter . ")"}}</p>
-                    <p class="ml-8">\({{$item->function}}\), zastavovacie kritérium \(|f(x_i)| < {{$item->dispersion}}\)</p>
+                    <p class="ml-8">\({{$item->function}}\), \(I = <{{$item->interval}}>\); zastavovacie kritérium \(|f(x_i)| < {{$item->dispersion}}\)</p>
                     <p class="my-2"> <b>Výsledok: </b>{{$item->result}}; iterácie: {{$item->iterations}}</p>
                 </div>    
             @endforeach
