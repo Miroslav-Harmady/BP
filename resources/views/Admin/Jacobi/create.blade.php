@@ -43,7 +43,7 @@
                                     <label for="dispersion">Zastavovacie kritérium:</label>
                                 </div>
                                 <div>
-                                    <input type="number" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" step="0.001" placeholder="0.001" value="{{$errors->any() ? old('dispersion') : ''}}">
+                                    <input type="number" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" step="any" placeholder="0.001" value="{{$errors->any() ? old('dispersion') : ''}}">
                                 </div>
                                 @error('dispersion')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">

@@ -17,7 +17,7 @@
                 Choleskyho rozklad
             </h1>
             <p class="">
-                Nech A je symetrická pozitívne definitná matica, potom existuje dolno-trojuholníková matica L s kladnými diagonálnymi prvkami taká, že platí
+                Nech \(\mathbf A\) je symetrická pozitívne definitná matica, potom existuje dolno-trojuholníková matica \(\mathbf L\) s kladnými diagonálnymi prvkami taká, že platí
            </p>
 
            <div class="py-2 ">
@@ -55,10 +55,15 @@
             </div>
         
             <p class="py-2 ">
-                Postup riešenia sústavy Ax = b metódou <em>Choleskyho rozkladu</em> je nasledovný. Maticu A nahradíme v sústave súčinom \(LL^T\) a označíme \(L^Tx = y\).
-                Dostaneme \(Ly = b\). Najprv vyreišime sústavu Ly = b <em>doprednou substitúciou</em> a potom dosadíme y do prvej strany sústavy \(L^Tx = y\), 
+                Postup riešenia sústavy \(\mathbf {Ax = b}\) metódou <em>Choleskyho rozkladu</em> je nasledovný. Maticu \(\mathbf A\) nahradíme v sústave súčinom \(\mathbf {LL}^T\) a označíme \(\mathbf L^T \mathbf {x = y}\).
+                Dostaneme \(\mathbf {Ly = b}\). Najprv vyriešime sústavu \(\mathbf {Ly = b}\) <em>doprednou substitúciou</em> a potom dosadíme \(\mathbf y\) do pravej strany sústavy \(\mathbf L^T \mathbf {x = y}\), 
                 ktorú vyriešime <em>spätnou substitúciou</em>.
             </p>
+
+            <h2 class="text-2xl py-2 font-semibold border-b-2">
+                Vzorový príklad
+            </h2>
+
             <p>
                 Metódou Choleskyho rozkladu nájdite riešenie sústavy lineárnych rovníc.
                 $$25x_1 + 15x_2 -5x_3 = 5$$
@@ -66,7 +71,7 @@
                 $$-5x_1 + 0x_2 + 11x_3 = 7$$
             </p>
             <p>
-                Po dosadení do vzoca pre výpočet matice L dostaneme maticu L v tvare: <br>
+                Po dosadení do vzorca pre výpočet matice \(\mathbf L \) dostaneme maticu \(\mathbf L\) v tvare: <br>
                 \(L=
                  \begin{pmatrix} 
                  5 & 0 & 0 \\
@@ -74,7 +79,7 @@
                  -1 & 1 & 3 \end{pmatrix}\)
             </p>
             <p>
-                ďalej postupujeme rovnako ako pri riešení systémov lineárnych rovníc pomocou LU rozkladu. Vypočítanú L meticu dosadíme do \(Ly=b\) a vypočítame prvky vektora y <br>
+                ďalej postupujeme rovnako ako pri riešení systémov lineárnych rovníc pomocou LU rozkladu. Vypočítanú \(\mathbf L\) maticu dosadíme do \(\mathbf {Ly=b}\) a vypočítame prvky vektora \(\mathbf y\) <br>
                 \(
                  \begin{pmatrix} 
                  5 & 0 & 0 \\
@@ -98,7 +103,7 @@
             </p>
 
             <p>
-               Dosadením vektora y do pravej strany sústavy \(L^Tx=y\)vypočítame prvky vektoar x <br>
+               Dosadením vektora \(\mathbf y\) do pravej strany sústavy \(\mathbf L^T \mathbf {x=y}\) vypočítame prvky vektora \(\mathbf x\) <br>
                 \(
                 \begin{pmatrix} 
                 5 & 3 & -1 \\
@@ -120,16 +125,42 @@
                 x_2 = \frac{4}{9}\\
                 x_3 = \frac{2}{3} \end{matrix}\)
             </p>
+
+            <h2 class="text-2xl py-2 font-semibold border-b-2">
+                Neriešené príklady
+            </h2>
+
+            <p class="mb-2 ">
+                Pomocou metódy Choleskyho rozkladu matice vypočítajte nasledovné príklady. V prípade potreby zaokrúhľujte na 4 desatinné miesta.
+            </p>
+
+            @foreach ($collection as $item)
+                <div>
+                    <p class="mb-2 ml-4">{{++$counter . ")"}}</p>
+                    <p class="ml-8">\({{$item->matrix}}\)</p>
+                    <p class="my-2 font-bold">Výsledok:</p>
+                    <div class="w-3/4">
+                        <div class="flex justify-center">
+                            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
+                                <span class="mr-2">\(L={{$item->resultL}}\)</span>
+                                <span class="mr-2">\(x={{$item->resultY}}\)</span>
+                                <span class="mr-2">\(y={{$item->resultX}}\)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            @endforeach
+
             <div class="relative">
                 <p class="text-base sm:text-sm">
-                    Pre správny výpočet kalkulačky zadajte maticu v regulérnom tvare. Dodržiavajte prosím vzor ktorý vidíte dole v
+                    Pre správny výpočet kalkulačky musí byť matica regulárna. Dodržiavajte prosím vzor, ktorý vidíte dole
                     v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov.
                  </p>
                 <div class="grid grid-cols-1 z-3 mt-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 justify-items-center">
                         <div>
                             <div>
-                                <label for="inputA">Ľavá strana matice:</label>
+                                <label for="inputA">Matica sústavy:</label>
                             </div>
                             <div>
                                 <textarea required class="border-2 border-black border-solid rounded-lg p-1 m-0" name="inputA" id="inputA" cols="20" rows="10" placeholder="4, 6, -2&#10;6, 13, 1&#10;-2, 1, 6"></textarea>
@@ -138,7 +169,7 @@
 
                         <div>
                             <div>
-                                <label  for="inputB">Pravá strana matice:</label>
+                                <label  for="inputB">Vektor pravej strany:</label>
                             </div>
                             <div>
                                 <textarea required class="border-2 border-black border-solid rounded-lg p-1 m-0" name="inputB" id="inputB" cols="20" rows="10" placeholder="-6&#10;-5&#10;9"></textarea>

@@ -10,7 +10,7 @@
 <body>
      @include('Includes.adminNavbar')
     <h1 class="text-center text-2xl font-bold my-4">
-        N-C kvadratúrne vzorce - vytváranie
+        Numerické riešenie integrálov - vytváranie
     </h1>
     <div class="flex justify-center">
         <div class="w-1/2">
@@ -27,7 +27,7 @@
                                     <label for="function">f(x):</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="function" id="function" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="sem vlozte funkciu z latexu" value="{{$errors->any() ? old('function') : '' }}">
+                                    <input type="text" name="function" id="function" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="funkcia v latexu" value="{{$errors->any() ? old('function') : '' }}">
                                 </div>
                                 @error('function')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -75,7 +75,7 @@
                                     <label for="result">Výsledok:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="3.2, 7.4, 0.25" value="{{$errors->any() ? old('result') : '' }}">
+                                    <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="pravý, ľavý, stredný" value="{{$errors->any() ? old('result') : '' }}">
                                 </div>
                                 @error('result')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">

@@ -41,10 +41,10 @@
                             
                             <div>
                                 <div>
-                                    <label for="interval">Interval:</label>
+                                    <label for="interval">Počiatočný odhad riešenia:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="interval" id="interval" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->interval}}">
+                                    <input type="number" name="interval" id="interval" step="any" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->interval}}">
                                 </div>
                                 @error('interval')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -62,11 +62,29 @@
                                 <div>
                                     <select name="iterations" id="iterations" class="border-2 border-solid border-black rounded p-1 w-full">
                                         @for ($i = 1; $i < 11; $i++)
-                                            <option value="{{$i}}">{{$i}}</option>
+                                            <option value="{{$i}}" {{$item->iterations == $i ? 'selected' : ''}}>
+                                                {{$i}}
+                                            </option>
                                         @endfor
                                     </select>
                                 </div>
                                 @error('iterations')
+                                    <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
+                                        <p class="text-red-500 font-semibold">
+                                            {{ $message }}
+                                        </p>
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div>
+                                <div>
+                                    <label for="dispersion">Zastavovacie kritérium:</label>
+                                </div>
+                                <div>
+                                    <input type="number" step="any" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$item->dispersion}}">
+                                </div>
+                                @error('dispersion')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
                                         <p class="text-red-500 font-semibold">
                                             {{ $message }}
@@ -80,7 +98,7 @@
                                     <label for="result">Výsledok:</label>
                                 </div>
                                 <div>
-                                    <input type="text" step="0.001" name="result"  id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2345" value="{{$item->result}}">
+                                    <input type="number" step="any" name="result"  id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2345" value="{{$item->result}}">
                                 </div>
                                 @error('result')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">

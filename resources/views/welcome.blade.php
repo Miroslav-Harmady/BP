@@ -13,7 +13,7 @@
     <div class="flex justify-center">
         <div class="flex flex-col justify-items-center mt-4 p-2 w-10/12 md:w-3/4 lg:w-3/4 text-lg bg-white shadow-2xl">
             <div class=" text-center">
-                <h1 class="text-3xl text-center my-4 font-bold">Matematika pre geodetov</h1>
+                <h1 class="text-3xl text-center my-4 font-bold">Numerická matematika pre geodetov</h1>
                 <p class="pb-2">
                     Poznáte ten pocit, keď sa učíte matematiku a musíte mať otvorených nekonečný počet stránok, pretože sa potrebujete pozerať do skrípt, príklady sú na inej stránke
                     a kalkulačku si ešte musíte aj sami dohľadať? 
@@ -51,7 +51,7 @@
                                 <a href="/bisekcia" class="text-[#ff7900] hover:bg-[#ff7900] hover:text-white font-semibold p-1 rounded">Metóda bisekcie</a>
                             </li>
                             <li class="my-1">
-                                <a href="/cholesky" class="text-[#ff7900] hover:bg-[#ff7900] hover:text-white font-semibold p-1 rounded">Newtonova metóda</a>
+                                <a href="/newton" class="text-[#ff7900] hover:bg-[#ff7900] hover:text-white font-semibold p-1 rounded">Newtonova metóda</a>
                             </li>
                         </ul>
                     </li>

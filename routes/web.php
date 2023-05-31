@@ -23,30 +23,30 @@ Route::get('/', function () {
     return view('welcome'); 
 })->name('welcome');
 
-Auth::routes(/*['register' => false]*/);
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/bisekcia', function(){
-    return view('bisection', ['collection' => Bisection::all()]);
+    return view('bisection', ['collection' => Bisection::all(), 'counter' => 0]);
 });
 
 Route::get('/LURozklad', function(){
-    return view('LURozklad', ['collection' => LURozklad::all()]);
+    return view('LURozklad', ['collection' => LURozklad::all(), 'counter' => 0]);
 });
 
 Route::get('/cholesky', function(){
-    return view('cholesky', ['collection' => Cholesky::all()]);
+    return view('cholesky', ['collection' => Cholesky::all(), 'counter' => 0]);
 });
 
 Route::get('/integral', function(){
-    return view('integral', ['collection' => Integral::all()]);
+    return view('integral', ['collection' => Integral::all(), 'counter' => 0]);
 });
 
 Route::get('/jacobi', function(){
-    return view('jacobi', ['collection' => Jacobi::all()]);
+    return view('jacobi', ['collection' => Jacobi::all(), 'counter' => 0]);
 });
 Route::get('/newton', function(){
-    return view('newton', ['collection' => Newton::all()]);
+    return view('newton', ['collection' => Newton::all(), 'counter' => 0]);
 });
 
 Route::group([

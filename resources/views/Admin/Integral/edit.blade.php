@@ -10,7 +10,7 @@
 <body>
     @include('Includes.adminNavbar')
     <h1 class="text-center text-2xl font-bold my-4">
-        N-C kvadratúrne vzorce - úprava
+        Numerické riešenie integrálov - úprava
     </h1>
     <div class="flex justify-center">
         <div class="w-1/2">

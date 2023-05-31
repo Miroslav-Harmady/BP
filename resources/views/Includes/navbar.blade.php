@@ -18,12 +18,12 @@
                     </div>
                     <div class="hidden lg:flex items-center">
                         <a href="/" class="py-4 px-2 text-white {{Route::current()->uri == "/" ? " border-b-4 border-white" : ""}} font-semibold">Domov</a>
-                        <a href="/bisekcia" class="py-4 px-2 text-white {{Route::current()->uri == "bisekcia" ? " border-b-4 border-white" : ""}} font-semibold">Bisekcia</a>
-                        <a href="/cholesky" class="py-4 px-2 text-white {{Route::current()->uri == "cholesky" ? " border-b-4 border-white" : ""}} font-semibold">Choleskyho rozklad</a>
-                        <a href="/integral" class="py-4 px-2 text-white  {{Route::current()->uri == "integral" ? " border-b-4 border-white" : ""}} font-semibold">Numerické riešenie integrálov</a>
-                        <a href="/jacobi" class="py-4 px-2 text-white {{Route::current()->uri == "jacobi" ? " border-b-4 border-white" : ""}}  font-semibold">Jacobiho metóda</a>
                         <a href="/LURozklad" class="py-4 px-2 text-white {{Route::current()->uri == "LURozklad" ? " border-b-4 border-white" : ""}}  font-semibold">LU rozklad</a>
+                        <a href="/cholesky" class="py-4 px-2 text-white {{Route::current()->uri == "cholesky" ? " border-b-4 border-white" : ""}} font-semibold">Choleskyho rozklad</a>
+                        <a href="/jacobi" class="py-4 px-2 text-white {{Route::current()->uri == "jacobi" ? " border-b-4 border-white" : ""}}  font-semibold">Jacobiho metóda</a>
+                        <a href="/bisekcia" class="py-4 px-2 text-white {{Route::current()->uri == "bisekcia" ? " border-b-4 border-white" : ""}} font-semibold">Bisekcia</a>
                         <a href="/newton" class="py-4 px-2 text-white {{Route::current()->uri == "newton" ? " border-b-4 border-white" : ""}} font-semibold">Newtnova metóda</a>
+                        <a href="/integral" class="py-4 px-2 text-white  {{Route::current()->uri == "integral" ? " border-b-4 border-white" : ""}} font-semibold">Numerické riešenie integrálov</a>
                         {{-- <a href="/admin/index" class="py-4 px-2 text-white {{Route::current()->uri == "admin/index" ? " border-b-4 border-white" : ""}} font-semibold">Admin</a> --}}
                     </div>
                 </div>
@@ -60,28 +60,8 @@
         <div class="hidden lg:hidden mt-1" id="mobile-menu">
             <ul>
                 <li class="">
-                    <a href="/" class="block text-sm px-2 py-4 text-white bg-[#ff7900] font-semibold hover:text-[#ff7900] hover:bg-white ">
+                    <a href="/" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "/" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white ">
                         Domov
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/bisekcia" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "bisekcia" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white" >
-                        Bisekcia
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/cholesky" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "cholesky" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        Choleskyho rozklad
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/integral" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "integral" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        Numerické riešenie integrálov
-                    </a>
-                </li>
-                <li class="">
-                    <a href="/jacobi" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "jacobi" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        Jacobiho metóda
                     </a>
                 </li>
                 <li class="">
@@ -89,16 +69,37 @@
                         LU rozklad
                     </a>
                 </li>
+
+                <li class="">
+                    <a href="/cholesky" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "cholesky" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
+                        Choleskyho rozklad
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="/jacobi" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "jacobi" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
+                        Jacobiho metóda
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="/bisekcia" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "bisekcia" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white" >
+                        Bisekcia
+                    </a>
+                </li>
+                
                 <li class="">
                     <a href="/newton" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "newton" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
                         Newtnova metóda
                     </a>
                 </li>
-                {{-- <li class="">
-                    <a href="/admin/index" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "admin/index" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
-                        Admin
+
+                <li class="">
+                    <a href="/integral" class="block text-sm px-2 py-4 font-semibold {{Route::current()->uri == "integral" ? "text-[#ff7900] bg-white" : "text-white bg-[#ff7900]"}} hover:text-[#ff7900] hover:bg-white">
+                        Numerické riešenie integrálov
                     </a>
-                </li> --}}
+                </li>
+               
                 @if (Auth::user())
                     <li>
                         <form action="{{route('logout')}}" method="post">

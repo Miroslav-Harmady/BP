@@ -155,7 +155,6 @@ function compute(){
     generateTable("table2", intervals, h, f, 1, intervals.length, r );
     generateTable("table3", intervals, h, f, 0, intervals.length - 1, r);
     }catch(e){
-        console.log(e.message)
         return;
     }
 }

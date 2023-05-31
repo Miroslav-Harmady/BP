@@ -27,7 +27,7 @@
                                     <label for="matrix">Matica:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="matrix" id="matrix" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="sem vlozte maticu z latexu" value="{{$errors->any() ? old('matrix') : '' }}">
+                                    <input type="text" name="matrix" id="matrix" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="matica v latexu" value="{{$errors->any() ? old('matrix') : '' }}">
                                 </div>
                                 @error('matrix')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -43,7 +43,7 @@
                                     <label for="resultL">L matica:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="resultL" id="resultL" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultL') : '' }}">
+                                    <input type="text" name="resultL" id="resultL" placeholder="matica v latexu" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultL') : '' }}">
                                 </div>
                                 @error('resultL')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -58,7 +58,7 @@
                                     <label for="resultL">U matica:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="resultU" id="resultU" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultU') : '' }}">
+                                    <input type="text" name="resultU" id="resultU" placeholder="matica v latexu" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultU') : '' }}">
                                 </div>
                                 @error('resultU')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -74,7 +74,7 @@
                                     <label for="resultX">Vektor X:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="resultX" id="resultX" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultX') : '' }}">
+                                    <input type="text" name="resultX" id="resultX" placeholder="matica v latexu" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultX') : '' }}">
                                 </div>
                                 @error('resultX')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -90,7 +90,7 @@
                                     <label for="resultY">Vektor Y:</label>
                                 </div>
                                 <div>
-                                    <input type="text" name="resultY" id="resultY" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultY') : '' }}">
+                                    <input type="text" name="resultY" id="resultY" placeholder="matica v latexu" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultY') : '' }}">
                                 </div>
                                 @error('resultY')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">

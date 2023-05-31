@@ -22,6 +22,7 @@ class Newton extends Controller
         $rules = [
             'function' => 'required',
             'interval' => 'required',
+            'dispersion' => 'required|numeric|min:0',
             'iterations' => 'required',
             'result' => 'required'
         ];
@@ -41,6 +42,7 @@ class Newton extends Controller
         $newton = new Nwton;
         $newton->function = $request->input('function');
         $newton->interval = $request->input('interval');
+        $newton->dispersion = $request->input('dispersion');
         $newton->iterations = $request->input('iterations');
         $newton->result = $request->input('result');
         $newton->save();
@@ -60,6 +62,7 @@ class Newton extends Controller
         $rules = [
             'function' => 'required',
             'interval' => 'required',
+            'dispersion' => 'required',
             'iterations' => 'required',
             'result' => 'required'
         ];
@@ -79,6 +82,7 @@ class Newton extends Controller
         $newton = Nwton::where('id', $id)->update([
             'function' => $request->input('function'),
             'interval' => $request->input('interval'),
+            'dispersion' => $request->input('dispersion'),
             'iterations' => $request->input('iterations'),
             'result' => $request->input('result'),
         ]);

@@ -18,18 +18,19 @@
             </h1>
            <p>
             Jacobiho metóda je jedna z <em>iteračných metód</em>. Výsledky iteračných metód nemusia byť nutne presné, nakoľko dochádza k nepresnostiam pri zaokrúhľovaní, alebo pri chybách samotných metód. 
-            Práve preto vždy hľadáme len približné riešenie odpovedajúce vopred zadanej presnosti. Najrpv si zvolíme <em>počiatočnú aproximáciu riešenia</em> \(x^{(0)}\), ktorá sa postupom iterácii spresňuje. 
+            Práve preto vždy hľadáme len približné riešenie odpovedajúce vopred zadanej presnosti. Najprv si zvolíme <em>počiatočnú aproximáciu riešenia</em> \(x^{(0)}\), ktorá sa postupom iterácií spresňuje. 
             Výpočet je zastavovaný <em>zastavovacou podmienkou</em>. 
            </p>
 
             <p>
-                Princíp <em>Jacobiho metódy</em> vysvetlíme na systéme troch lineárnych rovníc o troch neznámych $$a_{11}x_1 + a_{12}x_2 + a_{13}x_3$$
-                $$a_{21}x_1 + a_{22}x_2 + a_{2n}x_3$$
-                $$a_{31}x_1 + a_{32}x_2 + a_{3n}x_3$$
+                Princíp <em>Jacobiho metódy</em> vysvetlíme na systéme troch lineárnych rovníc o troch neznámych 
+                $$a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1$$
+                $$a_{21}x_1 + a_{22}x_2 + a_{2n}x_3  = b_2$$
+                $$a_{31}x_1 + a_{32}x_2 + a_{3n}x_3 = b_3$$
             </p>
 
             <p>
-                Každú s rovníc vydelíme koeficientom \(a_{ii}\) za predpokladu, že \(a_{ii} \not= 0 \) 
+                Každú z rovníc vydelíme koeficientom \(a_{ii}\) za predpokladu, že \(a_{ii} \not= 0 \) 
                 $$x_1 + \frac{a_{12}}{a_{11}}x_2 + \frac{a_{13}}{a_{11}}x_3 = \frac{b_{1}}{a_{11}},$$
                 $$\frac{a_{21}}{a_{22}}x_1 + x_2  \frac{a_{23}}{a_{22}}x_3 = \frac{b_{2}}{a_{22}},$$
                 $$\frac{a_{31}}{a_{33}}x_2 + \frac{a_{32}}{a_{33}}x_2 +  x_3 = \frac{b_{3}}{a_{33}}.$$
@@ -47,18 +48,18 @@
 
             <p class="py-2">
                 \(\begin{pmatrix}
-                    x1\\
-                    x2\\
-                    x3 
+                    x_1\\
+                    x_2\\
+                    x_3 
                 \end{pmatrix}\) =  \(\begin{pmatrix}
                 \color{Blue} 0 & - \frac{a_{12}}{a_{11}} & - \frac{a_{13}}{a_{11}} \\
                 - \frac{a_{21}}{a_{22}} & \color{Blue} 0 & - \frac{a_{23}}{a_{22}} \\
                 - \frac{a_{31}}{a_{33}} & - \frac{a_{32}}{a_{33}} & \color{Blue} 0
-                \end{pmatrix} \cdot \) \(\begin{pmatrix} x1\\ x2\\ x3 \end{pmatrix} + \)
-                \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b2}{a_{22}}\\ \frac{b3}{a_{33}} \end{pmatrix}\)
+                \end{pmatrix} \cdot \) \(\begin{pmatrix} x_1\\ x_2\\ x_3 \end{pmatrix} + \)
+                \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b_2}{a_{22}}\\ \frac{b_3}{a_{33}} \end{pmatrix}\)
             </p>
             <p>
-                Iteračná formula pre výpočet vektora \(x^{\color{Green}{(k)}}\), k = 1, ..., bude potom mať tvar
+                Iteračná formula pre výpočet vektora \(x^{\color{Green}{(k)}}\), \(\color{Green}{k}\) = 1, ..., bude potom mať tvar
             </p>
 
             <p class="text-sm md:text-lg lg:text-lg">
@@ -72,32 +73,32 @@
 
             <p class="py-2">
                 \(\begin{pmatrix}
-                    x1^{\color{Green}{(k)}}\\
-                    x2^{\color{Green}{(k)}}\\
-                    x3^{\color{Green}{(k)}} 
+                    x_1^{\color{Green}{(k)}}\\
+                    x_2^{\color{Green}{(k)}}\\
+                    x_3^{\color{Green}{(k)}} 
                 \end{pmatrix}\) =  \(\begin{pmatrix}
                 \color{Blue} 0 & - \frac{a_{12}}{a_{11}} & - \frac{a_{13}}{a_{11}} \\
                 - \frac{a_{21}}{a_{22}} & \color{Blue} 0 & - \frac{a_{23}}{a_{22}} \\
                 - \frac{a_{31}}{a_{33}} & - \frac{a_{32}}{a_{33}} & \color{Blue} 0
-                \end{pmatrix} \cdot \) \(\begin{pmatrix} x1^{\color{Red}{(k-1)}}\\ x2^{\color{Red}{(k-1)}}\\ x3^{\color{Red}{(k-1)}} \end{pmatrix} + \)
-                \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b2}{a_{22}}\\ \frac{b3}{a_{33}} \end{pmatrix}\),
+                \end{pmatrix} \cdot \) \(\begin{pmatrix} x_1^{\color{Red}{(k-1)}}\\ x_2^{\color{Red}{(k-1)}}\\ x_3^{\color{Red}{(k-1)}} \end{pmatrix} + \)
+                \(\begin{pmatrix} \frac{b_1}{a_{11}}\\ \frac{b_2}{a_{22}}\\ \frac{b_3}{a_{33}} \end{pmatrix}\),
             </p>
             <p>
-                Kde horný index k označuje poradie iterácie. Horné indexy same zámere zvýraznili zelenou a červenou farbou, aby sme neskôr mohli poukázať na rozdiel medzi Jacobiho a Gaussovou-Seidelovou metódou. Je tiež dôležité si uvedomiť, že nahlavnej diagonále mám iba nulové prvky.
+                kde horný index \(\color{Green}{k}\) označuje poradie iterácie. Horné indexy sme zámerne zvýraznili zelenou a červenou farbou. Je tiež dôležité si uvedomiť, že na hlavnej diagonále máme iba nulové prvky.
             </p>
             <p>
-                Všeobecne <em>Jacobiho metódu</em> môžeme napísať nasledovne: Vybrme i-tú rovnicu
+                Všeobecne <em>Jacobiho metódu</em> môžeme napísať nasledovne: Vyberme \(i\)-tú rovnicu
                 $$\sum_{j=1}^{n}a_{ij}x_j = b_i$$
                 a iteračný zápis výpočtu hodnoty \(x_i\) bude nasledovný
-                $$x_i^{\color{Green}{(k)}} = \frac{1}{a_{i,i}} \left( b_i - \sum_{j=1}a_{ij}x{j}^{\color{Red}{(k-1)}} \right)$$
-                Na konvergenciu Jacobiho metódy jepostačujúce, aby matica A bola <em>diagonálne dominantná</em>. To, či je matica riadkovo (resp. stĺpcovo) diagonálne dominantná znamená,
-                že jej diagonálne prvky sú väčšieako suma ostatných prvkov v príslušnom riadku(resp. stĺpci).
+                $$x_i^{\color{Green}{(k)}} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1}a_{ij}x_{j}^{\color{Red}{(k-1)}} \right).$$
+                Na konvergenciu Jacobiho metódy je postačujúce, aby matica \(\mathbf A\) bola <em>diagonálne dominantná</em>. To, či je matica riadkovo (resp. stĺpcovo) diagonálne dominantná znamená,
+                že jej diagonálne prvky sú väčši eako suma ostatných prvkov v príslušnom riadku (resp. stĺpci).
             </p>
             <p class="pb-2">
                 Hlavnou výhodou Jacobiho metódy je ľahká paralelizácia a vektorizácia algoritmu.
             </p>
 
-            <h2 class="text-2xl py-2">
+            <h2 class="text-2xl py-2 font-semibold border-b-2">
                 Vzorový príklad
             </h2>
 
@@ -117,16 +118,33 @@
                 Podobným spôsobom dsotávame \(x^{(3)} = (1.4224;0.9977;0.7309)\), čo predstavuje konečný výsledok nášho zadania.
             </p>
       
+            <h2 class="text-2xl py-2 font-semibold border-b-2">
+                Neriešené príklady
+            </h2>
+
+            <p class="mb-2 ">
+               Pomocou Jacobiho metódy nájdite riešenie danej sústavy rovníc, ak počiatočná aproximácia riešenia \(x^{(0)} = (0; 0; 0)^T\). V prípade potreby zaokrúhľujte na 4 desatinné miesta.
+            </p>
+
+            @foreach ($collection as $item)
+                <div>
+                    <p class="mb-2 ml-4">{{++$counter . ")"}}</p>
+                    <p class="mb-2 ml-4">Nájdite výledok metódy po {{$item->iterations}}. iterácii</p>
+                    <p class="ml-8">\({{$item->matrix}}\)</p>
+                    <p class="my-2 ml-4"><b> Výsledok: </b>({{ join("; ", explode(",", $item->result)) }})</p>
+                </div>    
+            @endforeach
+
             <div class="relative mt-4">
                 <p class="text-base sm:text-sm">
-                    Pre správny výpočet kalkulačky zadajte maticu v regulérnom tvare. Dodržiavajte prosím vzor ktorý vidíte dole v
-                    v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkova nezabudnite vyplniť všetky polia nakoľko sú všetky povinné.
+                    Pre správny výpočet kalkulačky zadajte regulárnu maticu. Dodržiavajte prosím vzor, ktorý vidíte dole v
+                    v nevyplnených poliach. Dávajte si taktiež pozor na nežiadúce čiarky na konci riadkov a nezabudnite vyplniť všetky polia, nakoľko sú všetky povinné.
                  </p>
                 <div class="grid grid-cols-1 z-3 pb-4">
                     <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center mb-4" >
                         <div>
                             <div>
-                                <label for="inputA">Ľavá strana matice:</label>        
+                                <label for="inputA">Matica sústavy:</label>        
                             </div>
                             <div>
                                 <textarea name="inputA" id="inputA" class="border-2 border-black border-solid rounded-lg p-1 m-0" cols="20" rows="10" placeholder="4, 6, 0&#10;6, 13, 1&#10;0, 1, 6"></textarea>
@@ -135,7 +153,7 @@
                     
                         <div>
                             <div>
-                                <label for="inputB">Pravá strana matice:</label>
+                                <label for="inputB">Vektor pravej strany:</label>
                             </div>
                             <div>
                                 <textarea name="inputB" id="inputB" class="border-2 border-black border-solid rounded-lg p-1 m-0" cols="20" rows="10" placeholder="-6&#10;-5&#10;9"></textarea>

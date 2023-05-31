@@ -48,10 +48,6 @@ class Cholesky extends Controller
         return redirect()->route('admin.cholesky.index');
     }
 
-    public function show($id){
-        //
-    }
-
     public function edit($id){
         $item = Chol::find($id);
         return view('admin.cholesky.edit', ['item' => $item]);

@@ -29,7 +29,7 @@
                                     <label for="matrix">Matica:</label>
                                 </div>  
                                 <div>
-                                    <input type="text" name="matrix" id="matrix" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->left}}">
+                                    <input type="text" name="matrix" id="matrix" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$item->matrix}}">
                                 </div>
                                 @error('matrix')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -67,7 +67,7 @@
                                     <label for="dispersion">Zastavovacie kritérium:</label>
                                 </div>
                                 <div>
-                                    <input type="number" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$item->dispersion}}">
+                                    <input type="number" name="dispersion" id="dispersion" step="any" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$item->dispersion}}">
                                 </div>
                                 @error('dispersion')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">

@@ -27,7 +27,7 @@
                                     <label for="function" class="mb-2">f(x):</label> 
                                 </div>
                                 <div>
-                                    <input type="text" name="function" id="function" placeholder="sem vlozte funkciu z latexu" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('function') : '' }}">
+                                    <input type="text" name="function" id="function" placeholder="funkcia v latexu" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('function') : '' }}">
                                 </div>
                                 @error('function')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -53,27 +53,12 @@
                                 @enderror
                             </div>
 
-                            {{-- <div>
-                                <div>
-                                    <label for="approximation" class="truncate">Počet desatinných miest:</label>
-                                </div>
-                                <div>
-                                    <select name="approximation" id="approximation" class="border-2 border-solid border-black rounded p-1 w-full"> 
-                                        @for ($i = 2; $i < 5; $i++)
-                                        <option value={{$i}} {{($errors->any() && old('approximation') == $i) ? 'selected' : ''}}>{{$i}}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                                @error('approximation')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div> --}}
                             <div>
                                 <div>
                                     <label for="dispersion">Zastavovacie kriterium:</label>
                                 </div>
                                 <div>
-                                    <input type="number" step="0.001" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$errors->any() ? old('dispersion') : '' }}">
+                                    <input type="number" step="any" name="dispersion" id="dispersion" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="0.001" value="{{$errors->any() ? old('dispersion') : '' }}">
                                 </div>
                                 @error('dispersion')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">
@@ -108,7 +93,7 @@
                                     <label for="result">Výsledok:</label>                                    
                                 </div>
                                 <div>
-                                    <input type="text" name="result" id="result" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2345" value="{{$errors->any() ? old('result') : '' }}">
+                                    <input type="number" name="result" id="result" step="any" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="1.2345" value="{{$errors->any() ? old('result') : '' }}">
                                 </div>
                                 @error('result')
                                     <div class="border-2 border-red-500 rounded-xl p-1 mt-2">

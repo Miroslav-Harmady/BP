@@ -38,21 +38,9 @@
                                 @enderror
                             </div>
 
-                            {{-- <div>
-                                <div>
-                                    <label for="inputRight">Pravá strana matice:</label>
-                                </div>
-                                <div>
-                                    <input type="text" name="inputRight" id="inputRight" class="border-2 border-solid border-black rounded p-1 w-full" placeholder="sem vlozte maticu z latexu" value="{{$errors->any() ? old('inputRight') : '' }}">
-                                </div>
-                                @error('inputRight')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div> --}}
-
                             <div>
                                 <div>
-                                    <label for="resultL">Výsledok:</label>
+                                    <label for="resultL">L matica:</label>
                                 </div>
                                 <div>
                                     <input type="text" name="resultL" id="resultL" class="border-2 border-solid border-black rounded p-1 w-full" value="{{$errors->any() ? old('resultL') : '' }}">

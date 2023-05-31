@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->String('function');
             $table->String('interval');
+            $table->float('dispersion', 5, 4);
             $table->Integer('iterations');
             $table->float('result', 8, 4);
             $table->timestamps();

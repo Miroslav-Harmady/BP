@@ -61,7 +61,7 @@ class LURozklad extends Controller
 
     public function update(Request $request, $id){
         $rules = [
-            'matrix' => 'required|max:100',
+            'matrix' => 'required|max:300',
             'resultL' => 'required',
             'resultU' => 'required',
             'resultX' => 'required',

@@ -19,15 +19,14 @@ class Jacobi extends Controller
     }
 
     public function save(Request $request){
+        
         $rules = [
-            'matrix' => 'required|max:100',
-            'inputRight' => 'required',
-            'approximation' => 'required',
-            'dispersion' => 'required|numeric|min:0',
+            'matrix' => 'required|max:500',
+            //'approximation' => 'required',
+            'dispersion' => 'required|min:0',
             'iterations' => 'required',
             'result' => 'required'
         ];
-
         $messages = [
             'required' => "Vstupné pole musí byť vyplnené",
             'min' => "Zastavovacie kritérium musí byť väčšie ako :min"
@@ -40,7 +39,6 @@ class Jacobi extends Controller
                              ->withErrors($validator)
                              ->withInput();
         }
-
         $jacobi = new Jac;
         $jacobi->matrix = $request->input('matrix');
         $jacobi->iterations = $request->input('iterations');

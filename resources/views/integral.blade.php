@@ -18,16 +18,16 @@
             </h1>
         
             <p class="">
-                <em>Základná myšlienka</em> Newtonových - Cotesových kvadratúrnych vzorcov spočíva v tom,že funkciu \(f(x)\) <em>nahradíme</em> na intervale \(\left< a,b \right>\)
-                nejakou inou <em>jednoduchšou funkciou</em> \(P_m(x)\), v tomto prípad aproximačným alebo interpolačným polynómom stupňa m. Vo všeobecnosti platí, že pokiaľ je
-                funkcia \(P_m(x)\) dobrou aprosimáciou funkcie \(f(x)\), tak aj $$\int_{a}^{b}P_m(x)dx$$ je dobrou aproximáciou \(\int_a^bf(x)dx\)
+                <em>Základná myšlienka</em> Newtonových - Cotesových kvadratúrnych vzorcov spočíva v tom, že funkciu \(f(x)\) <em>nahradíme</em> na intervale \(\left< a,b \right>\)
+                nejakou inou <em>jednoduchšou funkciou</em> \(P_m(x)\), v tomto prípade aproximačným alebo interpolačným polynómom stupňa \(m\). Vo všeobecnosti platí, že pokiaľ je
+                funkcia \(P_m(x)\) dobrou aproximáciou funkcie \(f(x)\), tak aj $$\int_{a}^{b}P_m(x)dx$$ je dobrou aproximáciou \(\int_a^bf(x)dx\).
             </p>
             <p>
                 Postup výpočtu určitého integrálu potom môžeme zhrnúť do nasledovných bodov:
             </p>
             <p>
-                1. Interval \(\left< a,b \right>\) rozdelíme na n <em>rovnakých čiastkových intervalov</em> (nazývaných aj <em>podintervaly</em>) rovnakej dĺžky h, ktorú vypočítame
-                 $$h = \frac{b - a}{n}$$.
+                Interval \(\left< a,b \right>\) rozdelíme na \(n\) <em>rovnakých čiastkových intervalov</em> (nazývaných aj <em>podintervaly</em>) rovnakej dĺžky \(h\), ktorú vypočítame
+                 $$h = \frac{b - a}{n}.$$
             </p>
             <p>
                 Získali sme tak (n + 1) deliacich bodov, ktoré označíme \(x_i, i = 1,...,n + 1\). Platí 
@@ -45,17 +45,18 @@
                 </div>
             </div>   
             <p class="mt-2">
-                Na základe získaných poznatkov môžeme teda povedať, že všeobecný vzorec je: 
+               Všeobecný vzťah je: 
                 $$\int_{a}^{b}f(x)dx \approx h \cdot \sum_{i=1}^{n}f(x_i)$$
             </p>
-            <h2 class="text-2xl py-4">
+            <h2 class="text-2xl py-2 font-semibold border-b-2">
                 Vzorový príklad
             </h2>
             <p>
-                Vypočítajte približne hodnotu \(\int_{1}^{5}cos(x+3)dx\) pomocou zloženejobdĺžnikovej metódy, ak počet podintervalov n = 4. Vypočítajte pre ľavý krajný pravý krajný a stredný bod interpolácie.
+                Vypočítajte približne hodnotu \(\int_{1}^{5}\cos(x+3)dx\) pomocou obdĺžnikovej metódy, ak počet podintervalov n = 4. Vypočítajte pre ľavý krajný, pravý krajný a stredný bod interpolácie.
             </p>
             <p class="py-2">
-                Najskôr vypočítame dĺžku čiastkového intervalu h. \(h = \frac{b-a}{n} = \frac{5-1}{4} = 1\)
+                Najskôr vypočítame dĺžku čiastkového intervalu \(h = \frac{b-a}{n} = \frac{5-1}{4} = 1\) <br>
+                A teraz môžeme vypočítať funkčné hodnoty v bodoch interpolácie. 
             </p>
             <h3 class="text-xl py-3">
                 Ľavý krajný bod:
@@ -73,7 +74,7 @@
             <p>
                 
                 Pre pravý krajný bod nám stačí dopočítať hodnotu pre \(x_5\), \(f(x_5) = f(5)\approx-0.1455\) <br>
-                Súčtom hodnôt \(f(2) až f(5)\) dostávame výsledok \(1.8523\) 
+                Súčtom hodnôt \(f(2)\) až \(f(5)\) dostávame výsledok \(1.8523\) 
             </p>
             <h3 class="text-xl py-3">
                Stredný bod:
@@ -85,16 +86,42 @@
                 \(f(4.5)\approx 0.3466\)<br>
                 Po dosadení do vzorca uvedeného vyššie dostávame hodnotu \(1.8211\)
             </p>
+
+            <h2 class="text-2xl py-2 font-semibold border-b-2">
+                Neriešené príklady
+            </h2>
+
+            <p class="mb-2 ">
+                Použitím <em>obdĺžnikovej metódy</em> s použitím všetkých uzlových bodov vypočítajte s presnosťou na 4 desatinné miesta.
+            </p>
+
+            @foreach ($collection as $item)
+                <div>
+                    <p class="mb-2 ml-4">{{++$counter . ")"}}</p>
+                    <p class="ml-8">\(\int_{{{explode(",", $item->interval)[0]}}}^{{{explode(",", $item->interval)[1]}}}{{$item->function}}dx\); \(n = {{$item->n}}\)</p>
+                    <p class="my-2"> <b>Výsledok: </b></p>
+                    <p>
+                        Pravý: {{explode(",", $item->result)[0]}}
+                    </p>
+                    <p>
+                        Ľavý: {{explode(",", $item->result)[1]}}
+                    </p>
+                    <p>
+                        Stredný: {{explode(",", $item->result)[2]}}
+                    </p>
+                </div>    
+            @endforeach
+
             <div class="relative mt-4">
                 <p class="text-base">
                     Pre správny výpočet prosím vyplňte všetky polia, nakoľko pre výpočet sú všetky potrebné. Funkciu však treba zadať v špecifickej syntaxi.
-                     Ako zadávať ktoré operácie, či funkcie sa dozviete v dokuementácii na stránke <a href="https://mathjs.org/docs/index.html" target="_blank" class="text-[#ff7900] hover:border-b-2 hover:border-[#ff7900]">https://mathjs.org/docs/index.html</a> 
+                     Ako zadávať ktoré operácie, či funkcie sa dozviete v dokumentácii na stránke <a href="https://mathjs.org/docs/index.html" target="_blank" class="text-[#ff7900] hover:border-b-2 hover:border-[#ff7900]">https://mathjs.org/docs/index.html</a> 
                 </p>      
                 <div class="grid grid-cols-1 z-3">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
                         <div>
                             <div>
-                                <label for="f"> f:</label>
+                                <label for="f"> f(x):</label>
                             </div>
                             <div>
                                 <input type="text" id="f" class="border-2 border-black rounded-lg border-solid p-1">
